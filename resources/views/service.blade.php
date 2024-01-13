@@ -132,8 +132,8 @@
                         @elseif($services->tools === 'UI/UX')
                             <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-uikit"></span></div>
                         @endif
-                        <h2>{{$services->tools}}</h2>
-                        <p>{{$services->description}}</p>
+                        <h2>{{$services->tools}} Development</h2>
+                        <p align="justify">{{$services->description}}</p>
                         <a href="#" class="btn-custom">Thank You</a>
                     </div>
                 </div>
