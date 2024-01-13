@@ -84,13 +84,13 @@
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="project.html" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
+                <li class="nav-item active"><a href="{{route('contact')}}}" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">Inquire Now</a>
+            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">Sign in</a>
         </div>
     </div>
 </nav>
