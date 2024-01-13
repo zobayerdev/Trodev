@@ -16,6 +16,8 @@ class Blog extends Model
         'write',
         'writer_image',
         'post',
-        'writer_desccription'
+        'writer_desccription',
+        'created_at',
+        'updated_at'
     ];
 }

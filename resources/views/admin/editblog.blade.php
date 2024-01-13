@@ -12,8 +12,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="{{asset('admin/assets/libs/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('admin/assets/extra-libs/calendar/calendar.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="{{asset('admin/dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,26 +65,15 @@
                         </span>
 
                 </a>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Toggle which is visible on mobile only -->
-                <!-- ============================================================== -->
+
                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
+
             <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                <!-- ============================================================== -->
-                <!-- toggle and nav items -->
-                <!-- ============================================================== -->
+
                 <ul class="navbar-nav float-left mr-auto">
                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
-                    <!-- ============================================================== -->
-                    <!-- create new -->
-                    <!-- ============================================================== -->
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
@@ -189,7 +178,7 @@
                     <!-- User profile and search -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -222,28 +211,27 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.dashboard',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Project</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-cloud"></i><span class="hide-menu">Project</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Project </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Project </span></a></li>
                             <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Project List </span></a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Employee</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Employee</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Employee </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Employee </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employees',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('service',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Offer Service</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Blog</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item"><a href="{{route('blog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Write Blog </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('editblog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
+                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Admin Profile</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('logout')}}" aria-expanded="false"><i class="fa fa-power-off m-r-5 m-l-5"></i><span class="hide-menu">Logout</span></a></li>
                 </ul>
@@ -265,7 +253,7 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Calendar</h4>
+                    <h4 class="page-title">Dashboard</h4>
                     <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -284,81 +272,66 @@
         <!-- Container fluid  -->
         <!-- ============================================================== -->
         <div class="container-fluid">
-            <!-- ============================================================== -->
-            <!-- Start Page Content -->
-            <!-- ============================================================== -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card-body b-l calender-sidebar">
-                                        <div id="calendar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Datatable</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Decription</th>
+                                <th>Writer</th>
+                                <th>Writer Description</th>
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($blog as $clients)
+                                @php
+                                    $date = date("M d, Y", strtotime($clients->created_at));
+                                @endphp
+                                <form action="{{route('edits')}}" method="post">
+                                    @csrf
+
+                                <tr>
+
+                                    <td>
+                                        <input type="text" name="id" value="{{$clients->id}}" readonly>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="name" value="{{$clients->title}}">
+                                    </td>
+                                    <td><textarea name="blog">{{$clients->description}}</textarea></td>
+                                    <td>
+                                        <input type="text" name="write" value="{{$clients->write}}">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="desccription" value="{{$clients->writer_desccription}}">
+                                    </td>
+                                    <td>
+                                        <button type="submit">Update</button>
+                                    </td>
+                                </tr>
+                                </form>
+                            @endforeach
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Decription</th>
+                                <th>Writer</th>
+                                <th>Writer Description</th>
+                                <th>Update</th>
+                            </tr>
+                            </tfoot>
+                        </table>
                     </div>
+
                 </div>
             </div>
-            <!-- BEGIN MODAL -->
-            <div class="modal none-border" id="my-event">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add Event</strong></h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal Add Category -->
-            <div class="modal fade none-border" id="add-new-event">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label">Category Name</label>
-                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Choose Category Color</label>
-                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                            <option value="success">Success</option>
-                                            <option value="danger">Danger</option>
-                                            <option value="info">Info</option>
-                                            <option value="primary">Primary</option>
-                                            <option value="warning">Warning</option>
-                                            <option value="inverse">Inverse</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END MODAL -->
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
         </div>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
@@ -384,12 +357,9 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 <script src="{{asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
-<script src="{{asset('admin/dist/js/jquery.ui.touch-punch-improved.js')}}"></script>
-<script src="{{asset('admin/dist/js/jquery-ui.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('admin/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-<script src="{{asset('admin/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
+<script src="{{asset('admin/asset/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('admin/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
 <script src="{{asset('admin/assets/extra-libs/sparkline/sparkline.js')}}"></script>
 <!--Wave Effects -->
@@ -398,10 +368,18 @@
 <script src="{{asset('admin/dist/js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
 <script src="{{asset('admin/dist/js/custom.min.js')}}"></script>
-<!-- this page js -->
-<script src="{{asset('admin/assets/libs/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('admin/assets/libs/fullcalendar/dist/fullcalendar.min.js')}}"></script>
-<script src="{{asset('admin/dist/js/pages/calendar/cal-init.js')}}"></script>
+<!--This page JavaScript -->
+<!-- <script src="dist/js/pages/dashboards/dashboard1.js"></script> -->
+<!-- Charts js Files -->
+<script src="{{asset('admin/assets/libs/flot/excanvas.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.pie.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.time.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.stack.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
+<script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
+
 </body>
 
 </html>

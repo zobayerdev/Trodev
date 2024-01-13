@@ -155,6 +155,10 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/clientmsg/{id}',[AdminDashboard::class,'clientmsg'])->name('clientmsg');
 
     Route::get('/admin/calender/{id}',[AdminDashboard::class,'calender'])->name('calender');
+
+    Route::get('/admin/blog/editblog/{id}',[AdminDashboard::class,'editblog'])->name('editblog');
+
+    Route::post('/edits',[AdminDashboard::class,'edits'])->name('edits');
 });
 
 Route::get('/homepage/{id}',[UserRegisterandLogin::class,'dashboard'])->middleware(['auth','verified'])->name('homepage');
