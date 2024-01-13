@@ -65,6 +65,6 @@ class AdminLoginandRegistration extends Controller
 
         Session::flush();
 
-        return redirect()->route('admin-login');
+        return redirect()->route('home');
     }
 }

@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserRegisterandLogin extends Controller
 {
@@ -79,10 +80,9 @@ class UserRegisterandLogin extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('user')->logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        Session::flush();
 
         return redirect()->route('home');
 
