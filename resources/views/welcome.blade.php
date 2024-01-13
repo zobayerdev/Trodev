@@ -241,8 +241,8 @@
                         @elseif($servicec->tools === 'UI/UX')
                             <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-uikit"></span></div>
                         @endif
-                        <h2>{{$servicec->tools}}</h2>
-                        <p>{{$servicec->description}}</p>
+                        <h2>{{$servicec->tools}} Development</h2>
+                        <p align="justify">{{$servicec->description}}</p>
                         <a href="#" class="btn-custom">Thank You</a>
                     </div>
                 </div>
