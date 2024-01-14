@@ -26,16 +26,28 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span
+                                class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="https://www.facebook.com/trodevit" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook" style="color: white;"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter" style="color: white;"><i class="sr-only">Twitter</i></span></a>
-                        <a href="https://www.instagram.com/trodevit/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram" style="color: white;"><i class="sr-only">Instagram</i></span></a>
-                        <a href="https://www.linkedin.com/company/84349418/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin" style="color: white;"><i class="sr-only">LinkedIn</i></span></a>
+                        <a href="https://www.facebook.com/trodevit"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Facebook</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"
+                                                                                                   style="color: white;"><i
+                                    class="sr-only">Twitter</i></span></a>
+                        <a href="https://www.instagram.com/trodevit/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Instagram</i></span></a>
+                        <a href="https://www.linkedin.com/company/84349418/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">LinkedIn</i></span></a>
                     </p>
                 </div>
             </div>
@@ -59,7 +71,8 @@
                     <span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span></p>
+                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span>
+                    </p>
                     <p class="con">Call Us Now 24/7 Customer Support</p>
                 </div>
             </div>
@@ -76,7 +89,8 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-center">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -94,7 +108,8 @@
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap js-fullheight" style="background-image: url('{{ asset('user/images/bg_1.png') }}');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap js-fullheight" style="background-image: url('{{ asset('user/images/bg_1.png') }}');"
+         data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
@@ -102,7 +117,10 @@
                 <div class="mt-5">
                     <h1 class="mb-4">We Build <br>Great Projects</h1>
                     <p class="mb-4">We're in this business since 2021 and We provide the best software services</p>
-                    <p><a href="#" class="btn btn-primary">Our Services</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>
+                    <p><a href="#" class="btn btn-primary">Our Services</a> <a href="#" class="btn btn-white"
+                                                                               data-toggle="modal"
+                                                                               data-target="#exampleModalCenter">Touch
+                            Us</a></p>
                 </div>
             </div>
         </div>
@@ -114,55 +132,67 @@
         <div class="row no-gutters d-flex">
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-mobile"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-mobile"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">App Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-globe"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-globe"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">Web Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-computer"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-computer"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">Software Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-uikit"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-uikit"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">UI/UX</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-pencil-alt"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-pencil-alt"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">Graphics Design</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                 <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-server"></span></div>
+                    <div class="icon justify-content-center align-items-center d-flex"><span
+                            class="fa-solid fa-server"></span></div>
                     <div class="media-body pl-4">
                         <h3 class="heading mb-3">Server Administration</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
                     </div>
                 </div>
             </div>
@@ -175,7 +205,8 @@
         <div class="row">
             <div class="col-md-6 d-flex align-items-stretch">
                 <div class="about-wrap img w-100" style="background-image: url({{asset('user/images/bg_2.png')}});">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-crane"></span></div>
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-crane"></span></div>
                 </div>
             </div>
             <div class="col-md-6 py-5 pl-md-5">
@@ -187,13 +218,15 @@
                             <div class="icon"><span class="flaticon-hammer"></span></div>
                             <h3>We're in this business since 2021 and We provide the best software services</h3>
                         </div>
-                        <p align="justify">Today's world is moving with the touch of modernity, different technologies have touched that touch. With this technology, the whole world seems to be in the palm of your hand.</p>
-{{--                        <div class="d-flex video-image align-items-center mt-md-4">--}}
-{{--                            <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url({{asset('user/images/about-2.jpg')}});">--}}
-{{--                                <span class="fa fa-play-circle"></span>--}}
-{{--                            </a>--}}
-{{--                            <h4 class="ml-4">This is how we work on our clients, Watch video</h4>--}}
-{{--                        </div>--}}
+                        <p align="justify">Today's world is moving with the touch of modernity, different technologies
+                            have touched that touch. With this technology, the whole world seems to be in the palm of
+                            your hand.</p>
+                        {{--                        <div class="d-flex video-image align-items-center mt-md-4">--}}
+                        {{--                            <a href="#" class="video img d-flex align-items-center justify-content-center" style="background-image: url({{asset('user/images/about-2.jpg')}});">--}}
+                        {{--                                <span class="fa fa-play-circle"></span>--}}
+                        {{--                            </a>--}}
+                        {{--                            <h4 class="ml-4">This is how we work on our clients, Watch video</h4>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -205,11 +238,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-                <div class="img"  style="background-image: url({{asset('user/images/bg_2.png')}});">
+                <div class="img" style="background-image: url({{asset('user/images/bg_2.png')}});">
                     <div class="overlay"></div>
                     <h2>Providing Personalized and High Quality Services</h2>
                     <p>We can manage your dream projects to make with responsive design.</p>
-                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>
+                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal"
+                                       data-target="#exampleModalCenter">Touch Us</a></p>
                 </div>
             </div>
         </div>
@@ -227,25 +261,30 @@
         <div class="row">
             <div class="col-md-4">
                 @foreach($service as $servicec)
-                <div class="services-wrap ftco-animate">
-                    <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
-                    <div class="text">
-                        @if($servicec->tools === 'App')
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-mobile"></span></div>
-                        @elseif($servicec->tools === 'Software')
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-computer"></span></div>
-                        @elseif($servicec->tools === 'Website')
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-globe"></span></div>
-                        @elseif($servicec->tools === 'Graphic-Design')
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-pencil-alt"></span></div>
-                        @elseif($servicec->tools === 'UI/UX')
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-uikit"></span></div>
-                        @endif
-                        <h2>{{$servicec->tools}} Development</h2>
-                        <p align="justify">{{$servicec->description}}</p>
-                        <a href="#" class="btn-custom">Thank You</a>
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
+                        <div class="text">
+                            @if($servicec->tools === 'App')
+                                <div class="icon justify-content-center align-items-center d-flex"><span
+                                        class="fa-solid fa-mobile"></span></div>
+                            @elseif($servicec->tools === 'Software')
+                                <div class="icon justify-content-center align-items-center d-flex"><span
+                                        class="fa-solid fa-computer"></span></div>
+                            @elseif($servicec->tools === 'Website')
+                                <div class="icon justify-content-center align-items-center d-flex"><span
+                                        class="fa-solid fa-globe"></span></div>
+                            @elseif($servicec->tools === 'Graphic-Design')
+                                <div class="icon justify-content-center align-items-center d-flex"><span
+                                        class="fa-solid fa-pencil-alt"></span></div>
+                            @elseif($servicec->tools === 'UI/UX')
+                                <div class="icon justify-content-center align-items-center d-flex"><span
+                                        class="fa-solid fa-uikit"></span></div>
+                            @endif
+                            <h2>{{$servicec->tools}} Development</h2>
+                            <p align="justify">{{$servicec->description}}</p>
+                            <a href="#" class="btn-custom">Thank You</a>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -261,14 +300,18 @@
                     <span class="subheading">Trodev is an Company</span>
                     <h2 class="mb-4">Best Provider for Industrial & Educational Services</h2>
                     <h4>At present people and rhythms are mixing with this modern world.</h4>
-                    <p align="justify">Just as a person is modern and sees everything around him, so a person is using his latest technology to carry on his activities. In the same way, we have this organization to help people use technology in the right way. Through our organization we provide various necessary apps, software and websites.</p>
+                    <p align="justify">Just as a person is modern and sees everything around him, so a person is using
+                        his latest technology to carry on his activities. In the same way, we have this organization to
+                        help people use technology in the right way. Through our organization we provide various
+                        necessary apps, software and websites.</p>
                 </div>
             </div>
             <div class="col-md-6 d-flex align-items-center">
                 <div class="row">
                     <div class="col-md-12 d-flex counter-wrap ftco-animate">
                         <div class="block-18 bg-primary d-flex align-items-center justify-content-between">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-engineer"></span></div>
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-engineer"></span></div>
                             <div class="text">
                                 <strong class="number" data-number="{{$complete}}">0</strong>
                                 <span>Project Completed</span>
@@ -277,7 +320,8 @@
                     </div>
                     <div class="col-md-12 d-flex counter-wrap ftco-animate">
                         <div class="block-18 d-flex align-items-center justify-content-between">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-worker-1"></span></div>
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="flaticon-worker-1"></span></div>
                             <div class="text">
                                 <strong class="number" data-number="54900">0</strong>
                                 <span>Happy Clients</span>
@@ -300,18 +344,22 @@
         </div>
         <div class="row">
             @foreach($result as $projects)
-            <div class="col-md-4">
-                <div class="project">
-                    <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
-                        <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                    </a>
-                    <div class="text">
-                        <span class="subheading">{{$projects->type}}</span>
-                        <h3>{{$projects->name}}</h3>
-                        <p><span class="fa-solid fa-link mr-1"></span> <a href="{{$projects->url}}" style="color: white">Click here</a> </p>
+                <div class="col-md-4">
+                    <div class="project">
+                        <a href="{{asset('storage/'.$projects->image)}}"
+                           class="img image-popup d-flex align-items-center"
+                           style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span
+                                    class="fa fa-plus"></span></div>
+                        </a>
+                        <div class="text">
+                            <span class="subheading">{{$projects->type}}</span>
+                            <h3>{{$projects->name}}</h3>
+                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{$projects->url}}"
+                                                                              style="color: white">Click here</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
@@ -324,7 +372,8 @@
             <div class="col-md-6 p-4 pl-md-0 py-md-5 pr-md-5 aside-stretch d-flex align-items-center">
                 <div class="heading-section heading-section-white">
                     <span class="subheading" style="color:#fff;">Read Testimonials</span>
-                    <h2 class="mb-4" style="font-size: 50px;">It's always a joy to hear that the work we do has positively reviews</h2>
+                    <h2 class="mb-4" style="font-size: 50px;">It's always a joy to hear that the work we do has
+                        positively reviews</h2>
                 </div>
             </div>
             <div class="col-md-6 pl-md-5 py-4 py-md-5 aside-stretch-right">
@@ -337,7 +386,9 @@
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                    right at the coast of the Semantics, a large language ocean</p>
                                 <p class="name">Jeff Freshman</p>
                                 <span class="position">Guests</span>
                             </div>
@@ -351,7 +402,9 @@
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                    right at the coast of the Semantics, a large language ocean</p>
                                 <p class="name">Jeff Freshman</p>
                                 <span class="position">Guests</span>
                             </div>
@@ -365,7 +418,9 @@
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                    right at the coast of the Semantics, a large language ocean</p>
                                 <p class="name">Jeff Freshman</p>
                                 <span class="position">Guests</span>
                             </div>
@@ -379,7 +434,9 @@
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                    right at the coast of the Semantics, a large language ocean</p>
                                 <p class="name">Jeff Freshman</p>
                                 <span class="position">Guests</span>
                             </div>
@@ -393,7 +450,9 @@
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean</p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+                                    right at the coast of the Semantics, a large language ocean</p>
                                 <p class="name">Jeff Freshman</p>
                                 <span class="position">Guests</span>
                             </div>
@@ -417,30 +476,37 @@
         </div>
         <div class="row d-flex">
             @foreach($blog as $blogs)
-            <div class="col-lg-4 ftco-animate">
-                <div class="blog-entry">
-                    <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
-                    </a>
-                    <div class="text d-block">
-                        <div class="meta">
+                <div class="col-lg-4 ftco-animate">
+                    <div class="blog-entry">
+                        <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
+                           class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
+                        </a>
+                        <div class="text d-block">
+                            <div class="meta">
+                                <p>
+                                    @php
+                                        $date = date("M d, Y", strtotime($blogs->created_at));
+
+                                        $write = $blogs->write;
+                                        $words = explode(' ', $write);
+                                        $first_two_words = implode(' ', array_slice($words, 2, 3));
+
+                                    @endphp
+                                    <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span
+                                            class="fa fa-calendar mr-2"></span>{{$date}}</a>
+                                    <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span
+                                            class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
+                                </p>
+                            </div>
+                            <h3 class="heading"><a
+                                    href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a>
+                            </h3>
                             <p>
-                                @php
-                                    $date = date("M d, Y", strtotime($blogs->created_at));
-
-                                    $write = $blogs->write;
-                                    $words = explode(' ', $write);
-                                    $first_two_words = implode(' ', array_slice($words, 2, 3));
-
-                                @endphp
-                                <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span class="fa fa-calendar mr-2"></span>{{$date}}</a>
-                                <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
-                            </p>
+                                <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
+                                   class="btn btn-secondary py-2 px-3">Read more</a></p>
                         </div>
-                        <h3 class="heading"><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
-                        <p><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="btn btn-secondary py-2 px-3">Read more</a></p>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
@@ -454,12 +520,13 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Today's world is moving with the touch of modernity, different technologies have touched that touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your business.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that
+                        touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your
+                        business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="https://www.facebook.com/trodevit"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="https://www.instagram.com/trodevit/"><span class="fa fa-instagram"></span></a></li>
-                        <li><a href="https://www.linkedin.com/company/84349418/"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="#"><span class="fa fa-instagram"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -475,25 +542,22 @@
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>UI/UX Development</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphics Design</a></li>
                         </ul>
-{{--                        <ul class="list-unstyled ml-md-5">--}}
-{{--                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>--}}
-{{--                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help</a></li>--}}
-{{--                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>--}}
-{{--                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms of Use</a></li>--}}
-{{--                        </ul>--}}
                     </div>
                 </div>
             </div>
 
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Service</a>
+                        </li>
+                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('projectpage')}}"><span
+                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -503,22 +567,28 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span></li>
-                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a></li>
-                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@trodev.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span>
+                            </li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a>
+                            </li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span
+                                        class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-
-                    <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.trodev.com" target="_blank">Trodev</a>
+                    <p class="mb-0">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                            href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
@@ -528,11 +598,13 @@
 
 {{--##################--}}
 {{--Request to talk us--}}
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close d-flex align-items-center justify-content-center"
+                        data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="fa fa-close"></span>
                 </button>
             </div>
@@ -571,7 +643,8 @@
                     </div>
                     <div class="">
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="4" class="form-control"
+                                      placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
@@ -584,7 +657,13 @@
 </div>
 
 <!-- loader -->
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
 
 <script src="{{asset('user/js/jquery.min.js')}}"></script>
 <script src="{{asset('user/js/jquery-migrate-3.0.1.min.js')}}"></script>
