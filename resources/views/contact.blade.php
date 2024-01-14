@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Wilcon - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Trodev- Contact Us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,58 +28,80 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="fa fa-paper-plane"></span>
-                    <span class="text">youremail@email.com</span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"
+                                                                               style="color: white;"></span><span
+                                class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                        <a href="https://www.facebook.com/trodevit"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Facebook</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"
+                                                                                                   style="color: white;"><i
+                                    class="sr-only">Twitter</i></span></a>
+                        <a href="https://www.instagram.com/trodevit/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Instagram</i></span></a>
+                        <a href="https://www.linkedin.com/company/84349418/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">LinkedIn</i></span></a>
                     </p>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Inquire Now</a></p>
+                <p class="mb-0 register-link"><a href="#" class="btn btn-primary" data-toggle="modal"
+                                                 data-target="#exampleModalCenter">sign up</a></p>
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="pt-4 pb-5">
-    <div class="container">
-        <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
-            <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
-                    <span class="flaticon flaticon-crane"></span>
-                    <span class="ml-2">Wilcon <small>Construction Company</small></span>
-                </a>
-            </div>
-            <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="fa fa-map"></span>
+    <div class="pt-4 pb-5">
+        <div class="container">
+            <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
+                <div class="col-md-4 d-flex mb-2 mb-md-0">
+                    <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                        <span class="flaticon flaticon-crane"></span>
+                        <span class="ml-2">Trodev <small>IT & Software Company</small></span>
+                    </a>
                 </div>
-                <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Free Call</span> <span>+1 234 456 78910</span></p>
-                    <p class="con">Call Us Now 24/7 Customer Support</p>
+                <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="fa fa-map"></span>
+                    </div>
+                    <div class="pr-md-4 pl-md-3 pl-3 text">
+                        <p class="con"><span>Phone Call</span> <span><a
+                                    href="tel:+8801615257555">+880 1615257555</a></span></p>
+                        <p class="con">Call Us Now 24/7 Customer Support</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
-                <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
-                </div>
-                <div class="text pl-3 pl-md-3">
-                    <p class="hr"><span>Our Location</span></p>
-                    <p class="con">198 West 21th Street, Suite 721 New York NY 10016</p>
+                <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
+                    <div class="icon d-flex justify-content-center align-items-center"><span
+                            class="fa fa-paper-plane"></span>
+                    </div>
+                    <div class="text pl-3 pl-md-3">
+                        <p class="hr"><span>Our Office Location</span></p>
+                        <p class="con">H#34/4, Primary School Road, Islampur, Dattapara, House-Building, Tongi,
+                            Gazipur </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-center">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
@@ -97,12 +119,15 @@
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');"
+         data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Contact us <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
+                                class="fa fa-chevron-right"></i></a></span> <span>Contact us <i
+                            class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Contact us</h1>
             </div>
         </div>
@@ -115,7 +140,6 @@
             <div class="col-md-7 heading-section text-center ftco-animate">
                 <span class="subheading">Contact us</span>
                 <h2 class="mb-4">Message us for more details</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
             </div>
         </div>
 
@@ -141,7 +165,8 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <textarea name="msg" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                <textarea name="msg" id="" cols="30" rows="7" class="form-control"
+                                          placeholder="Message"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -161,7 +186,8 @@
                             <span class="fa fa-map-marker"></span>
                         </div>
                         <div class="text">
-                            <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+                            <p><span>Address:</span> H#34/4, Primary School Road, Islampur, Dattapara, House-Building,
+                                Tongi, Gazipur, Bangladesh</p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex ftco-animate">
@@ -169,7 +195,8 @@
                             <span class="fa fa-phone"></span>
                         </div>
                         <div class="text">
-                            <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+                            <p class="con"><span>Phone Call</span> <span><a
+                                        href="tel:+8801615257555">+880 1615257555</a></span></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex ftco-animate">
@@ -177,7 +204,7 @@
                             <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text">
-                            <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                            <p><span>Email:</span> <a href="mailto:info@trodev.com">info@trodev.com</a></p>
                         </div>
                     </div>
                     <div class="dbox w-100 d-flex ftco-animate">
@@ -185,7 +212,7 @@
                             <span class="fa fa-globe"></span>
                         </div>
                         <div class="text">
-                            <p><span>Website</span> <a href="#">yoursite.com</a></p>
+                            <p><span>Website</span> <a href="https://www.trodev.com">www.trodev.com</a></p>
                         </div>
                     </div>
                 </div>
@@ -203,7 +230,9 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that
+                        touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your
+                        business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -214,20 +243,14 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Links</h2>
+                    <h2 class="ftco-heading-2">Services</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-md-4">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Project</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog Posts</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Industries</a></li>
-                        </ul>
-                        <ul class="list-unstyled ml-md-5">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms of Use</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>App Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Software Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>UI/UX Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphics Design</a></li>
                         </ul>
                     </div>
                 </div>
@@ -235,12 +258,15 @@
 
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Customer Services</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Prompt Delivery</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reliable Equipment</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New Heavy Equipment</a></li>
+                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a>
+                        </li>
+                        <li><a href="{{route('projectpage')}}"><span
+                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
                     </ul>
                 </div>
             </div>
@@ -250,22 +276,28 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="fa fa-phone mr-3"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span>
+                            </li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a>
+                            </li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span
+                                        class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-
-                    <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <p class="mb-0">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                            href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
@@ -273,11 +305,13 @@
     </div>
 </footer>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close d-flex align-items-center justify-content-center"
+                        data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="fa fa-close"></span>
                 </button>
             </div>
@@ -316,7 +350,8 @@
                     </div>
                     <div class="">
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="4" class="form-control"
+                                      placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
@@ -329,7 +364,13 @@
 </div>
 
 <!-- loader -->
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
 
 <script src="{{asset('user/js/jquery.min.js')}}"></script>
 <script src="{{asset('user/js/jquery-migrate-3.0.1.min.js')}}"></script>

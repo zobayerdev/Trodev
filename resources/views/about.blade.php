@@ -340,12 +340,6 @@
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>UI/UX Development</a></li>
                             <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphics Design</a></li>
                         </ul>
-{{--                        <ul class="list-unstyled ml-md-5">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms of Use</a></li>
-                        </ul>--}}
                     </div>
                 </div>
             </div>
@@ -357,8 +351,8 @@
                         <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
                         <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
                         <li><a href="{{route('projectpage')}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -377,6 +371,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
