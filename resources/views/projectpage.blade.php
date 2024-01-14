@@ -111,7 +111,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 ftco-animate">
+            <div class="col-lg-12 ftco-animate">
                 <h2 class="mb-3">{{$id->title}}</h2>
 
                 @php
@@ -140,9 +140,6 @@
                 $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
                 echo implode(".", $firstTwoLines);
                 ?>
-                <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
-                </p>
                 <?php
                 $nextFourLines = array_slice($lines, 4, 39);
 
@@ -163,19 +160,80 @@
 
 
 
-                <div class="about-author d-flex p-4 bg-light">
-                    <div class="bio mr-5">
-                        <img src="{{asset('storage/'.$id->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
+                <section class="ftco-section bg-half-light">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5 pb-2">
+                            <div class="col-md-8 text-center heading-section ftco-animate">
+                                <h2 class="mb-4">Our Packages</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                @foreach($basic as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4">
+                                @foreach($standard as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4">
+                                @foreach($premium as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-
-
-
-                    <div class="desc">
-                        <h3>{{$id->write}}</h3>
-                        <p>{{$id->post}}</p>
-                        <p>{{$id->writer_desccription}}</p>
-                    </div>
-                </div>
+                </section>
 
 
 

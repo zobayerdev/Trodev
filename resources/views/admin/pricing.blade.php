@@ -501,28 +501,28 @@
             // Add new options based on the selected type
             if (selectedType === "Basic") {
                 durationSelect.append('<option value="1 Month">1 Month</option>');
-                storageSelect.append('<option value="5GB-500Tk">5GB-500Tk</option>');
-                monthlycharge.append('<option value="1000Tk">1000Tk</option>');
-                training.append('<option value="500Tk">500Tk</option>');
+                storageSelect.append('<option value="500">500</option>');
+                monthlycharge.append('<option value="1000">1000</option>');
+                training.append('<option value="500">500</option>');
                 revision.append('<option value="2 Times">2 Times</option>');
                 domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="500Tk">500Tk</option>');
+                sslcertificate.append('<option value="500">500</option>');
             } else if (selectedType === "Standard") {
                 durationSelect.append('<option value="6 Months">6 Months</option>');
-                storageSelect.append('<option value="5GB-1000Tk">5GB-1000Tk</option>');
-                monthlycharge.append('<option value="3000Tk">3000Tk</option>');
-                training.append('<option value="500Tk">500Tk</option>');
+                storageSelect.append('<option value="1000">1000</option>');
+                monthlycharge.append('<option value="3000">3000</option>');
+                training.append('<option value="500">500</option>');
                 revision.append('<option value="5 Times">5 Times</option>');
                 domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="1000Tk">1000Tk</option>');
+                sslcertificate.append('<option value="1000">1000</option>');
             } else if (selectedType === "Premium") {
                 durationSelect.append('<option value="1 Year">1 Year</option>');
-                storageSelect.append('<option value="5GB-2000Tk">5GB-2000Tk</option>');
-                monthlycharge.append('<option value="5500Tk">5500Tk</option>');
-                training.append('<option value="Free">Free</option>');
+                storageSelect.append('<option value="2000">2000</option>');
+                monthlycharge.append('<option value="5500">5500</option>');
+                training.append('<option value="0">Free</option>');
                 revision.append('<option value="Life Time">Life Time</option>');
                 domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="Free">Free</option>');
+                sslcertificate.append('<option value="0">Free</option>');
             }
             else {
                 durationSelect.append('<option value="-">Select</option>');

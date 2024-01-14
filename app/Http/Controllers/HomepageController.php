@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
+use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\SendMsg;
 use Carbon\Carbon;
@@ -102,10 +103,15 @@ class HomepageController extends Controller
     {
         $project = Project::find($projects);
 
-
+        $pack = Pricing::where('projectid',$project->id)
+            ->where('packagestype','Basic')->get();
+        $pack2 = Pricing::where('projectid',$project->id)
+            ->where('packagestype','Standard')->get();
+        $pack3 = Pricing::where('projectid',$project->id)
+            ->where('packagestype','Premium')->get();
 
         $proj = Project::all();
 
-        return view('projectpage',['id'=>$project, 'proj' =>$proj]);
+        return view('projectpage',['id'=>$project, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
     }
 }
