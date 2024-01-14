@@ -159,6 +159,8 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/blog/editblog/{id}',[AdminDashboard::class,'editblog'])->name('editblog');
 
     Route::post('/edits',[AdminDashboard::class,'edits'])->name('edits');
+
+    Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
 });
 
 Route::get('/homepage/{id}',[UserRegisterandLogin::class,'dashboard'])->middleware(['auth','verified'])->name('homepage');

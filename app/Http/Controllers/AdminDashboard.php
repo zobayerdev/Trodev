@@ -332,5 +332,13 @@ class AdminDashboard extends Controller
         return redirect()->back();
     }
 
-
+    public function pricingpages($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            $software = Project::get();
+            $types =  Project::select('type')->distinct()->get();
+            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
+        }
+    }
 }
