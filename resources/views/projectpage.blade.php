@@ -174,15 +174,15 @@
                                         <div class="text">
                                             <h1>{{$servicec->packagestype}}</h1>
                                             <h2>{{$servicec->validity}}</h2>
-                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+{{--                                            <p>Price: {{$servicec->softwareprice}}</p>--}}
                                             <p>SSL Certificate: {{$servicec->ssl}}</p>
                                             <p>Training: {{$servicec->training}}</p>
                                             <p>Revision: {{$servicec->revision}}</p>
                                             <p>Domain: {{$servicec->domain}}</p>
                                             <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage;
                                             @endphp
                                             <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
@@ -195,15 +195,15 @@
                                         <div class="text">
                                             <h1>{{$servicec->packagestype}}</h1>
                                             <h2>{{$servicec->validity}}</h2>
-                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+{{--                                            <p>Price: {{$servicec->softwareprice}}</p>--}}
                                             <p>SSL Certificate: {{$servicec->ssl}}</p>
                                             <p>Training: {{$servicec->training}}</p>
                                             <p>Revision: {{$servicec->revision}}</p>
                                             <p>Domain: {{$servicec->domain}}</p>
                                             <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage;
                                             @endphp
                                             <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
@@ -216,15 +216,15 @@
                                         <div class="text">
                                             <h1>{{$servicec->packagestype}}</h1>
                                             <h2>{{$servicec->validity}}</h2>
-                                            <p>Monthly Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+{{--                                            <p>Price: {{$servicec->softwareprice}}</p>--}}
                                             <p>SSL Certificate: {{$servicec->ssl}}</p>
                                             <p>Training: {{$servicec->training}}</p>
                                             <p>Revision: {{$servicec->revision}}</p>
                                             <p>Domain: {{$servicec->domain}}</p>
                                             <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training + $servicec->softwareprice + $servicec->storage;
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage;
                                             @endphp
                                             <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
