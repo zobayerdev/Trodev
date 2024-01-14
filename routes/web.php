@@ -96,6 +96,8 @@ Route::post('/sendmsg',[HomepageController::class,'send_msg'])->name('sendmsg');
 
 Route::get('/blog/{title}/{id}',[HomepageController::class,'singleblogpage'])->name('single.blogpage');
 
+Route::get('/project/{id}',[HomepageController::class,'singleproject'])->name('single.projectpage');
+
 Route::get('/registration', function () {
     return view('register');
 })->name('register');
@@ -161,6 +163,8 @@ Route::middleware(['admin'])->group(function (){
     Route::post('/edits',[AdminDashboard::class,'edits'])->name('edits');
 
     Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
+
+    Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
 });
 
 Route::get('/homepage/{id}',[UserRegisterandLogin::class,'dashboard'])->middleware(['auth','verified'])->name('homepage');

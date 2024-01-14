@@ -356,8 +356,7 @@
                         <div class="text">
                             <span class="subheading">{{$projects->type}}</span>
                             <h3>{{$projects->name}}</h3>
-                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{$projects->url}}"
-                                                                              style="color: white">Click here</a></p>
+                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('single.projectpage',['id'=>$projects->id])}}" style="color: white">Click here</a></p>
                         </div>
                     </div>
                 </div>

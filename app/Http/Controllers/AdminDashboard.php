@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
+use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\SendMsg;
 use App\Models\User;
@@ -340,5 +341,23 @@ class AdminDashboard extends Controller
             $types =  Project::select('type')->distinct()->get();
             return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
         }
+    }
+
+    public function priceinsert(Request $request)
+    {
+        Pricing::insert([
+            'projectid' => $request->input('software'),
+            'packagestype' => $request->input('details'),
+            'validity' => $request->input('duration'),
+            'monthlycharge' => $request->input('monthly'),
+            'softwareprice' => $request->input('price'),
+            'ssl' => $request->input('ssl'),
+            'training' => $request->input('training'),
+            'revision' => $request->input('revision'),
+            'domain' => $request->input('domain'),
+            'storage' => $request->input('storage'),
+        ]);
+
+        return redirect()->back();
     }
 }

@@ -97,4 +97,15 @@ class HomepageController extends Controller
 
         return redirect()->back();
     }
+
+    public function singleproject($projects)
+    {
+        $project = Project::find($projects);
+
+
+
+        $proj = Project::all();
+
+        return view('projectpage',['id'=>$project, 'proj' =>$proj]);
+    }
 }

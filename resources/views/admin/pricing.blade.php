@@ -298,7 +298,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <form class="form-horizontal" action="{{route('project-upload')}}" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="{{route('packageinsert')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <h4 class="card-title">Packages Info</h4>
@@ -306,7 +306,7 @@
                                     <label class="col-sm-3 text-right control-label col-form-label">Type</label>
                                     <div class="col-md-9">
                                         <select class="select2 form-control custom-select" name="details" id="typeSelect" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
+                                            <option value="-">Select</option>
                                             <option value="Basic">Basic</option>
                                             <option value="Standard">Standard</option>
                                             <option value="Premium">Premium</option>
@@ -325,56 +325,70 @@
                                 <div class="form-group row">
                                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software</label>
                                     <div class="col-md-9">
-                                        <select id="softwareSelect" class="select2 form-control custom-select" name="type" style="width: 100%; height:36px;" required>
+                                        <select id="softwareSelect" class="select2 form-control custom-select" name="software" style="width: 100%; height:36px;" required>
                                             <option>Select</option>
                                             @foreach($project as $soft)
                                                 <option value="{{$soft->id}}">{{$soft->id}}. {{$soft->name}} - <strong>{{$soft->type}}</strong></option>
                                             @endforeach
-                                            <!-- Projects will be dynamically populated here based on user selection -->
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Price</label>
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software Price</label>
                                     <div class="col-sm-9">
                                         <input type="number" class="form-control" id="lname" name="price" placeholder="Price Here" required readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="email1" class="col-sm-3 text-right control-label col-form-label">Demon Link</label>
-                                    <div class="col-sm-9">
-                                        <input type="url" class="form-control" id="email1" name="url" placeholder="Demo Link Here" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 text-right control-label col-form-label">Mode</label>
+                                    <label for="email1" class="col-sm-3 text-right control-label col-form-label">Monthly Charge</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="mode" style="width: 100%; height:36px;" required>
+                                        <select class="select2 form-control custom-select" name="monthly" id="monthlycharge" style="width: 100%; height:36px;" required>
                                             <option>Select</option>
-                                            <option value="Upcoming">Upcoming</option>
-                                            <option value="Latest">Latest</option>
-                                            <option value="Previous">Previous</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 text-right control-label col-form-label">Type</label>
+                                    <label class="col-sm-3 text-right control-label col-form-label">SSL Certificate</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="type" style="width: 100%; height:36px;" required>
+                                        <select class="select2 form-control custom-select" name="ssl" id="sslcertificate" style="width: 100%; height:36px;" required>
                                             <option>Select</option>
-                                            <option value="App">App</option>
-                                            <option value="Software">Software</option>
-                                            <option value="Website">Website</option>
-                                            <option value="UI/UX">UI/UX</option>
-                                            <option value="Graphic-Design">Graphic Design</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Image</label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="form-control-file" name="pic" id="imageUpload" required>
-                                        <small class="form-text text-muted">Upload your image here</small>
+                                    <label class="col-sm-3 text-right control-label col-form-label">Training Cost</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="training" id="training" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Revision</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="revision" id="revision" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Domain</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="domain" id="domains" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Storage</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="storage" id="storageSelect" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -466,17 +480,58 @@
         $("#typeSelect").change(function () {
             var selectedType = $(this).val();
             var durationSelect = $("#durationSelect");
+            var storageSelect = $("#storageSelect");
+            var monthlycharge = $("#monthlycharge");
+            var training = $("#training");
+            var revision = $("#revision");
+            var domains = $("#domains");
+            var sslcertificate = $("#sslcertificate");
 
-            // Clear previous options
+
+
             durationSelect.empty();
+            storageSelect.empty();
+            monthlycharge.empty();
+            training.empty();
+            revision.empty();
+            domains.empty();
+            sslcertificate.empty();
+
 
             // Add new options based on the selected type
             if (selectedType === "Basic") {
                 durationSelect.append('<option value="1 Month">1 Month</option>');
+                storageSelect.append('<option value="5GB-500Tk">5GB-500Tk</option>');
+                monthlycharge.append('<option value="1000Tk">1000Tk</option>');
+                training.append('<option value="500Tk">500Tk</option>');
+                revision.append('<option value="2 Times">2 Times</option>');
+                domains.append('<option value="Custom Price">Custom Price</option>');
+                sslcertificate.append('<option value="500Tk">500Tk</option>');
             } else if (selectedType === "Standard") {
                 durationSelect.append('<option value="6 Months">6 Months</option>');
+                storageSelect.append('<option value="5GB-1000Tk">5GB-1000Tk</option>');
+                monthlycharge.append('<option value="3000Tk">3000Tk</option>');
+                training.append('<option value="500Tk">500Tk</option>');
+                revision.append('<option value="5 Times">5 Times</option>');
+                domains.append('<option value="Custom Price">Custom Price</option>');
+                sslcertificate.append('<option value="1000Tk">1000Tk</option>');
             } else if (selectedType === "Premium") {
                 durationSelect.append('<option value="1 Year">1 Year</option>');
+                storageSelect.append('<option value="5GB-2000Tk">5GB-2000Tk</option>');
+                monthlycharge.append('<option value="5500Tk">5500Tk</option>');
+                training.append('<option value="Free">Free</option>');
+                revision.append('<option value="Life Time">Life Time</option>');
+                domains.append('<option value="Custom Price">Custom Price</option>');
+                sslcertificate.append('<option value="Free">Free</option>');
+            }
+            else {
+                durationSelect.append('<option value="-">Select</option>');
+                storageSelect.append('<option value="-">Select</option>');
+                monthlycharge.append('<option value="-">Select</option>');
+                training.append('<option value="-">Select</option>');
+                revision.append('<option value="-">Select</option>');
+                domains.append('<option value="-">Select</option>');
+                sslcertificate.append('<option value="-">Select</option>');
             }
         });
     });
