@@ -10,10 +10,13 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Add Projects (Trodev)</title>
     <!-- Custom CSS -->
-    <link href="{{asset('admin/assets/libs/fullcalendar/dist/fullcalendar.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('admin/assets/extra-libs/calendar/calendar.css')}}" rel="stylesheet" />
+    <link href="{{asset('admin/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/jquery-minicolors/jquery.minicolors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/quill/dist/quill.snow.css')}}">
     <link href="{{asset('admin/dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,10 +24,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
-<!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
 <div class="preloader">
@@ -222,16 +225,16 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.dashboard',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Project</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-cloud"></i><span class="hide-menu">Project</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Project </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Project </span></a></li>
                             <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Project List </span></a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Employee</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Employee</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Employee </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Employee </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employees',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('service',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Offer Service</span></a></li>
@@ -241,9 +244,14 @@
                             <li class="sidebar-item"><a href="{{route('editblog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Packages</span></a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Packages </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Packages List </span></a></li>
+                        </ul>
+                    </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Admin Profile</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('logout')}}" aria-expanded="false"><i class="fa fa-power-off m-r-5 m-l-5"></i><span class="hide-menu">Logout</span></a></li>
                 </ul>
@@ -265,12 +273,12 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Calendar</h4>
+                    <h4 class="page-title">Add Packages</h4>
                     <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                <li class="breadcrumb-item active" aria-current="page">Add Packages</li>
                             </ol>
                         </nav>
                     </div>
@@ -285,80 +293,106 @@
         <!-- ============================================================== -->
         <div class="container-fluid">
             <!-- ============================================================== -->
-            <!-- Start Page Content -->
+            <!-- Sales Cards  -->
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card-body b-l calender-sidebar">
-                                        <div id="calendar"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- BEGIN MODAL -->
-            <div class="modal none-border" id="my-event">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add Event</strong></h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body"></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-success save-event waves-effect waves-light">Create event</button>
-                            <button type="button" class="btn btn-danger delete-event waves-effect waves-light" data-dismiss="modal">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Modal Add Category -->
-            <div class="modal fade none-border" id="add-new-event">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title"><strong>Add</strong> a category</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label class="control-label">Category Name</label>
-                                        <input class="form-control form-white" placeholder="Enter name" type="text" name="category-name" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="control-label">Choose Category Color</label>
-                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
-                                            <option value="success">Success</option>
-                                            <option value="danger">Danger</option>
-                                            <option value="info">Info</option>
-                                            <option value="primary">Primary</option>
-                                            <option value="warning">Warning</option>
-                                            <option value="inverse">Inverse</option>
+                        <form class="form-horizontal" action="{{route('project-upload')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="card-body">
+                                <h4 class="card-title">Packages Info</h4>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Type</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="details" id="typeSelect" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Standard">Standard</option>
+                                            <option value="Premium">Premium</option>
                                         </select>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger waves-effect waves-light save-category" data-dismiss="modal">Save</button>
-                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
-                        </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Duration</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="duration" id="durationSelect" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software</label>
+                                    <div class="col-md-9">
+                                        <select id="softwareSelect" class="select2 form-control custom-select" name="type" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                            @foreach($project as $soft)
+                                                <option value="{{$soft->id}}">{{$soft->id}}. {{$soft->name}} - <strong>{{$soft->type}}</strong></option>
+                                            @endforeach
+                                            <!-- Projects will be dynamically populated here based on user selection -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Price</label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" id="lname" name="price" placeholder="Price Here" required readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email1" class="col-sm-3 text-right control-label col-form-label">Demon Link</label>
+                                    <div class="col-sm-9">
+                                        <input type="url" class="form-control" id="email1" name="url" placeholder="Demo Link Here" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Mode</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="mode" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                            <option value="Upcoming">Upcoming</option>
+                                            <option value="Latest">Latest</option>
+                                            <option value="Previous">Previous</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Type</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="type" style="width: 100%; height:36px;" required>
+                                            <option>Select</option>
+                                            <option value="App">App</option>
+                                            <option value="Software">Software</option>
+                                            <option value="Website">Website</option>
+                                            <option value="UI/UX">UI/UX</option>
+                                            <option value="Graphic-Design">Graphic Design</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Image</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" class="form-control-file" name="pic" id="imageUpload" required>
+                                        <small class="form-text text-muted">Upload your image here</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="border-top">
+                                <div class="card-body text-center">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary col-md-4">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- END MODAL -->
-            <!-- ============================================================== -->
-            <!-- End PAge Content -->
-            <!-- ============================================================== -->
+
+
+
         </div>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
@@ -384,12 +418,9 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 <script src="{{asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
-<script src="{{asset('admin/dist/js/jquery.ui.touch-punch-improved.js')}}"></script>
-<script src="{{asset('admin/dist/js/jquery-ui.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('admin/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
-<script src="{{asset('admin/assets/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
+<script src="{{asset('admin/asset/libs/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('admin/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
 <script src="{{asset('admin/assets/extra-libs/sparkline/sparkline.js')}}"></script>
 <!--Wave Effects -->
@@ -398,10 +429,61 @@
 <script src="{{asset('admin/dist/js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
 <script src="{{asset('admin/dist/js/custom.min.js')}}"></script>
-<!-- this page js -->
-<script src="{{asset('admin/assets/libs/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('admin/assets/libs/fullcalendar/dist/fullcalendar.min.js')}}"></script>
-<script src="{{asset('admin/dist/js/pages/calendar/cal-init.js')}}"></script>
+<!--This page JavaScript -->
+<!-- <script src="dist/js/pages/dashboards/dashboard1.js"></script> -->
+<!-- Charts js Files -->
+<script src="{{asset('admin/assets/libs/flot/excanvas.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.pie.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.time.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.stack.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
+<script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
+<script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#softwareSelect').change(function () {
+            var selectedId = $(this).val();
+            $('#lname').prop('readonly', selectedId === '');
+            if (selectedId !== '') {
+                var employeeData = <?php echo json_encode($project); ?>;
+                var selectedEmployee = employeeData.find(function (emp) {
+                    return emp.id == selectedId;
+                });
+                if (selectedEmployee) {
+                    $('#lname').val(selectedEmployee.price).prop('readonly', true);
+                }
+            } else {
+                $('#lname').val('').prop('readonly', false);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $("#typeSelect").change(function () {
+            var selectedType = $(this).val();
+            var durationSelect = $("#durationSelect");
+
+            // Clear previous options
+            durationSelect.empty();
+
+            // Add new options based on the selected type
+            if (selectedType === "Basic") {
+                durationSelect.append('<option value="1 Month">1 Month</option>');
+            } else if (selectedType === "Standard") {
+                durationSelect.append('<option value="6 Months">6 Months</option>');
+            } else if (selectedType === "Premium") {
+                durationSelect.append('<option value="1 Year">1 Year</option>');
+            }
+        });
+    });
+</script>
+
+
+
 </body>
 
 </html>

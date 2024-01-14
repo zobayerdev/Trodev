@@ -275,7 +275,9 @@ class AdminDashboard extends Controller
                 'write'=>$developer,
                 'writer_image' =>$path,
                 'post' => $desgination,
-                'writer_desccription'=>$post
+                'writer_desccription'=>$post,
+                'created_at'=> Carbon::now('Asia/Dhaka'),
+                'updated_at' =>  Carbon::now('Asia/Dhaka')
             ]);
         }
 
@@ -305,6 +307,38 @@ class AdminDashboard extends Controller
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
             return view('admin.calender', ['id' => $user]);
+        }
+    }
+
+    public function editblog($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            $blogs = Blog::all();
+            return view('admin.editblog', ['id' => $user, 'blog' => $blogs]);
+        }
+    }
+
+    public function edits(Request $request)
+    {
+        Blog::where('id',$request->input('id'))
+            ->update([
+                'title' => $request->input('name'),
+                'description' => $request->input('blog'),
+                'write' => $request->input('write'),
+                'writer_desccription' => $request->input('desccription'),
+                'updated_at' => Carbon::now('Asia/Dhaka')
+            ]);
+        return redirect()->back();
+    }
+
+    public function pricingpages($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            $software = Project::get();
+            $types =  Project::select('type')->distinct()->get();
+            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
         }
     }
 }

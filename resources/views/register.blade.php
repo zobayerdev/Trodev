@@ -5,6 +5,7 @@
     <title>Login SignUp</title>
     <link rel="stylesheet" type="text/css" href="{{asset('user/loginStyle.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
 
     <!-- It will redirect to the Home Page after submitting the form -->
 
