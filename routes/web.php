@@ -162,7 +162,7 @@ Route::middleware(['admin'])->group(function (){
 
     Route::post('/edits',[AdminDashboard::class,'edits'])->name('edits');
 
-    Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
+    Route::get('/admin/packages/{id}/{project}',[AdminDashboard::class,'pricingpages'])->name('packages');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
 });

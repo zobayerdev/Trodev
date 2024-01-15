@@ -296,6 +296,21 @@
                             @csrf
                             <div class="card-body">
                                 <h4 class="card-title">Project Info</h4>
+                                <input type="hidden" name="id" value="{{$id->id}}">
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Project Id</label>
+                                    @php
+                                    if (\App\Models\Project::count()===0)
+                                        {
+                                            $proj = 1;
+                                        }
+                                    else
+                                        $proj = $project->id + 1
+                                    @endphp
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="fname" name="projectid" value="{{$proj}}" readonly>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label for="fname" class="col-sm-3 text-right control-label col-form-label">Project Name</label>
                                     <div class="col-sm-9">

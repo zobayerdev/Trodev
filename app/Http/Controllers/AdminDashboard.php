@@ -28,12 +28,15 @@ class AdminDashboard extends Controller
     {
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
-            return view('admin.addproject', ['id' => $user]);
+
+            $project = Project::orderBy('id','desc')->first();
+            return view('admin.addproject', ['id' => $user, 'project'=>$project]);
         }
     }
 
     public function projectupload(Request $request)
     {
+        $projectid = $request->input('projectid');
         $project = $request->input('project');
         $description = $request->input('description');
         $price = $request->input('price');
@@ -60,7 +63,7 @@ class AdminDashboard extends Controller
                 'updated_at' => $now
             ]);
 
-            return redirect()->back()->with('success','Successfully Added!');
+            return redirect()->route('packages',['id'=>$request->input('id'),'project'=>$projectid]);
         }
     }
 
@@ -333,13 +336,14 @@ class AdminDashboard extends Controller
         return redirect()->back();
     }
 
-    public function pricingpages($id)
+    public function pricingpages($id,$project)
     {
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
+            $pro = Project::find($project);
             $software = Project::get();
             $types =  Project::select('type')->distinct()->get();
-            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
+            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types,'proj' =>$pro]);
         }
     }
 
