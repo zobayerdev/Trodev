@@ -340,6 +340,15 @@
                                     </div>
                                 </div>
 
+                                <!-- Image display -->
+                                <div class="form-group row">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Preview</label>
+                                    <div class="col-sm-9">
+                                        <img id="imagePreview" src="" alt="Image Preview">
+                                    </div>
+                                </div>
+
+
                             </div>
                             <div class="border-top">
                                 <div class="card-body text-center">
@@ -405,6 +414,35 @@
 <script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Listen for changes in the file input
+        $('#imageUpload').change(function() {
+            // Get the selected file
+            var file = this.files[0];
+
+            if (file) {
+                // Create a FileReader to read the file
+                var reader = new FileReader();
+
+                // Set a callback function to execute when the reader has finished reading
+                reader.onload = function(e) {
+                    // Set the source of the image to the result of the FileReader
+                    $('#imagePreview').attr('src', e.target.result);
+                };
+
+                // Read the file as a data URL
+                reader.readAsDataURL(file);
+            } else {
+                // If no file is selected, clear the image source
+                $('#imagePreview').attr('src', '');
+            }
+        });
+    });
+</script>
+
 
 </body>
 

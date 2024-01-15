@@ -244,12 +244,12 @@
                             <li class="sidebar-item"><a href="{{route('editblog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Packages</span></a>
-                        <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Packages </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Packages List </span></a></li>
-                        </ul>
-                    </li>
+{{--                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Packages</span></a>--}}
+{{--                        <ul aria-expanded="false" class="collapse  first-level">--}}
+{{--                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Packages </span></a></li>--}}
+{{--                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Packages List </span></a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>
@@ -323,20 +323,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software ID</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="lname" name="software" value="{{$proj->id}}" required readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software</label>
-                                    <div class="col-md-9">
-                                        <select id="softwareSelect" class="select2 form-control custom-select" name="software" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-                                            @foreach($project as $soft)
-                                                <option value="{{$soft->id}}">{{$soft->id}}. {{$soft->name}} - <strong>{{$soft->type}}</strong></option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="lname" name="name" value="{{$proj->name}}" required readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Software Price</label>
                                     <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="lname" name="price" placeholder="Price Here" required readonly>
+                                        <input type="number" class="form-control" id="lname" name="price" value="{{$proj->price}}" required readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
