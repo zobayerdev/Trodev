@@ -32,7 +32,7 @@ class AdminLoginandRegistration extends Controller
                 'password'=>$makehash
             ]);
 
-            return redirect()->route('admin-login')->with('success','Registration Successfull!!');
+            return redirect()->route('admin-login')->with('success','Registration Successful!!');
         }
 
     }
