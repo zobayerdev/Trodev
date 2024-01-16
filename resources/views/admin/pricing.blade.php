@@ -502,7 +502,7 @@
             // Add new options based on the selected type
             if (selectedType === "Basic") {
                 durationSelect.append('<option value="1 Month">1 Month</option>');
-                storageSelect.append('<option value="500">500</option>');
+                storageSelect.append('<option value="500">200</option>');
                 monthlycharge.append('<option value="1000">1000</option>');
                 training.append('<option value="500">500</option>');
                 revision.append('<option value="2 Times">2 Times</option>');
@@ -510,7 +510,7 @@
                 sslcertificate.append('<option value="500">500</option>');
             } else if (selectedType === "Standard") {
                 durationSelect.append('<option value="6 Months">6 Months</option>');
-                storageSelect.append('<option value="1000">1000</option>');
+                storageSelect.append('<option value="1000">600</option>');
                 monthlycharge.append('<option value="3000">3000</option>');
                 training.append('<option value="500">500</option>');
                 revision.append('<option value="5 Times">5 Times</option>');
@@ -518,7 +518,7 @@
                 sslcertificate.append('<option value="1000">1000</option>');
             } else if (selectedType === "Premium") {
                 durationSelect.append('<option value="1 Year">1 Year</option>');
-                storageSelect.append('<option value="2000">2000</option>');
+                storageSelect.append('<option value="2000">1000</option>');
                 monthlycharge.append('<option value="5500">5500</option>');
                 training.append('<option value="0">Free</option>');
                 revision.append('<option value="Life Time">Life Time</option>');
