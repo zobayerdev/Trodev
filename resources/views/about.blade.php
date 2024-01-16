@@ -21,6 +21,34 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+
+    <style>
+        /* Apply the flip effect for screens smaller than 768 pixels (adjust as needed) */
+        @media (max-width: 768px) {
+            .flipper {
+                transform-style: preserve-3d;
+                transform: rotateY(180deg); /* Set to 180deg by default for phone views */
+                transition: transform 0.5s ease-in-out;
+                cursor: pointer; /* Add cursor:pointer for better user experience */
+            }
+
+            .flipped .flipper {
+                transform: rotateY(0deg); /* Reverse the rotation when flipped */
+            }
+
+            .front, .back {
+                backface-visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .back {
+                transform: rotateY(0deg); /* Set to 0deg by default for phone views */
+            }
+        }
+
+    </style>
 </head>
 <body>
 <div class="py-1 top">
@@ -462,6 +490,23 @@
 <script src="{{asset('user/js/google-map.js')}}"></script>
 
 <script src="{{asset('user/js/main.js')}}"></script>
+
+<!-- Add this script in the <head> or at the end of your HTML body -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all elements with the 'block-2' class
+        var blocks = document.querySelectorAll('.block-2');
+
+        // Add a touch event listener to each block
+        blocks.forEach(function (block) {
+            block.addEventListener('touchstart', function () {
+                // Toggle the 'flipped' class on touch
+                block.classList.toggle('flipped');
+            });
+        });
+    });
+</script>
+
 
 </body>
 </html>

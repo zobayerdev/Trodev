@@ -234,31 +234,17 @@
             <!-- Sidebar navigation-->
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
-                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
-                                                aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark" href="#"
-                                                aria-expanded="false"><i class="mdi mdi-file-cloud"></i><span
-                                class="hide-menu">Project</span></a>
+                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-cloud"></i><span class="hide-menu">Project</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-plus"></i><span
-                                        class="hide-menu"> Add Project </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-note-plus"></i><span
-                                        class="hide-menu"> Project List </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Project </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Project List </span></a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
-                                                href="javascript:void(0)" aria-expanded="false"><i
-                                class="mdi mdi-nature-people"></i><span class="hide-menu">Employee</span></a>
+                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Employee</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-plus"></i><span
-                                        class="hide-menu"> Add Employee </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('employees',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-note-plus"></i><span
-                                        class="hide-menu"> Employee List </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Employee </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employees',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
@@ -275,32 +261,6 @@
                                         class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
-
-                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark"
-                                                href="javascript:void(0)" aria-expanded="false"><i
-                                class="mdi mdi-nature-people"></i><span class="hide-menu">Packages</span></a>
-                        <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-plus"></i><span
-                                        class="hide-menu"> Add Packages </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}"
-                                                        class="sidebar-link"><i class="mdi mdi-note-plus"></i><span
-                                        class="hide-menu"> Packages List </span></a></li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i
-                                class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i
-                                class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i
-                                class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>
-                    <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                                href="{{route('logout')}}" aria-expanded="false"><i
-                                class="fa fa-power-off m-r-5 m-l-5"></i><span class="hide-menu">Logout</span></a></li>
-
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>

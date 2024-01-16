@@ -38,9 +38,9 @@
         <div class="inp">
             <img src="{{asset('images/icon/password.png')}}"><input type="password" id="password" name="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
         </div>
-        <input type="checkbox" class="check-box">Remember Password
+        <a href="forget" class="check-box">Forget Password</a>
         <button type="submit" class="submit-btn">Log In</button>
-        <a href="forget" class="submit-btn">Forgot Password?</a>
+{{--        <a href="forget" class="submit-btn">Forgot Password?</a>--}}
     </form>
 
 
