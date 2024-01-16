@@ -110,7 +110,7 @@ class HomepageController extends Controller
         $pack3 = Pricing::where('projectid',$project->id)
             ->where('packagestype','Premium')->get();
 
-        $proj = Project::all();
+        $proj = Project::take(4)->get();
 
         return view('projectpage',['id'=>$project, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
     }

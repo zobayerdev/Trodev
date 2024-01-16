@@ -111,7 +111,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 ftco-animate">
+            <div class="col-lg-8 ftco-animate">
                 <h2 class="mb-3">{{$id->title}}</h2>
 
                 @php
@@ -267,7 +267,7 @@
 
                                         @endphp
                                         <div><a href="#"><span class="icon-calendar"></span> {{$date}}</a></div>
-                                        <div><a href="#"><span class="icon-person"></span> {{$write}}</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> {{$blogs->description}}</a></div>
                                     </div>
                                 </div>
                             </div>
