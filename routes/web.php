@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Str;
 use App\Models\User;
+use App\Http\Controllers\UserDashbaord;
 
 
 Route::get('/',[HomepageController::class,'complete'])->name('home');
@@ -96,7 +97,8 @@ Route::post('/sendmsg',[HomepageController::class,'send_msg'])->name('sendmsg');
 
 Route::get('/blog/{title}/{id}',[HomepageController::class,'singleblogpage'])->name('single.blogpage');
 
-Route::get('/project/{id}',[HomepageController::class,'singleproject'])->name('single.projectpage');
+Route::get('/project/single-projectpage/{id}', [HomepageController::class, 'singleproject'])->name('singleprojectpages');
+
 
 Route::get('/registration', function () {
     return view('register');
@@ -167,4 +169,24 @@ Route::middleware(['admin'])->group(function (){
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
 });
 
-Route::get('/homepage/{id}',[UserRegisterandLogin::class,'dashboard'])->middleware(['auth','verified'])->name('homepage');
+Route::middleware(['auth','verified'])->group(function (){
+    Route::get('/homepage/{id}',[UserRegisterandLogin::class,'dashboard'])->name('homepage');
+
+    Route::get('/about/{id}',[UserDashbaord::class,'aboutuspages'])->name('aboutus');
+
+    Route::get('/service/{id}',[UserDashbaord::class,'servicepage'])->name('servicepages');
+
+    Route::get('/project/{id}',[UserDashbaord::class,'projectpages'])->name('projectpages');
+
+    Route::get('/project/single-project/{id}/{user}',[UserDashbaord::class,'singleprojects'])->name('singlepages');
+
+    Route::get('/blog/{id}',[UserDashbaord::class,'blogpage'])->name('blogspages');
+
+    Route::get('/blog/{users}/{title}/{id}',[UserDashbaord::class,'singleblogpage'])->name('singleblogpage');
+
+    Route::get('/contact/{id}',[UserDashbaord::class,'contact'])->name('conatactpage');
+
+    Route::post('/sendmsg',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
+});
+
+

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
+use App\Models\Offer;
+use App\Models\Project;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -74,8 +77,32 @@ class UserRegisterandLogin extends Controller
                     'visit_count' => 1
                     ]);
         }
+        $completeproject = Project::count();
 
-        return view('user.homepage',['id'=>$user]);
+        $blog = Blog::all();
+
+        $service = Offer::inRandomOrder()->take(3)->get();
+
+        $projects = Project::select('type')
+            ->distinct()
+            ->inRandomOrder()
+            ->take(6)
+            ->get();
+
+
+        $result = collect();
+
+        foreach ($projects as $project) {
+            $singleProject = Project::where('type', $project->type)->first();
+            $result->push($singleProject);
+        }
+
+        return view('user.homepage',[
+            'id'=>$user,
+            'complete'=>$completeproject,
+            'blog' => $blog,
+            'service' => $service,
+            'result'=>$result]);
     }
 
     public function logout(Request $request)

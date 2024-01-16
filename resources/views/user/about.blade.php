@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -111,13 +111,14 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Home</a></li>
-                <li class="nav-item active"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('homepage',['id'=>$id->id])}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('aboutus',['id'=>$id->id])}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('servicepages',['id'=>$id->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('projectpages',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('blogspages',['id'=>$id->id])}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('conatactpage',['id'=>$id->id])}}" class="nav-link">Contact</a></li>
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -224,30 +225,30 @@
         </div>
         <div class="row">
             @foreach($employee as $emp)
-            <div class="col-lg-3 col-sm-6">
-                <div class="block-2 ftco-animate">
-                    <div class="flipper">
-                        <div class="front" style="background-image: url({{asset('storage/'. $emp->pic)}});">
-                            <div class="box">
-                                <h2>{{$emp->Name}}</h2>
-                                <p>{{$emp->Designation}}</p>
-                            </div>
-                        </div>
-                        <div class="back">
-                            <!-- back content -->
-                            <blockquote>
-                                <p>&ldquo;With great power comes great responsibility&rdquo;</p>
-                            </blockquote>
-                            <div class="author d-flex">
-                                <div class="image align-self-center">
-                                    <img src="{{asset('storage/'. $emp->pic)}}" alt="">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="block-2 ftco-animate">
+                        <div class="flipper">
+                            <div class="front" style="background-image: url({{asset('storage/'. $emp->pic)}});">
+                                <div class="box">
+                                    <h2>{{$emp->Name}}</h2>
+                                    <p>{{$emp->Designation}}</p>
                                 </div>
-                                <div class="name align-self-center ml-3">{{$emp->Name}} <span class="position">{{$emp->Designation}}</span></div>
+                            </div>
+                            <div class="back">
+                                <!-- back content -->
+                                <blockquote>
+                                    <p>&ldquo;With great power comes great responsibility&rdquo;</p>
+                                </blockquote>
+                                <div class="author d-flex">
+                                    <div class="image align-self-center">
+                                        <img src="{{asset('storage/'. $emp->pic)}}" alt="">
+                                    </div>
+                                    <div class="name align-self-center ml-3">{{$emp->Name}} <span class="position">{{$emp->Designation}}</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>

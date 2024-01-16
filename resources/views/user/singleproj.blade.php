@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$user->name}}</a></p>
             </div>
         </div>
     </div>
@@ -83,13 +83,14 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
-                <li class="nav-item active"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('homepage',['id'=>$user->id])}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('aboutus',['id'=>$user->id])}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('servicepages',['id'=>$user->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item active"><a href="{{route('projectpages',['id'=>$user->id])}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('blogspages',['id'=>$user->id])}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('conatactpage',['id'=>$user->id])}}" class="nav-link">Contact</a></li>
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -101,7 +102,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
                 <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">{{$id->title}}</h1>
+                <h1 class="mb-3 bread">{{$id->name}}</h1>
             </div>
         </div>
     </div>
@@ -125,9 +126,9 @@
 
                 <p>
                     <?php
-                        $lines = explode(".", $id->description); // Split description into lines by full stops
-                        $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
-                        echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
+                    $lines = explode(".", $id->description); // Split description into lines by full stops
+                    $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
+                    echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
                     ?>
                 </p>
 
@@ -135,13 +136,10 @@
                     <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
                 </p>
                 <?php
-                    $lines = explode(".", $id->description); // Split description into lines by full stops
-                    $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
-                    echo implode(".", $firstTwoLines);
+                $lines = explode(".", $id->description); // Split description into lines by full stops
+                $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
+                echo implode(".", $firstTwoLines);
                 ?>
-                <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
-                </p>
                 <?php
                 $nextFourLines = array_slice($lines, 4, 39);
 
@@ -162,19 +160,80 @@
 
 
 
-                <div class="about-author d-flex p-4 bg-light">
-                    <div class="bio mr-5">
-                        <img src="{{asset('storage/'.$id->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
+                <section class="ftco-section bg-half-light">
+                    <div class="container">
+                        <div class="row justify-content-center mb-5 pb-2">
+                            <div class="col-md-8 text-center heading-section ftco-animate">
+                                <h2 class="mb-4">Our Packages</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                @foreach($basic as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4">
+                                @foreach($standard as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4">
+                                @foreach($premium as $servicec)
+                                    <div class="services-wrap ftco-animate">
+                                        <div class="text">
+                                            <h1>{{$servicec->packagestype}}</h1>
+                                            <h2>{{$servicec->validity}}</h2>
+                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
+                                            <p>Price: {{$servicec->softwareprice}}</p>
+                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
+                                            <p>Training: {{$servicec->training}}</p>
+                                            <p>Revision: {{$servicec->revision}}</p>
+                                            <p>Domain: {{$servicec->domain}}</p>
+                                            <p>Storage: {{$servicec->storage}}</p>
+                                            @php
+                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                            @endphp
+                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-
-
-
-                    <div class="desc">
-                        <h3>{{$id->write}}</h3>
-                        <p>{{$id->post}}</p>
-                        <p>{{$id->writer_desccription}}</p>
-                    </div>
-                </div>
+                </section>
 
 
 
@@ -184,35 +243,35 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading-sidebar">Services</h3>
                     <ul class="categories">
-                        @foreach($offers as $service)
-                            <li><a href="#">{{$service->tools}}</a></li>
-                        @endforeach
+                        {{--                        @foreach($offers as $service)--}}
+                        {{--                            <li><a href="#">{{$service->tools}}</a></li>--}}
+                        {{--                        @endforeach--}}
                     </ul>
                 </div>
 
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading-sidebar">Recent Blog</h3>
-                    @foreach($all as $blogs)
+                    @foreach($proj as $blogs)
                         @if($blogs->id !== $id->id)
-                                <div class="block-21 mb-4 d-flex">
-                                    <a class="blog-img mr-4" href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
-                                    <div class="text">
-                                        <h3 class="heading"><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
-                                        <div class="meta">
-                                            @php
-                                                $date = date("M d, Y", strtotime($blogs->created_at));
+                            <div class="block-21 mb-4 d-flex">
+                                <a class="blog-img mr-4" href="{{route('singlepages',['user'=>$user->id,'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
+                                <div class="text">
+                                    <h3 class="heading"><a href="{{route('singlepages',['user'=>$user->id,'id' => $blogs->id])}}">{{$blogs->name}}</a></h3>
+                                    <div class="meta">
+                                        @php
+                                            $date = date("M d, Y", strtotime($blogs->created_at));
 
-                                                $write = $blogs->write;
-                                                $words = explode(' ', $write);
-                                                $first_two_words = implode(' ', array_slice($words, 2, 3));
+                                            $write = $blogs->write;
+                                            $words = explode(' ', $write);
+                                            $first_two_words = implode(' ', array_slice($words, 2, 3));
 
-                                            @endphp
-                                            <div><a href="#"><span class="icon-calendar"></span> {{$date}}</a></div>
-                                            <div><a href="#"><span class="icon-person"></span> {{$write}}</a></div>
-                                        </div>
+                                        @endphp
+                                        <div><a href="#"><span class="icon-calendar"></span> {{$date}}</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> {{$blogs->description}}</a></div>
                                     </div>
                                 </div>
-                            @endif
+                            </div>
+                        @endif
                     @endforeach
                 </div>
 

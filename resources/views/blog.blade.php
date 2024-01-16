@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Sign Up</a></p>
+                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign Up</a></p>
             </div>
         </div>
     </div>
@@ -90,7 +90,7 @@
                 <li class="nav-item active"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">Inquire Now</a>
+
         </div>
     </div>
 </nav>

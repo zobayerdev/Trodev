@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$users->name}}</a></p>
             </div>
         </div>
     </div>
@@ -83,25 +83,26 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
-                <li class="nav-item active"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('homepage',['id'=>$users->id])}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('aboutus',['id'=>$users->id])}}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{route('servicepages',['id'=>$users->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('projectpages',['id'=>$users->id])}}" class="nav-link">Projects</a></li>
+                <li class="nav-item active"><a href="{{route('blogspages',['id'=>$users->id])}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('conatactpage',['id'=>$users->id])}}" class="nav-link">Contact</a></li>
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('storage/'.$id->image)}}');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('storage/'.$title->image)}}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
                 <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">{{$id->title}}</h1>
+                <h1 class="mb-3 bread">{{$title->title}}</h1>
             </div>
         </div>
     </div>
@@ -111,12 +112,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 ftco-animate">
-                <h2 class="mb-3">{{$id->title}}</h2>
+                <h2 class="mb-3">{{$title->title}}</h2>
 
                 @php
-                    $date = date("M d, Y", strtotime($id->created_at));
+                    $date = date("M d, Y", strtotime($title->created_at));
 
-                    $write = $id->write;
+                    $write = $title->write;
                     $words = explode(' ', $write);
                     $first_two_words = implode(' ', array_slice($words, 2, 3));
 
@@ -125,22 +126,22 @@
 
                 <p>
                     <?php
-                        $lines = explode(".", $id->description); // Split description into lines by full stops
-                        $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
-                        echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
+                    $lines = explode(".", $title->description); // Split description into lines by full stops
+                    $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
+                    echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
                     ?>
                 </p>
 
                 <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/'.$title->image) }}" alt="" class="img-fluid">
                 </p>
                 <?php
-                    $lines = explode(".", $id->description); // Split description into lines by full stops
-                    $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
-                    echo implode(".", $firstTwoLines);
+                $lines = explode(".", $title->description); // Split description into lines by full stops
+                $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
+                echo implode(".", $firstTwoLines);
                 ?>
                 <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/'.$title->image) }}" alt="" class="img-fluid">
                 </p>
                 <?php
                 $nextFourLines = array_slice($lines, 4, 39);
@@ -164,15 +165,15 @@
 
                 <div class="about-author d-flex p-4 bg-light">
                     <div class="bio mr-5">
-                        <img src="{{asset('storage/'.$id->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
+                        <img src="{{asset('storage/'.$title->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
                     </div>
 
 
 
                     <div class="desc">
-                        <h3>{{$id->write}}</h3>
-                        <p>{{$id->post}}</p>
-                        <p>{{$id->writer_desccription}}</p>
+                        <h3>{{$title->write}}</h3>
+                        <p>{{$title->post}}</p>
+                        <p>{{$title->writer_desccription}}</p>
                     </div>
                 </div>
 
@@ -193,26 +194,26 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading-sidebar">Recent Blog</h3>
                     @foreach($all as $blogs)
-                        @if($blogs->id !== $id->id)
-                                <div class="block-21 mb-4 d-flex">
-                                    <a class="blog-img mr-4" href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
-                                    <div class="text">
-                                        <h3 class="heading"><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
-                                        <div class="meta">
-                                            @php
-                                                $date = date("M d, Y", strtotime($blogs->created_at));
+                        @if($blogs->id !== $title->id)
+                            <div class="block-21 mb-4 d-flex">
+                                <a class="blog-img mr-4" href="{{route('singleblogpage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
+                                <div class="text">
+                                    <h3 class="heading"><a href="{{route('singleblogpage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
+                                    <div class="meta">
+                                        @php
+                                            $date = date("M d, Y", strtotime($blogs->created_at));
 
-                                                $write = $blogs->write;
-                                                $words = explode(' ', $write);
-                                                $first_two_words = implode(' ', array_slice($words, 2, 3));
+                                            $write = $blogs->write;
+                                            $words = explode(' ', $write);
+                                            $first_two_words = implode(' ', array_slice($words, 2, 3));
 
-                                            @endphp
-                                            <div><a href="#"><span class="icon-calendar"></span> {{$date}}</a></div>
-                                            <div><a href="#"><span class="icon-person"></span> {{$write}}</a></div>
-                                        </div>
+                                        @endphp
+                                        <div><a href="#"><span class="icon-calendar"></span> {{$date}}</a></div>
+                                        <div><a href="#"><span class="icon-person"></span> {{$write}}</a></div>
                                     </div>
                                 </div>
-                            @endif
+                            </div>
+                        @endif
                     @endforeach
                 </div>
 

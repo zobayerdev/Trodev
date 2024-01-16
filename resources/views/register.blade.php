@@ -38,20 +38,20 @@
         <div class="inp">
             <img src="{{asset('images/icon/password.png')}}"><input type="password" id="password" name="password" class="input-field" placeholder="Password" style="width: 88%; border: none;" required="required">
         </div>
-        <a href="forget" class="check-box">Forget Password</a>
         <button type="submit" class="submit-btn">Log In</button>
+
 {{--        <a href="forget" class="submit-btn">Forgot Password?</a>--}}
     </form>
 
 
-{{--    <div class="other" id="other">--}}
-{{--        <div class="instead">--}}
-{{--            <h3>or</h3>--}}
-{{--        </div>--}}
+    <div class="other" id="other">
+        <a href="forget" class="instead" target="_blank">
+            <h3>Forget Password?</h3>
+        </a>
 {{--        <button class="connect" onclick="google()">--}}
 {{--            <img src="{{asset('images/icon/google.png')}}"><span>Sign in with Google</span>--}}
 {{--        </button>--}}
-{{--    </div>--}}
+    </div>
 
     <!-- Registration Form -->
     <form id="register" action="{{route('registers')}}" method="post" class="input-group">

@@ -103,7 +103,6 @@
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">Sign In</a>
         </div>
     </div>
 </nav>
@@ -356,7 +355,8 @@
                         <div class="text">
                             <span class="subheading">{{$projects->type}}</span>
                             <h3>{{$projects->name}}</h3>
-                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('single.projectpage',['id'=>$projects->id])}}" style="color: white">Click here</a></p>
+                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>
+
                         </div>
                     </div>
                 </div>

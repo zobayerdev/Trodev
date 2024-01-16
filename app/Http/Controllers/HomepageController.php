@@ -15,7 +15,7 @@ class HomepageController extends Controller
 {
     public function complete()
     {
-        $completeproject = Employee::sum('Complete_Project');
+        $completeproject = Project::count();
 
         $blog = Blog::all();
 
@@ -46,7 +46,7 @@ class HomepageController extends Controller
     public function aboutuspage()
     {
         $employee = Employee::all();
-        $completeproject = Employee::sum('Complete_Project');
+        $completeproject = Project::count();
         return view('about',['employee'=>$employee,'complete'=>$completeproject]);
     }
 

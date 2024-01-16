@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
             </div>
         </div>
     </div>
@@ -86,11 +86,10 @@
                 <li class="nav-item"><a href="{{route('home')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
-                <li class="nav-item active"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
+                <li class="nav-item active"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
-            <a href="#" class="btn-custom" data-toggle="modal" data-target="#exampleModalCenter">Inquire Now</a>
         </div>
     </div>
 </nav>
@@ -254,9 +253,9 @@
                     @foreach($proj as $blogs)
                         @if($blogs->id !== $id->id)
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" href="{{route('single.projectpage',['id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
+                                <a class="blog-img mr-4" href="{{route('singleprojectpages',['id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="{{route('single.projectpage',['id' => $blogs->id])}}">{{$blogs->name}}</a></h3>
+                                    <h3 class="heading"><a href="{{route('singleprojectpages',['id' => $blogs->id])}}">{{$blogs->name}}</a></h3>
                                     <div class="meta">
                                         @php
                                             $date = date("M d, Y", strtotime($blogs->created_at));
