@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Trodev Client List</title>
     <!-- Custom CSS -->
     <link href="{{asset('admin/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -53,14 +53,14 @@
                     <b class="logo-icon p-l-10">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="{{asset('unnamed (1).png')}}" alt="homepage" class="light-logo" width="50px" height="50px"/>
+                        <img src="{{asset('unnamed (1).png')}}" alt="homepage" class="light-logo"/>
 
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                              <!-- dark Logo text -->
-                             <img src="{{asset('unnamed (2).png')}}" alt="homepage" class="light-logo" width="150px" height="50px"/>
+                             <img src="{{asset('unnamed (2).png')}}" alt="homepage" class="light-logo"/>
 
                         </span>
 
@@ -335,7 +335,10 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer text-center">
-            All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                href="https://www.trodev.com" target="_blank">Trodev</a>
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
