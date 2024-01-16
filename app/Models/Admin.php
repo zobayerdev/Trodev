@@ -14,6 +14,10 @@ class Admin extends Model implements Authenticatable
     use HasApiTokens, HasFactory, Notifiable, AuthenticatableTrait;
 
     protected $guard = 'admin';
+    public $table = 'admins';
+    public $primaryKey = 'id';
+    public $incrementing = true;
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'email',
