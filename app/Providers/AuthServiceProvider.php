@@ -24,12 +24,23 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
+            $expirationTimeInMinutes = 15;
+            $expiration = now()->addMinutes($expirationTimeInMinutes);
+
+            // Append expiration timestamp to the URL
+            $url .= '&expires=' . $expiration->timestamp;
+
             $verificationUrl = $url;
             $appName = config('app.name');
+            $userName = $notifiable->name;
 
             return (new MailMessage)
                 ->subject('Verify Your Email Address')
-                ->markdown('design-email', ['verificationUrl' => $verificationUrl, 'appName' => $appName]);
+                ->markdown('design-email', [
+                    'verificationUrl' => $verificationUrl,
+                    'appName' => $appName,
+                    'userName' => $userName,
+                ]);
         });
     }
 }
