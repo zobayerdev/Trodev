@@ -259,8 +259,9 @@
             </div>
         </div>
         <div class="row">
+            @foreach($service as $servicec)
             <div class="col-md-4">
-                @foreach($service as $servicec)
+
                     <div class="services-wrap ftco-animate">
                         <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
                         <div class="text">
@@ -285,8 +286,9 @@
                             <a href="#" class="btn-custom">Thank You</a>
                         </div>
                     </div>
-                @endforeach
+
             </div>
+            @endforeach
         </div>
     </div>
 </section>

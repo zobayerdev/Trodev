@@ -62,20 +62,19 @@ class UserDashbaord extends Controller
         return view('user.singleproj',['id'=>$project, 'user'=>$users, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
     }
 
-    public function singleblogpage($title, $id, $user)
+    public function singleblogpage($users, $title, $id)
     {
-        $users = User::find($user);
+        $user = User::find($users);
+        $blog = Blog::find($id);
 
-        $blogs = Blog::find($id);
-
-        $title = Blog::find($title);
+        $title = Blog::where('title', $title)->first();
 
         $allblogs = Blog::take(3)->get();
-
         $service = Offer::all();
 
-        return view('user.singleblogpages',['ids'=>$blogs,'users'=>$users,'title'=>$title,'all'=>$allblogs,'offers'=>$service]);
+        return view('user.singleblogpages', ['users' => $user, 'title' => $title, 'ids' => $blog, 'all' => $allblogs, 'offers' => $service]);
     }
+
 
     public function contact($id)
     {

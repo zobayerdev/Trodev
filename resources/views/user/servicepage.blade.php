@@ -133,7 +133,15 @@
                             @elseif($services->tools === 'UI/UX')
                                 <div class="icon justify-content-center align-items-center d-flex"><span class="fa-solid fa-uikit"></span></div>
                             @endif
-                            <h2>{{$services->tools}} Development</h2>
+                            <h2>
+                                @if(in_array($services->tools, ['App', 'Software', 'Website']))
+                                    {{$services->tools}} Development
+                                @elseif($services->tools === 'Graphic-Design')
+                                    Graphic Design
+                                @elseif($services->tools === 'UI/UX')
+                                    UI/UX
+                                @endif
+                            </h2>
                             <p align="justify">{{$services->description}}</p>
                             <a href="#" class="btn-custom">Thank You</a>
                         </div>

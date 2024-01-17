@@ -62,7 +62,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -260,8 +260,9 @@
             </div>
         </div>
         <div class="row">
+            @foreach($service as $servicec)
             <div class="col-md-4">
-                @foreach($service as $servicec)
+
                     <div class="services-wrap ftco-animate">
                         <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
                         <div class="text">
@@ -286,8 +287,9 @@
                             <a href="#" class="btn-custom">Thank You</a>
                         </div>
                     </div>
-                @endforeach
+
             </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -478,7 +480,7 @@
             @foreach($blog as $blogs)
                 <div class="col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="{{route('singleblogpage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
+                        <a href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
                            class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
                         </a>
                         <div class="text d-block">
@@ -492,17 +494,17 @@
                                         $first_two_words = implode(' ', array_slice($words, 2, 3));
 
                                     @endphp
-                                    <a href="{{route('singleblogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id, 'users'=>$id->id])}}"><span
+                                    <a href="{{route('singlepage',['title' => Str::slug($blogs->title), 'id' => $blogs->id, 'users'=>$id->id])}}"><span
                                             class="fa fa-calendar mr-2"></span>{{$date}}</a>
-                                    <a href="{{route('singleblogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id,'users'=>$id->id])}}"><span
+                                    <a href="{{route('singlepage',['title' => Str::slug($blogs->title), 'id' => $blogs->id,'users'=>$id->id])}}"><span
                                             class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
                                 </p>
                             </div>
                             <h3 class="heading"><a
-                                    href="{{route('singleblogpage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a>
+                                    href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a>
                             </h3>
                             <p>
-                                <a href="{{route('singleblogpage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
+                                <a href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
                                    class="btn btn-secondary py-2 px-3">Read more</a></p>
                         </div>
                     </div>
@@ -550,13 +552,11 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Service</a>
-                        </li>
-                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('projectpage')}}"><span
-                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
+                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Service</a></li>
+                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('conatactpage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
                         </li>
                     </ul>
                 </div>

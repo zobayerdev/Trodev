@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Wilcon - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Trodev- Blogs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3" style="color: white;"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
@@ -51,9 +51,9 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$users->id])}}">
                     <span class="flaticon flaticon-crane"></span>
-                    <span class="ml-2">Wilcon <small>Construction Company</small></span>
+                    <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
             </div>
             <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
@@ -61,7 +61,7 @@
                     <span class="fa fa-map"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Free Call</span> <span>+1 234 456 78910</span></p>
+                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span></p>
                     <p class="con">Call Us Now 24/7 Customer Support</p>
                 </div>
             </div>
@@ -69,8 +69,8 @@
                 <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="text pl-3 pl-md-3">
-                    <p class="hr"><span>Our Location</span></p>
-                    <p class="con">198 West 21th Street, Suite 721 New York NY 10016</p>
+                    <p class="hr"><span>Our Office Location</span></p>
+                    <p class="con">H#34/4, Primary School Road, Islampur, Dattapara, House-Building, Tongi, Gazipur </p>
                 </div>
             </div>
         </div>
@@ -96,13 +96,13 @@
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('storage/'.$title->image)}}');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{asset('storage/'.$ids->image)}}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">{{$title->title}}</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('homepage',['id'=>$users->id])}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">{{$ids->title}}</h1>
             </div>
         </div>
     </div>
@@ -112,12 +112,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 ftco-animate">
-                <h2 class="mb-3">{{$title->title}}</h2>
+                <h2 class="mb-3">{{$ids->title}}</h2>
 
                 @php
-                    $date = date("M d, Y", strtotime($title->created_at));
+                    $date = date("M d, Y", strtotime($ids->created_at));
 
-                    $write = $title->write;
+                    $write = $ids->write;
                     $words = explode(' ', $write);
                     $first_two_words = implode(' ', array_slice($words, 2, 3));
 
@@ -126,22 +126,22 @@
 
                 <p>
                     <?php
-                    $lines = explode(".", $title->description); // Split description into lines by full stops
+                    $lines = explode(".", $ids->description); // Split description into lines by full stops
                     $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
                     echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
                     ?>
                 </p>
 
                 <p>
-                    <img src="{{ asset('storage/'.$title->image) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/'.$ids->image) }}" alt="" class="img-fluid">
                 </p>
                 <?php
-                $lines = explode(".", $title->description); // Split description into lines by full stops
+                $lines = explode(".", $ids->description); // Split description into lines by full stops
                 $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
                 echo implode(".", $firstTwoLines);
                 ?>
                 <p>
-                    <img src="{{ asset('storage/'.$title->image) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/'.$ids->image) }}" alt="" class="img-fluid">
                 </p>
                 <?php
                 $nextFourLines = array_slice($lines, 4, 39);
@@ -165,15 +165,15 @@
 
                 <div class="about-author d-flex p-4 bg-light">
                     <div class="bio mr-5">
-                        <img src="{{asset('storage/'.$title->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
+                        <img src="{{asset('storage/'.$ids->writer_image)}}" alt="Image placeholder" class="img-fluid mb-4 rounded-circle" style="width: 200px; height: 200px;">
                     </div>
 
 
 
                     <div class="desc">
-                        <h3>{{$title->write}}</h3>
-                        <p>{{$title->post}}</p>
-                        <p>{{$title->writer_desccription}}</p>
+                        <h3>{{$ids->write}}</h3>
+                        <p>{{$ids->post}}</p>
+                        <p>{{$ids->writer_desccription}}</p>
                     </div>
                 </div>
 
@@ -194,11 +194,11 @@
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading-sidebar">Recent Blog</h3>
                     @foreach($all as $blogs)
-                        @if($blogs->id !== $title->id)
+                        @if($blogs->id !== $ids->id)
                             <div class="block-21 mb-4 d-flex">
-                                <a class="blog-img mr-4" href="{{route('singleblogpage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
+                                <a class="blog-img mr-4" href="{{route('singlepage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" style="background-image: url('{{asset('storage/'.$blogs->image)}}');"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="{{route('singleblogpage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
+                                    <h3 class="heading"><a href="{{route('singlepage',['users'=>$users->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
                                     <div class="meta">
                                         @php
                                             $date = date("M d, Y", strtotime($blogs->created_at));
@@ -230,7 +230,7 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -241,20 +241,14 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Links</h2>
+                    <h2 class="ftco-heading-2">Services</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-md-4">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Project</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog Posts</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Industries</a></li>
-                        </ul>
-                        <ul class="list-unstyled ml-md-5">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms of Use</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>App Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Software Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>UI/UX Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphics Design</a></li>
                         </ul>
                     </div>
                 </div>
@@ -262,12 +256,13 @@
 
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Customer Services</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Prompt Delivery</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reliable Equipment</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New Heavy Equipment</a></li>
+                        <li><a href="{{route('homepage',['id'=>$users->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('aboutus',['id'=>$users->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('servicepages',['id'=>$users->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                        <li><a href="{{route('projectpages',['id'=>$users->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('conatactpage',['id'=>$users->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -277,22 +272,22 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="fa fa-phone mr-3"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span></li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a></li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-
                     <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>

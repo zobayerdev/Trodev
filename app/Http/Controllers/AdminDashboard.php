@@ -225,8 +225,19 @@ class AdminDashboard extends Controller
     {
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
-            return view('admin.offerservice', ['id' => $user]);
+            $offers = Offer::all();
+            return view('admin.offerservice', ['id' => $user,'all'=>$offers]);
         }
+    }
+
+    public function updateoffer(Request $request)
+    {
+        Offer::where('id',$request->input('id'))->update([
+            'description'=>$request->input('description'),
+            'updated_at'=>Carbon::now('Asia/Dhaka')
+        ]);
+
+        return redirect()->back();
     }
 
     public function uploadoffer(Request $request)

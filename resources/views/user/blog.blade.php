@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -101,7 +101,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Our Blog <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('homepage',['id'=>$id->id])}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Our Blog <i class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Our Blog</h1>
             </div>
         </div>
@@ -114,7 +114,7 @@
             @foreach($blog as $blogs)
                 <div class="col-lg-4 ftco-animate">
                     <div class="blog-entry">
-                        <a href="{{route('singleblogpage',['users'=>$id->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
+                        <a href="{{route('singlepage',['users'=>$id->id, 'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
                         </a>
                         <div class="text d-block">
                             <div class="meta">
@@ -132,7 +132,7 @@
                                 </p>
                             </div>
                             <h3 class="heading"><a href="#">{{$blogs->title}}</a></h3>
-                            <p><a href="{{route('singleblogpage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="btn btn-secondary py-2 px-3">Read more</a></p>
+                            <p><a href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="btn btn-secondary py-2 px-3">Read more</a></p>
                         </div>
                     </div>
                 </div>
@@ -175,11 +175,11 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                        <li><a href="{{route('projectpage')}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('conatactpage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>

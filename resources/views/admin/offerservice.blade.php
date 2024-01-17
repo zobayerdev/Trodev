@@ -313,6 +313,62 @@
                 </div>
             </div>
 
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Datatable</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                                <th>Update At</th>
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($all as $clients)
+                                @php
+                                    $date = date("M d, Y", strtotime($clients->created_at));
+                                    $date2 = date("M d, Y h:i:s A", strtotime($clients->updated_at));
+                                @endphp
+                                <form action="{{route('editoffer')}}" method="post">
+                                    @csrf
+                                <tr>
+                                    <td>{{$clients->id}}</td>
+                                    <input type="hidden" name="id" value="{{$clients->id}}"/>
+                                    <td>{{$clients->tools}}</td>
+                                    <td>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" id="lname" name="description" placeholder="Description Here" required>{{$clients->description}}</textarea>
+                                        </div>
+                                    </td>
+                                    <td>{{$date}}</td>
+                                    <td>{{$date2}}</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </td>
+                                </tr>
+                                </form>
+                            @endforeach
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                                <th>Update At</th>
+                                <th>Update</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
 

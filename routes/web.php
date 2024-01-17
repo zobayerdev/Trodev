@@ -167,6 +167,8 @@ Route::middleware(['admin'])->group(function (){
     Route::get('/admin/packages/{id}/{project}',[AdminDashboard::class,'pricingpages'])->name('packages');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
+
+    Route::post('/editoffer',[AdminDashboard::class,'updateoffer'])->name('editoffer');
 });
 
 Route::middleware(['auth','verified'])->group(function (){
@@ -182,7 +184,7 @@ Route::middleware(['auth','verified'])->group(function (){
 
     Route::get('/blog/{id}',[UserDashbaord::class,'blogpage'])->name('blogspages');
 
-    Route::get('/blog/{users}/{title}/{id}',[UserDashbaord::class,'singleblogpage'])->name('singleblogpage');
+    Route::get('/blog/{users}/{title}/{id}',[UserDashbaord::class,'singleblogpage'])->name('singlepage');
 
     Route::get('/contact/{id}',[UserDashbaord::class,'contact'])->name('conatactpage');
 
