@@ -95,7 +95,7 @@ Route::get('/blog',[HomepageController::class,'blogpage'])->name('blogs');
 
 Route::get('/contact',[HomepageController::class,'contact'])->name('contact');
 
-Route::post('/sendmsg',[HomepageController::class,'send_msg'])->name('sendmsg');
+Route::post('/sendmsg', [HomepageController::class, 'send_msg'])->name('sendmsg');
 
 Route::get('/blog/{title}/{id}',[HomepageController::class,'singleblogpage'])->name('single.blogpage');
 
@@ -192,7 +192,7 @@ Route::middleware(['auth','verified'])->group(function (){
 
     Route::get('/contact/{id}',[UserDashbaord::class,'contact'])->name('conatactpage');
 
-    Route::post('/sendmsg',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
+    Route::post('/sendmsgs',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
 });
 
 
