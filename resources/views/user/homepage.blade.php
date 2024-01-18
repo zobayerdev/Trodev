@@ -118,10 +118,7 @@
                 <div class="mt-5">
                     <h1 class="mb-4">We Build <br>Great Projects</h1>
                     <p class="mb-4">We're in this business since 2021 and We provide the best software services</p>
-                    <p><a href="#" class="btn btn-primary">Our Services</a> <a href="#" class="btn btn-white"
-                                                                               data-toggle="modal"
-                                                                               data-target="#exampleModalCenter">Touch
-                            Us</a></p>
+                    <p><a href="{{route('servicepages',['id'=>$id->id])}}" class="btn btn-primary">Our Services</a> </p>
                 </div>
             </div>
         </div>
@@ -243,8 +240,7 @@
                     <div class="overlay"></div>
                     <h2>Providing Personalized and High Quality Services</h2>
                     <p>We can manage your dream projects to make with responsive design.</p>
-                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal"
-                                       data-target="#exampleModalCenter">Touch Us</a></p>
+{{--                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>--}}
                 </div>
             </div>
         </div>
@@ -348,19 +344,18 @@
         <div class="row">
             @foreach($result as $projects)
                 <div class="col-md-4">
-                    <div class="project">
-                        <a href="{{asset('storage/'.$projects->image)}}"
-                           class="img image-popup d-flex align-items-center"
-                           style="background-image: url('{{asset('storage/'.$projects->image)}}');">
-                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span
-                                    class="fa fa-plus"></span></div>
-                        </a>
-                        <div class="text">
-                            <span class="subheading">{{$projects->type}}</span>
-                            <h3>{{$projects->name}}</h3>
-                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}" style="color: white">Click here</a></p>
+                    <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}">
+                        <div class="project">
+                            <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                            </a>
+                            <div class="text">
+                                <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}" class="subheading">{{$projects->type}}</a>
+                                <h3>{{$projects->name}}</h3>
+                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}" style="color: white">Click here</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>

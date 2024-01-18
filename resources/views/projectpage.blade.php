@@ -21,6 +21,281 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+
+{{--    <style>--}}
+{{--        html, body {--}}
+{{--            background-color: #2B3A4C;--}}
+{{--        }--}}
+
+{{--        .package {--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: repeat(3, 1fr);--}}
+{{--            grid-gap: 1rem;--}}
+{{--            margin-top: 4rem;--}}
+
+{{--            @media screen and (max-width: 800px) {--}}
+{{--                grid-template-columns: 1fr;--}}
+{{--                grid-row-gap: 7rem;--}}
+{{--            }--}}
+
+{{--            &__item {--}}
+{{--                height: 100%;--}}
+{{--                transition: all ease-in-out .3s;--}}
+
+{{--                &:hover {--}}
+{{--                    transform: translateY(-5px);--}}
+{{--                }--}}
+
+{{--                .package__header {--}}
+{{--                    background-color: white;--}}
+{{--                    border-top-left-radius: 4px;--}}
+{{--                    border-top-right-radius: 4px;--}}
+{{--                    border-bottom: 3px solid rgba(#000, .1);--}}
+
+{{--                    .package__name {--}}
+{{--                        font-size: 1.2rem;--}}
+{{--                        font-weight: bold;--}}
+{{--                        text-align: center;--}}
+{{--                        padding: 8px;--}}
+{{--                        color: white;--}}
+{{--                    }--}}
+{{--                }--}}
+
+{{--                .package__body {--}}
+{{--                    background-color: white;--}}
+{{--                    padding: 1rem;--}}
+{{--                    min-height: 82%;--}}
+
+{{--                    @media screen and (max-width: 800px) {--}}
+{{--                        min-height: 100%;--}}
+{{--                    }--}}
+
+{{--                    .package__price-container {--}}
+{{--                        min-height: 150px;--}}
+{{--                        background-color: rgba(#000, .06);--}}
+{{--                        display: flex;--}}
+{{--                        flex-direction: column;--}}
+{{--                        justify-content: center;--}}
+{{--                        border-radius: 4px;--}}
+
+{{--                        @media screen and (max-width: 800px) {--}}
+{{--                            min-height: 100%;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price-container--column {--}}
+{{--                        display: grid;--}}
+{{--                        grid-template-columns: 1fr 1fr;--}}
+{{--                        text-align: center;--}}
+
+{{--                        @media screen and (max-width: 800px) {--}}
+{{--                            grid-template-columns: 1fr;--}}
+{{--                        }--}}
+
+{{--                        .package__column {--}}
+{{--                            display: grid;--}}
+
+{{--                            [class^="package__column"] {--}}
+{{--                                display: flex;--}}
+{{--                                align-items: center;--}}
+{{--                                justify-content: center;--}}
+{{--                            }--}}
+
+{{--                            .package__column-title {--}}
+{{--                                color: white;--}}
+{{--                                background-color: #78a87f;--}}
+{{--                                font-weight: 600;--}}
+{{--                            }--}}
+
+{{--                        // .package__column-content { }--}}
+
+{{--                            .package__column-price {--}}
+{{--                                font-weight: bold;--}}
+{{--                            }--}}
+
+{{--                            .package__column-price--bb {--}}
+{{--                                border-bottom: 1px solid rgba(#000, .1);--}}
+{{--                            }--}}
+{{--                        }--}}
+
+{{--                        .package__column--2 {--}}
+{{--                            border-left: 1px solid rgba(#000, .05);--}}
+
+{{--                            .package__column-title {--}}
+{{--                                background-color: darken(#78a87f, 10%);--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price {--}}
+{{--                        text-align: center;--}}
+{{--                        font-size: 3rem;--}}
+{{--                        font-weight: 600;--}}
+{{--                        position: relative;--}}
+{{--                    }--}}
+
+{{--                    .package__price--sm {--}}
+{{--                        font-size: 1.8rem;--}}
+{{--                    }--}}
+
+{{--                    .package__price--xs {--}}
+{{--                        font-size: 1.2rem;--}}
+{{--                    }--}}
+
+{{--                    .package__price--monthly {--}}
+{{--                        &::after {--}}
+{{--                            content: 'Monthly';--}}
+{{--                            background-color: #459bba;--}}
+{{--                            border-radius: 8px;--}}
+{{--                            font-size: 10px;--}}
+{{--                            padding: 1px 5px;--}}
+{{--                            color: white;--}}
+{{--                            position: absolute;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price--quarterly {--}}
+{{--                        &::after {--}}
+{{--                            content: 'Quarterly';--}}
+{{--                            background-color: orange;--}}
+{{--                            border-radius: 8px;--}}
+{{--                            font-size: 10px;--}}
+{{--                            padding: 1px 5px;--}}
+{{--                            color: white;--}}
+{{--                            position: absolute;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price--yearly {--}}
+{{--                        &::after {--}}
+{{--                            content: 'Yearly';--}}
+{{--                            background-color: darken(#459bba, 10%);--}}
+{{--                            border-radius: 8px;--}}
+{{--                            font-size: 10px;--}}
+{{--                            padding: 1px 5px;--}}
+{{--                            color: white;--}}
+{{--                            position: absolute;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price--ind-yearly {--}}
+{{--                        &::after {--}}
+{{--                            content: 'Yearly Individual';--}}
+{{--                            background-color: #5043C9;--}}
+{{--                            border-radius: 8px;--}}
+{{--                            font-size: 10px;--}}
+{{--                            padding: 1px 5px;--}}
+{{--                            color: white;--}}
+{{--                            position: absolute;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    .package__price--ins-yearly {--}}
+{{--                        &::after {--}}
+{{--                            content: 'Yearly Institutional';--}}
+{{--                            background-color: darken(#78a87f, 10%);--}}
+{{--                            border-radius: 8px;--}}
+{{--                            font-size: 10px;--}}
+{{--                            padding: 1px 5px;--}}
+{{--                            color: white;--}}
+{{--                            position: absolute;--}}
+{{--                        }--}}
+{{--                    }--}}
+
+{{--                    ul {--}}
+{{--                        margin-top: 1rem;--}}
+
+{{--                        li {--}}
+{{--                            position: relative;--}}
+{{--                            font-size: 0.875rem;--}}
+{{--                            font-weight: 600;--}}
+{{--                            color: #31363c;--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+
+{{--                .package__footer {--}}
+{{--                    button {--}}
+{{--                        background-color: #2287F5;--}}
+{{--                        color: white;--}}
+{{--                        padding: 8px 0;--}}
+{{--                        width: 100%;--}}
+{{--                        border: 0;--}}
+{{--                        border-bottom-left-radius: 4px;--}}
+{{--                        border-bottom-right-radius: 4px;--}}
+{{--                        cursor: pointer;--}}
+{{--                        position: relative;--}}
+{{--                        transition: all ease-in-out .3s;--}}
+{{--                        font-weight: 600;--}}
+
+{{--                        &::after {--}}
+{{--                            content: '\00bb';--}}
+{{--                            opacity: 0;--}}
+{{--                            position: absolute;--}}
+{{--                            top: 0;--}}
+{{--                            font-size: 1.5rem;--}}
+{{--                            transition: all ease-in-out .3s;--}}
+{{--                        }--}}
+
+{{--                        &:hover {--}}
+{{--                            &::after {--}}
+{{--                                opacity: 1;--}}
+{{--                                transform: translateX(4px);--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+
+{{--                &:nth-child(1) {--}}
+{{--                    .package__header {--}}
+{{--                        background-color: #eea726;--}}
+{{--                    }--}}
+
+{{--                    .package__footer {--}}
+{{--                        button {--}}
+{{--                            background-color: #eea726;--}}
+
+{{--                            &:hover {--}}
+{{--                                background-color: darken(#eea726, 6%);--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+
+{{--                &:nth-child(2) {--}}
+{{--                    .package__header {--}}
+{{--                        background-color: #459bba;--}}
+{{--                    }--}}
+
+{{--                    .package__footer {--}}
+{{--                        button {--}}
+{{--                            background-color: #459bba;--}}
+
+{{--                            &:hover {--}}
+{{--                                background-color: darken(#459bba, 6%);--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+
+{{--                &:nth-child(3) {--}}
+{{--                    .package__header {--}}
+{{--                        background-color: #78a87f;--}}
+{{--                    }--}}
+
+{{--                    .package__footer {--}}
+{{--                        button {--}}
+{{--                            background-color: #78a87f;--}}
+
+{{--                            &:hover {--}}
+{{--                                background-color: darken(#78a87f, 6%);--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    }--}}
+{{--                }--}}
+{{--            }--}}
+{{--        }--}}
+{{--    </style>--}}
 </head>
 <body>
 <div class="py-1 top">
@@ -53,24 +328,24 @@
             <div class="col-md-4 d-flex mb-2 mb-md-0">
                 <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
                     <span class="flaticon flaticon-crane"></span>
-                    <span class="ml-2">Wilcon <small>Construction Company</small></span>
+                    <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
             </div>
             <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
                 <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="fa fa-map"></span>
+                    <span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Free Call</span> <span>+1 234 456 78910</span></p>
+                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span></p>
                     <p class="con">Call Us Now 24/7 Customer Support</p>
                 </div>
             </div>
             <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
-                <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
+                <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-map"></span>
                 </div>
                 <div class="text pl-3 pl-md-3">
-                    <p class="hr"><span>Our Location</span></p>
-                    <p class="con">198 West 21th Street, Suite 721 New York NY 10016</p>
+                    <p class="hr"><span>Our Office Location</span></p>
+                    <p class="con">H#34/4, Primary School Road, Islampur, Dattapara, House-Building, Tongi, Gazipur </p>
                 </div>
             </div>
         </div>
@@ -100,7 +375,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Blog <i class="fa fa-chevron-right"></i></a></span> <span>Blog Single <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span class="mr-2"><a href="#">Project <i class="fa fa-chevron-right"></i></a></span> <span>Project Single <i class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">{{$id->name}}</h1>
             </div>
         </div>
@@ -110,7 +385,7 @@
 <section class="ftco-section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 ftco-animate">
+            <div class="col-lg-12 ftco-animate">
                 <h2 class="mb-3">{{$id->title}}</h2>
 
                 @php
@@ -183,7 +458,7 @@
                                             @php
                                                 $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -204,7 +479,7 @@
                                             @php
                                                 $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -225,7 +500,7 @@
                                             @php
                                                 $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
                                         </div>
                                     </div>
                                 @endforeach
@@ -237,19 +512,98 @@
 
 
 
-            </div> <!-- .col-md-8 -->
+
+
+{{--                <div class="container mt-3">--}}
+{{--                <div class="package">--}}
+{{--                    <div class="package__item">--}}
+{{--                        <div class="package__header">--}}
+{{--                            <div class="package__name">Free User</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__body">--}}
+{{--                            <div class="package__price-container">--}}
+{{--                                <div class="package__price">HK$ 0.00</div>--}}
+{{--                            </div>--}}
+{{--                            <ul>--}}
+{{--                                <li>User Account (1)</li>--}}
+{{--                                <li>Startup filter and list view</li>--}}
+{{--                                <li>Investor filter and list view</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__footer">--}}
+{{--                            <button>Get Started</button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="package__item">--}}
+{{--                        <div class="package__header">--}}
+{{--                            <div class="package__name">Became a Startup</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__body">--}}
+{{--                            <div class="package__price-container">--}}
+{{--                                <div class="package__price package__price--sm package__price--monthly">HK$ 1,000.00</div>--}}
+{{--                                <div class="package__price package__price--sm package__price--yearly">HK$ 12,000.00</div>--}}
+{{--                            </div>--}}
+{{--                            <ul>--}}
+{{--                                <li>Premium User Account Dashboard</li>--}}
+{{--                                <li>Individual Startup profile page</li>--}}
+{{--                                <li>Startup filter and list view</li>--}}
+{{--                                <li>Investor filter and list view</li>--}}
+{{--                                <li>Video Shooting Promotion</li>--}}
+{{--                                <li>Chatroom</li>--}}
+{{--                                <li>View Individual profile pages</li>--}}
+{{--                                <li>Personalize newsletter recommendation</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__footer">--}}
+{{--                            <button>Get Started</button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="package__item">--}}
+{{--                        <div class="package__header">--}}
+{{--                            <div class="package__name">Became an Investor</div>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__body">--}}
+{{--                            <div class="package__price-container package__price-container--column">--}}
+{{--                                <div class="package__column">--}}
+{{--                                    <div class="package__column-title">Individual</div>--}}
+{{--                                    <div class="package__column-content">Quarterly</div>--}}
+{{--                                    <div class="package__column-price package__column-price--bb">HK$ 300.00</div>--}}
+{{--                                    <div class="package__column-content">Yearly</div>--}}
+{{--                                    <div class="package__column-price">HK$ 1,000.00</div>--}}
+{{--                                </div>--}}
+{{--                                <div class="package__column package__column--2">--}}
+{{--                                    <div class="package__column-title">Institutional</div>--}}
+{{--                                    <div class="package__column-content">Quarterly</div>--}}
+{{--                                    <div class="package__column-price package__column-price--bb">HK$ 1,200.00</div>--}}
+{{--                                    <div class="package__column-content">Yearly</div>--}}
+{{--                                    <div class="package__column-price">HK$ 3,000.00</div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+
+{{--                            <ul>--}}
+{{--                                <li>Premium User Account Dashboard</li>--}}
+{{--                                <li class="package__price--ins-yearly">3 Premium User Account<br>Dashboard</li>--}}
+{{--                                <li>Individual Investor profile page</li>--}}
+{{--                                <li>Startup filter and list view</li>--}}
+{{--                                <li>Investor filter and list view</li>--}}
+{{--                                <li>Chatroom</li>--}}
+{{--                                <li>View Individual profile pages</li>--}}
+{{--                                <li>Personalize newsletter recommendation</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="package__footer">--}}
+{{--                            <button>Get Started</button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+            </div>
+
+            <!-- .col-md-8 -->
             <div class="col-lg-4 sidebar ftco-animate">
                 <div class="sidebar-box ftco-animate">
-                    <h3 class="heading-sidebar">Services</h3>
-                    <ul class="categories">
-{{--                        @foreach($offers as $service)--}}
-{{--                            <li><a href="#">{{$service->tools}}</a></li>--}}
-{{--                        @endforeach--}}
-                    </ul>
-                </div>
-
-                <div class="sidebar-box ftco-animate">
-                    <h3 class="heading-sidebar">Recent Blog</h3>
+                    <h3 class="heading-sidebar">Recent Projects</h3>
                     @foreach($proj as $blogs)
                         @if($blogs->id !== $id->id)
                             <div class="block-21 mb-4 d-flex">
@@ -287,7 +641,7 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Far far away, behind the word mountains, far from the countries.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -298,20 +652,14 @@
 
             <div class="col-lg-4 col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Links</h2>
+                    <h2 class="ftco-heading-2">Services</h2>
                     <div class="d-flex">
                         <ul class="list-unstyled mr-md-4">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Project</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog Posts</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Industries</a></li>
-                        </ul>
-                        <ul class="list-unstyled ml-md-5">
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy Policy</a></li>
-                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Terms of Use</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>App Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Web Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Software Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>UI/UX Development</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Graphics Design</a></li>
                         </ul>
                     </div>
                 </div>
@@ -319,12 +667,13 @@
 
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Customer Services</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Prompt Delivery</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Reliable Equipment</a></li>
-                        <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New Heavy Equipment</a></li>
+                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -334,22 +683,22 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="fa fa-phone mr-3"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@yourdomain.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span></li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a></li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-
                     <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
