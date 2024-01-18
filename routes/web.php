@@ -83,6 +83,8 @@ Route::post('/reset', function (Request $request) {
 
 Route::get('/logout',[UserRegisterandLogin::class,'logout'])->name('logout');
 
+Route::post('/page-visit', [HomepageController::class, 'store']);
+
 Route::get('/about',[HomepageController::class,'aboutuspage'])->name('about');
 
 Route::get('/service',[HomepageController::class,'servicepage'])->name('services');
@@ -169,6 +171,8 @@ Route::middleware(['admin'])->group(function (){
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
 
     Route::post('/editoffer',[AdminDashboard::class,'updateoffer'])->name('editoffer');
+
+    Route::get('/admin/visitoripaddress/{id}',[AdminDashboard::class,'visitor'])->name('visitor');
 });
 
 Route::middleware(['auth','verified'])->group(function (){

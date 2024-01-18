@@ -119,16 +119,18 @@
         <div class="row">
             @foreach($result as $projects)
                 <div class="col-md-4">
+                    <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">
                     <div class="project">
                         <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
                             <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
                         </a>
                         <div class="text">
-                            <span class="subheading">{{$projects->type}}</span>
-                            <h3>{{$projects->name}}</h3>
+                            <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" class="subheading">{{$projects->type}}</a>
+                            <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" ><h3>{{$projects->name}}</h3></a>
                             <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" style="color: white">Click here</a> </p>
                         </div>
                     </div>
+                    </a>
                 </div>
             @endforeach
         </div>
@@ -174,11 +176,11 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('conatactpage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>

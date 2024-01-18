@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
+use App\Models\PageVisit;
 use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\SendMsg;
@@ -13,7 +14,7 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function complete()
+    public function complete(Request $request)
     {
         $completeproject = Project::count();
 
@@ -27,6 +28,24 @@ class HomepageController extends Controller
             ->take(6)
             ->get();
 
+        $ipaddress = $request->ip();
+
+        $check = PageVisit::where('ip_address',$ipaddress)->first();
+
+        if($check)
+        {
+            $check->increment('visit_count');
+            $check->update([
+                'updated_at' => Carbon::now('Asia/Dhaka')
+            ]);
+        }
+        else
+            PageVisit::insert([
+                'ip_address' => $ipaddress,
+                'visit_count' => 1,
+                'created_at' => Carbon::now('Asia/Dhaka'),
+                'updated_at' => Carbon::now('Asia/Dhaka')
+            ]);
 
         $result = collect();
 
@@ -113,5 +132,27 @@ class HomepageController extends Controller
         $proj = Project::take(4)->get();
 
         return view('projectpage',['id'=>$project, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'time_spent' => 'required|integer',
+        ]);
+
+        $ip = $request->ip();
+
+        $check = PageVisit::where('ip_address',$ip)->first();
+
+        if ($check)
+        {
+            $check->update([
+                'time_spent' => $data['time_spent']
+            ]);
+        }
+        else
+            PageVisit::insert([
+                'time_spent' => $data['time_spent'],
+            ]);
     }
 }

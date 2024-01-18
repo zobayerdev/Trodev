@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
+use App\Models\PageVisit;
 use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\SendMsg;
@@ -374,5 +375,15 @@ class AdminDashboard extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function visitor($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+           $visitor = PageVisit::all();
+           $total = PageVisit::count();
+            return view('admin.visitorlist', ['id'=>$user,'total'=>$total,'visit'=>$visitor]);
+        }
     }
 }

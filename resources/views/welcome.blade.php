@@ -18,6 +18,23 @@
     <link rel="stylesheet" href="{{asset('user/css/jquery.timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+
+    <style>
+        /* Style for the message box */
+        #message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
 </head>
 
 
@@ -514,6 +531,11 @@
     </div>
 </section>
 
+{{--<div>--}}
+{{--    <p id="timeSpent">Time Spent: Loading...</p>--}}
+{{--</div>--}}
+
+<div id="message-box">This is your message!</div>
 {{--#########################--}}
 {{--Footersection is starting--}}
 <footer class="ftco-footer">
@@ -685,5 +707,47 @@
 
 <script src="{{asset('user/js/main.js')}}"></script>
 
+<script>
+    var startTime = new Date();
+    var totalTimeSpent = 0;
+
+
+    var intervalId = setInterval(function () {
+        var currentTime = new Date();
+        var timeSpent = currentTime - startTime;
+        totalTimeSpent += timeSpent;
+
+
+        document.getElementById('timeSpent').innerText = 'Time Spent: ' + formatTime(totalTimeSpent / 1000); // Convert milliseconds to seconds
+
+
+        startTime = currentTime;
+    }, 100);
+
+
+    window.addEventListener('unload', function () {
+        var endTime = new Date();
+        var timeSpent = endTime - startTime;
+
+
+        totalTimeSpent += timeSpent;
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/page-visit', true);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify({ time_spent: totalTimeSpent / 1000 }));
+
+
+        clearInterval(intervalId);
+    });
+
+    function formatTime(seconds) {
+        var minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+
+        return minutes + 'm ' + seconds + 's';
+    }
+</script>
 </body>
 </html>

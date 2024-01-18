@@ -57,7 +57,8 @@ class UserDashbaord extends Controller
         $pack3 = Pricing::where('projectid',$project->id)
             ->where('packagestype','Premium')->get();
 
-        $proj = Project::take(4)->get();
+        $proj = Project::take(3)->get();
+
 
         return view('user.singleproj',['id'=>$project, 'user'=>$users, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
     }

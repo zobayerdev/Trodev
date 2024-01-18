@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Trodev Client Message</title>
+    <title>Trodev Client List</title>
     <!-- Custom CSS -->
     <link href="{{asset('admin/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -231,8 +231,8 @@
                         </ul>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('visitor',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Visitor IPs</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Visitor IPs</span></a></li>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('calender',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Calendar</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('logout')}}" aria-expanded="false"><i class="fa fa-power-off m-r-5 m-l-5"></i><span class="hide-menu">Logout</span></a></li>
                 </ul>
@@ -275,41 +275,40 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Basic Datatable</h5>
+                    <h5 class="card-title">Total Visitor: {{$total}}</h5>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Time</th>
-                                <th>Message</th>
+                                <th>#</th>
+                                <th>IP Address</th>
+                                <th>Total Visit</th>
+                                <th>First Time</th>
+                                <th>Return At</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($msg as $clients)
+                            @foreach($visit as $clients)
                                 @php
-                                    $date = date("M d, Y", strtotime($clients->created_at));
+                                    $date = date("M d, Y h:i:s A", strtotime($clients->created_at));
+                                    $date2 = date("M d, Y h:i:s A", strtotime($clients->updated_at));
                                 @endphp
                                 <tr>
-                                    <td>{{$clients->name}}</td>
-                                    <td>{{$clients->email}}</td>
+                                    <td>{{$clients->id}}</td>
+                                    <td>{{$clients->ip_address}}</td>
+                                    <td>{{$clients->visit_count}}</td>
                                     <td>{{$date}}</td>
-                                    <td>
-                                        <textarea readonly>{{$clients->message}}</textarea>
-                                    </td>
-                                    <td>
-                                        <a href="mailto: {{$clients->email}}">Replay</a>
-                                    </td>
+                                    <td>{{$date2}}</td>
                                 </tr>
                             @endforeach
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Time</th>
-                                <th>Message</th>
+                                <th>#</th>
+                                <th>IP Address</th>
+                                <th>Total Visit</th>
+                                <th>First Time</th>
+                                <th>Return At</th>
                             </tr>
                             </tfoot>
                         </table>

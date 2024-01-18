@@ -237,13 +237,11 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a>
-                        </li>
-                        <li><a href="{{route('projectpage')}}"><span
-                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
+                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
                     </ul>
                 </div>
             </div>
