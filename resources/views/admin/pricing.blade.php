@@ -313,9 +313,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Duration</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="duration" id="durationSelect" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-                                        </select>
+                                        <input type="text" class="select2 form-control custom-select" name="duration" id="durationSelect" style="width: 100%; height:36px;" required>
+
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -339,53 +338,38 @@
                                 <div class="form-group row">
                                     <label for="email1" class="col-sm-3 text-right control-label col-form-label">Monthly Charge</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="monthly" id="monthlycharge" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-                                        </select>
+                                        <input type="number" class="select2 form-control custom-select" name="monthly" id="monthlycharge" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">SSL Certificate</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="ssl" id="sslcertificate" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-
-                                        </select>
+                                        <input type="number" class="select2 form-control custom-select" name="ssl" id="sslcertificate" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Training Cost</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="training" id="training" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-
-                                        </select>
+                                        <input type="number" class="select2 form-control custom-select" name="training" id="training" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Revision</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="revision" id="revision" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-
-                                        </select>
+                                        <input type="number" class="select2 form-control custom-select" name="revision" id="revision" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Domain</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="domain" id="domains" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-
-                                        </select>
+                                        <input type="text" class="select2 form-control custom-select" name="domain" id="domains" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Storage</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="storage" id="storageSelect" style="width: 100%; height:36px;" required>
-                                            <option>Select</option>
-                                        </select>
+                                        <input type="number" class="select2 form-control custom-select" name="storage" id="storageSelect" style="width: 100%; height:36px;" required>
+
                                     </div>
                                 </div>
 
@@ -476,65 +460,7 @@
         });
     });
 
-    $(document).ready(function () {
-        $("#typeSelect").change(function () {
-            var selectedType = $(this).val();
-            var durationSelect = $("#durationSelect");
-            var storageSelect = $("#storageSelect");
-            var monthlycharge = $("#monthlycharge");
-            var training = $("#training");
-            var revision = $("#revision");
-            var domains = $("#domains");
-            var sslcertificate = $("#sslcertificate");
 
-
-
-            durationSelect.empty();
-            storageSelect.empty();
-            monthlycharge.empty();
-            training.empty();
-            revision.empty();
-            domains.empty();
-            sslcertificate.empty();
-
-
-            // Add new options based on the selected type
-            if (selectedType === "Basic") {
-                durationSelect.append('<option value="1 Month">1 Month</option>');
-                storageSelect.append('<option value="500">200</option>');
-                monthlycharge.append('<option value="1000">1000</option>');
-                training.append('<option value="500">500</option>');
-                revision.append('<option value="2 Times">2 Times</option>');
-                domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="500">500</option>');
-            } else if (selectedType === "Standard") {
-                durationSelect.append('<option value="6 Months">6 Months</option>');
-                storageSelect.append('<option value="1000">600</option>');
-                monthlycharge.append('<option value="3000">3000</option>');
-                training.append('<option value="500">500</option>');
-                revision.append('<option value="5 Times">5 Times</option>');
-                domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="1000">1000</option>');
-            } else if (selectedType === "Premium") {
-                durationSelect.append('<option value="1 Year">1 Year</option>');
-                storageSelect.append('<option value="2000">1000</option>');
-                monthlycharge.append('<option value="5500">5500</option>');
-                training.append('<option value="0">Free</option>');
-                revision.append('<option value="Life Time">Life Time</option>');
-                domains.append('<option value="Custom Price">Custom Price</option>');
-                sslcertificate.append('<option value="0">Free</option>');
-            }
-            else {
-                durationSelect.append('<option value="-">Select</option>');
-                storageSelect.append('<option value="-">Select</option>');
-                monthlycharge.append('<option value="-">Select</option>');
-                training.append('<option value="-">Select</option>');
-                revision.append('<option value="-">Select</option>');
-                domains.append('<option value="-">Select</option>');
-                sslcertificate.append('<option value="-">Select</option>');
-            }
-        });
-    });
 </script>
 
 
