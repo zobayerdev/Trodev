@@ -277,6 +277,7 @@
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
@@ -310,6 +311,7 @@
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
@@ -345,6 +347,7 @@
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
@@ -375,18 +378,21 @@
                                     <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
                                             @php
-                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+                                                $total = $servicec->maintainance + $servicec->storage ;
 
                                                 $yearly = $total*12;
 
                                                 $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                                                $number = number_format($intotal);
+                                                $intotals = $intotal + $id->price ;
+
+                                                $number = number_format($intotals);
                                             @endphp
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
@@ -412,18 +418,21 @@
                                     <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
                                             @php
-                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+                                                $total = $servicec->maintainance + $servicec->storage ;
 
                                                 $yearly = $total*12;
 
                                                 $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                                                $number = number_format($intotal);
+                                                $intotals = $intotal + $id->price ;
+
+                                                $number = number_format($intotals);
                                             @endphp
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
@@ -451,18 +460,21 @@
                                     <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
                                             @php
-                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+                                                $total = $servicec->maintainance + $servicec->storage ;
 
                                                 $yearly = $total*12;
 
                                                 $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                                                $number = number_format($intotal);
+                                                $intotals = $intotal + $id->price ;
+
+                                                $number = number_format($intotals);
                                             @endphp
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
                                             <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
