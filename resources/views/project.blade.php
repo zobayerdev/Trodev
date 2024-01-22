@@ -88,6 +88,7 @@
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
                 <li class="nav-item active"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('price')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>

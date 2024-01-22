@@ -101,6 +101,7 @@ Route::get('/blog/{title}/{id}',[HomepageController::class,'singleblogpage'])->n
 
 Route::get('/project/single-projectpage/{id}', [HomepageController::class, 'singleproject'])->name('singleprojectpages');
 
+Route::get('/pricing',[HomepageController::class,'pricingpages'])->name('price');
 
 Route::get('/registration', function () {
     return view('register');
@@ -166,13 +167,21 @@ Route::middleware(['admin'])->group(function (){
 
     Route::post('/edits',[AdminDashboard::class,'edits'])->name('edits');
 
-    Route::get('/admin/packages/{id}/{project}',[AdminDashboard::class,'pricingpages'])->name('packages');
+    Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
+
+    Route::get('/admin/packages/editpackages/{id}',[AdminDashboard::class,'editpricing'])->name('editprice');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
 
     Route::post('/editoffer',[AdminDashboard::class,'updateoffer'])->name('editoffer');
 
     Route::get('/admin/visitoripaddress/{id}',[AdminDashboard::class,'visitor'])->name('visitor');
+
+    Route::post('/basicupdate',[AdminDashboard::class,'basicupdate'])->name('basicupdate');
+
+    Route::post('/standardupdate',[AdminDashboard::class,'standaradsupdate'])->name('standardupdate');
+
+    Route::post('/premiumupdate',[AdminDashboard::class,'goldupdate'])->name('premiumupdate');
 });
 
 Route::middleware(['auth','verified'])->group(function (){
@@ -191,6 +200,8 @@ Route::middleware(['auth','verified'])->group(function (){
     Route::get('/blog/{users}/{title}/{id}',[UserDashbaord::class,'singleblogpage'])->name('singlepage');
 
     Route::get('/contact/{id}',[UserDashbaord::class,'contact'])->name('conatactpage');
+
+    Route::get('/pricing/{id}',[UserDashbaord::class,'pricing'])->name('pricing');
 
     Route::post('/sendmsgs',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
 });

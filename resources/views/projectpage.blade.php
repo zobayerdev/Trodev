@@ -21,281 +21,94 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/reset.css')}}"> <!-- CSS reset -->--}}
+{{--    <link rel="stylesheet" href="{{asset('css/style.css')}}"> <!-- Resource style -->--}}
+    <script src="{{asset('js/modernizr.js')}}"></script>
 
-{{--    <style>--}}
-{{--        html, body {--}}
-{{--            background-color: #2B3A4C;--}}
-{{--        }--}}
+<style>
+    .switcher {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
 
-{{--        .package {--}}
-{{--            display: grid;--}}
-{{--            grid-template-columns: repeat(3, 1fr);--}}
-{{--            grid-gap: 1rem;--}}
-{{--            margin-top: 4rem;--}}
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
 
-{{--            @media screen and (max-width: 800px) {--}}
-{{--                grid-template-columns: 1fr;--}}
-{{--                grid-row-gap: 7rem;--}}
-{{--            }--}}
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
 
-{{--            &__item {--}}
-{{--                height: 100%;--}}
-{{--                transition: all ease-in-out .3s;--}}
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
 
-{{--                &:hover {--}}
-{{--                    transform: translateY(-5px);--}}
-{{--                }--}}
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
 
-{{--                .package__header {--}}
-{{--                    background-color: white;--}}
-{{--                    border-top-left-radius: 4px;--}}
-{{--                    border-top-right-radius: 4px;--}}
-{{--                    border-bottom: 3px solid rgba(#000, .1);--}}
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
 
-{{--                    .package__name {--}}
-{{--                        font-size: 1.2rem;--}}
-{{--                        font-weight: bold;--}}
-{{--                        text-align: center;--}}
-{{--                        padding: 8px;--}}
-{{--                        color: white;--}}
-{{--                    }--}}
-{{--                }--}}
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
 
-{{--                .package__body {--}}
-{{--                    background-color: white;--}}
-{{--                    padding: 1rem;--}}
-{{--                    min-height: 82%;--}}
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
 
-{{--                    @media screen and (max-width: 800px) {--}}
-{{--                        min-height: 100%;--}}
-{{--                    }--}}
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
 
-{{--                    .package__price-container {--}}
-{{--                        min-height: 150px;--}}
-{{--                        background-color: rgba(#000, .06);--}}
-{{--                        display: flex;--}}
-{{--                        flex-direction: column;--}}
-{{--                        justify-content: center;--}}
-{{--                        border-radius: 4px;--}}
+    .slider.round:before {
+        border-radius: 50%;
+    }
 
-{{--                        @media screen and (max-width: 800px) {--}}
-{{--                            min-height: 100%;--}}
-{{--                        }--}}
-{{--                    }--}}
 
-{{--                    .package__price-container--column {--}}
-{{--                        display: grid;--}}
-{{--                        grid-template-columns: 1fr 1fr;--}}
-{{--                        text-align: center;--}}
+     .custom-card-size {
+         display: flex;
+         flex-direction: column;
+         height: 100%;
+     }
 
-{{--                        @media screen and (max-width: 800px) {--}}
-{{--                            grid-template-columns: 1fr;--}}
-{{--                        }--}}
+    .text {
+        flex-grow: 1;
+    }
 
-{{--                        .package__column {--}}
-{{--                            display: grid;--}}
+    .card-bottom {
+        margin-top: auto;
+    }
 
-{{--                            [class^="package__column"] {--}}
-{{--                                display: flex;--}}
-{{--                                align-items: center;--}}
-{{--                                justify-content: center;--}}
-{{--                            }--}}
 
-{{--                            .package__column-title {--}}
-{{--                                color: white;--}}
-{{--                                background-color: #78a87f;--}}
-{{--                                font-weight: 600;--}}
-{{--                            }--}}
-
-{{--                        // .package__column-content { }--}}
-
-{{--                            .package__column-price {--}}
-{{--                                font-weight: bold;--}}
-{{--                            }--}}
-
-{{--                            .package__column-price--bb {--}}
-{{--                                border-bottom: 1px solid rgba(#000, .1);--}}
-{{--                            }--}}
-{{--                        }--}}
-
-{{--                        .package__column--2 {--}}
-{{--                            border-left: 1px solid rgba(#000, .05);--}}
-
-{{--                            .package__column-title {--}}
-{{--                                background-color: darken(#78a87f, 10%);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    .package__price {--}}
-{{--                        text-align: center;--}}
-{{--                        font-size: 3rem;--}}
-{{--                        font-weight: 600;--}}
-{{--                        position: relative;--}}
-{{--                    }--}}
-
-{{--                    .package__price--sm {--}}
-{{--                        font-size: 1.8rem;--}}
-{{--                    }--}}
-
-{{--                    .package__price--xs {--}}
-{{--                        font-size: 1.2rem;--}}
-{{--                    }--}}
-
-{{--                    .package__price--monthly {--}}
-{{--                        &::after {--}}
-{{--                            content: 'Monthly';--}}
-{{--                            background-color: #459bba;--}}
-{{--                            border-radius: 8px;--}}
-{{--                            font-size: 10px;--}}
-{{--                            padding: 1px 5px;--}}
-{{--                            color: white;--}}
-{{--                            position: absolute;--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    .package__price--quarterly {--}}
-{{--                        &::after {--}}
-{{--                            content: 'Quarterly';--}}
-{{--                            background-color: orange;--}}
-{{--                            border-radius: 8px;--}}
-{{--                            font-size: 10px;--}}
-{{--                            padding: 1px 5px;--}}
-{{--                            color: white;--}}
-{{--                            position: absolute;--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    .package__price--yearly {--}}
-{{--                        &::after {--}}
-{{--                            content: 'Yearly';--}}
-{{--                            background-color: darken(#459bba, 10%);--}}
-{{--                            border-radius: 8px;--}}
-{{--                            font-size: 10px;--}}
-{{--                            padding: 1px 5px;--}}
-{{--                            color: white;--}}
-{{--                            position: absolute;--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    .package__price--ind-yearly {--}}
-{{--                        &::after {--}}
-{{--                            content: 'Yearly Individual';--}}
-{{--                            background-color: #5043C9;--}}
-{{--                            border-radius: 8px;--}}
-{{--                            font-size: 10px;--}}
-{{--                            padding: 1px 5px;--}}
-{{--                            color: white;--}}
-{{--                            position: absolute;--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    .package__price--ins-yearly {--}}
-{{--                        &::after {--}}
-{{--                            content: 'Yearly Institutional';--}}
-{{--                            background-color: darken(#78a87f, 10%);--}}
-{{--                            border-radius: 8px;--}}
-{{--                            font-size: 10px;--}}
-{{--                            padding: 1px 5px;--}}
-{{--                            color: white;--}}
-{{--                            position: absolute;--}}
-{{--                        }--}}
-{{--                    }--}}
-
-{{--                    ul {--}}
-{{--                        margin-top: 1rem;--}}
-
-{{--                        li {--}}
-{{--                            position: relative;--}}
-{{--                            font-size: 0.875rem;--}}
-{{--                            font-weight: 600;--}}
-{{--                            color: #31363c;--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-
-{{--                .package__footer {--}}
-{{--                    button {--}}
-{{--                        background-color: #2287F5;--}}
-{{--                        color: white;--}}
-{{--                        padding: 8px 0;--}}
-{{--                        width: 100%;--}}
-{{--                        border: 0;--}}
-{{--                        border-bottom-left-radius: 4px;--}}
-{{--                        border-bottom-right-radius: 4px;--}}
-{{--                        cursor: pointer;--}}
-{{--                        position: relative;--}}
-{{--                        transition: all ease-in-out .3s;--}}
-{{--                        font-weight: 600;--}}
-
-{{--                        &::after {--}}
-{{--                            content: '\00bb';--}}
-{{--                            opacity: 0;--}}
-{{--                            position: absolute;--}}
-{{--                            top: 0;--}}
-{{--                            font-size: 1.5rem;--}}
-{{--                            transition: all ease-in-out .3s;--}}
-{{--                        }--}}
-
-{{--                        &:hover {--}}
-{{--                            &::after {--}}
-{{--                                opacity: 1;--}}
-{{--                                transform: translateX(4px);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-
-{{--                &:nth-child(1) {--}}
-{{--                    .package__header {--}}
-{{--                        background-color: #eea726;--}}
-{{--                    }--}}
-
-{{--                    .package__footer {--}}
-{{--                        button {--}}
-{{--                            background-color: #eea726;--}}
-
-{{--                            &:hover {--}}
-{{--                                background-color: darken(#eea726, 6%);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-
-{{--                &:nth-child(2) {--}}
-{{--                    .package__header {--}}
-{{--                        background-color: #459bba;--}}
-{{--                    }--}}
-
-{{--                    .package__footer {--}}
-{{--                        button {--}}
-{{--                            background-color: #459bba;--}}
-
-{{--                            &:hover {--}}
-{{--                                background-color: darken(#459bba, 6%);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-
-{{--                &:nth-child(3) {--}}
-{{--                    .package__header {--}}
-{{--                        background-color: #78a87f;--}}
-{{--                    }--}}
-
-{{--                    .package__footer {--}}
-{{--                        button {--}}
-{{--                            background-color: #78a87f;--}}
-
-{{--                            &:hover {--}}
-{{--                                background-color: darken(#78a87f, 6%);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    }--}}
-{{--                }--}}
-{{--            }--}}
-{{--        }--}}
-{{--    </style>--}}
+    </style>
 </head>
 <body>
 <div class="py-1 top">
@@ -363,6 +176,7 @@
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
                 <li class="nav-item active"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('price')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -435,72 +249,240 @@
 
 
                 <section class="ftco-section bg-half-light">
+
                     <div class="container">
                         <div class="row justify-content-center mb-5 pb-2">
                             <div class="col-md-8 text-center heading-section ftco-animate">
                                 <h2 class="mb-4">Our Packages</h2>
                             </div>
                         </div>
+                        <div class="row justify-content-center mb-3">
+                            <div class="switcher">
+                                <label class="switch">
+                                    <input type="checkbox" id="switchToggle">
+                                    <span class="slider round"></span>
+                                    <p id="switchLabel">Monthly</p>
+                                </label>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($basic as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($standard as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($premium as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="{{route('register')}}" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 yearly-package">
+                                @foreach($basic as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4 yearly-package">
+                                @foreach($standard as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4 yearly-package">
+                                @foreach($premium as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -508,96 +490,6 @@
                         </div>
                     </div>
                 </section>
-
-
-
-
-
-
-{{--                <div class="container mt-3">--}}
-{{--                <div class="package">--}}
-{{--                    <div class="package__item">--}}
-{{--                        <div class="package__header">--}}
-{{--                            <div class="package__name">Free User</div>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__body">--}}
-{{--                            <div class="package__price-container">--}}
-{{--                                <div class="package__price">HK$ 0.00</div>--}}
-{{--                            </div>--}}
-{{--                            <ul>--}}
-{{--                                <li>User Account (1)</li>--}}
-{{--                                <li>Startup filter and list view</li>--}}
-{{--                                <li>Investor filter and list view</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__footer">--}}
-{{--                            <button>Get Started</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="package__item">--}}
-{{--                        <div class="package__header">--}}
-{{--                            <div class="package__name">Became a Startup</div>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__body">--}}
-{{--                            <div class="package__price-container">--}}
-{{--                                <div class="package__price package__price--sm package__price--monthly">HK$ 1,000.00</div>--}}
-{{--                                <div class="package__price package__price--sm package__price--yearly">HK$ 12,000.00</div>--}}
-{{--                            </div>--}}
-{{--                            <ul>--}}
-{{--                                <li>Premium User Account Dashboard</li>--}}
-{{--                                <li>Individual Startup profile page</li>--}}
-{{--                                <li>Startup filter and list view</li>--}}
-{{--                                <li>Investor filter and list view</li>--}}
-{{--                                <li>Video Shooting Promotion</li>--}}
-{{--                                <li>Chatroom</li>--}}
-{{--                                <li>View Individual profile pages</li>--}}
-{{--                                <li>Personalize newsletter recommendation</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__footer">--}}
-{{--                            <button>Get Started</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="package__item">--}}
-{{--                        <div class="package__header">--}}
-{{--                            <div class="package__name">Became an Investor</div>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__body">--}}
-{{--                            <div class="package__price-container package__price-container--column">--}}
-{{--                                <div class="package__column">--}}
-{{--                                    <div class="package__column-title">Individual</div>--}}
-{{--                                    <div class="package__column-content">Quarterly</div>--}}
-{{--                                    <div class="package__column-price package__column-price--bb">HK$ 300.00</div>--}}
-{{--                                    <div class="package__column-content">Yearly</div>--}}
-{{--                                    <div class="package__column-price">HK$ 1,000.00</div>--}}
-{{--                                </div>--}}
-{{--                                <div class="package__column package__column--2">--}}
-{{--                                    <div class="package__column-title">Institutional</div>--}}
-{{--                                    <div class="package__column-content">Quarterly</div>--}}
-{{--                                    <div class="package__column-price package__column-price--bb">HK$ 1,200.00</div>--}}
-{{--                                    <div class="package__column-content">Yearly</div>--}}
-{{--                                    <div class="package__column-price">HK$ 3,000.00</div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-
-{{--                            <ul>--}}
-{{--                                <li>Premium User Account Dashboard</li>--}}
-{{--                                <li class="package__price--ins-yearly">3 Premium User Account<br>Dashboard</li>--}}
-{{--                                <li>Individual Investor profile page</li>--}}
-{{--                                <li>Startup filter and list view</li>--}}
-{{--                                <li>Investor filter and list view</li>--}}
-{{--                                <li>Chatroom</li>--}}
-{{--                                <li>View Individual profile pages</li>--}}
-{{--                                <li>Personalize newsletter recommendation</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <div class="package__footer">--}}
-{{--                            <button>Get Started</button>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
             </div>
 
             <!-- .col-md-8 -->
@@ -782,6 +674,56 @@
 <script src="{{asset('user/js/google-map.js')}}"></script>
 
 <script src="{{asset('user/js/main.js')}}"></script>
+
+<script src="{{asset('js/jquery-2.1.1.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const switchToggle = document.getElementById('switchToggle');
+        const switchLabel = document.getElementById('switchLabel');
+        const monthlyPackages = document.querySelectorAll('.monthly-package');
+        const yearlyPackages = document.querySelectorAll('.yearly-package');
+
+        switchToggle.addEventListener('change', function () {
+            if (switchToggle.checked) {
+                switchLabel.innerText = 'Yearly';
+                showYearlyPackages();
+            } else {
+                switchLabel.innerText = 'Monthly';
+                showMonthlyPackages();
+            }
+        });
+
+        function showMonthlyPackages() {
+            monthlyPackages.forEach(package => {
+                package.style.display = 'block';
+            });
+
+            yearlyPackages.forEach(package => {
+                package.style.display = 'none';
+            });
+        }
+
+        function showYearlyPackages() {
+            monthlyPackages.forEach(package => {
+                package.style.display = 'none';
+            });
+
+            yearlyPackages.forEach(package => {
+                package.style.display = 'block';
+            });
+        }
+
+        // Initial setup based on default selection
+        if (switchToggle.checked) {
+            showYearlyPackages();
+        } else {
+            showMonthlyPackages();
+        }
+    });
+</script>
 
 </body>
 </html>

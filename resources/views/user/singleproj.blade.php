@@ -21,6 +21,91 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+
+    <style>
+        .switcher {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+
+        .custom-card-size {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .text {
+            flex-grow: 1;
+        }
+
+        .card-bottom {
+            margin-top: auto;
+        }
+
+
+    </style>
 </head>
 <body>
 <div class="py-1 top">
@@ -88,6 +173,7 @@
                 <li class="nav-item"><a href="{{route('servicepages',['id'=>$user->id])}}" class="nav-link">Services</a></li>
                 <li class="nav-item active"><a href="{{route('projectpages',['id'=>$user->id])}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogspages',['id'=>$user->id])}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('pricing',['id'=>$user->id])}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('conatactpage',['id'=>$user->id])}}" class="nav-link">Contact</a></li>
             </ul>
             <a href="{{route('logout')}}" class="btn-custom">Logout</a>
@@ -161,72 +247,240 @@
 
 
                 <section class="ftco-section bg-half-light">
+
                     <div class="container">
                         <div class="row justify-content-center mb-5 pb-2">
                             <div class="col-md-8 text-center heading-section ftco-animate">
                                 <h2 class="mb-4">Our Packages</h2>
                             </div>
                         </div>
+                        <div class="row justify-content-center mb-3">
+                            <div class="switcher">
+                                <label class="switch">
+                                    <input type="checkbox" id="switchToggle">
+                                    <span class="slider round"></span>
+                                    <p id="switchLabel">Monthly</p>
+                                </label>
+                            </div>
+                        </div>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($basic as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($standard as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 monthly-package">
                                 @foreach($premium as $servicec)
-                                    <div class="services-wrap ftco-animate">
+                                    <div class="services-wrap ftco-animate custom-card-size">
                                         <div class="text">
-                                            <h1>{{$servicec->packagestype}}</h1>
-                                            <h2>{{$servicec->validity}}</h2>
-                                            <p>Maintainace Charge: {{$servicec->monthlycharge}}</p>
-                                            <p>Price: {{$servicec->softwareprice}}</p>
-                                            <p>SSL Certificate: {{$servicec->ssl}}</p>
-                                            <p>Training: {{$servicec->training}}</p>
-                                            <p>Revision: {{$servicec->revision}}</p>
-                                            <p>Domain: {{$servicec->domain}}</p>
-                                            <p>Storage: {{$servicec->storage}}</p>
                                             @php
-                                                $total = $servicec->monthlycharge + $servicec->ssl + $servicec->training  + $servicec->storage + $servicec->monthlycharge;
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $format = number_format($total);
                                             @endphp
-                                            <a href="#" class="btn-custom">Total: {{$total}}Tk</a>
+                                            <h3>{{$servicec->type}}</h3>
+                                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 yearly-package">
+                                @foreach($basic as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4 yearly-package">
+                                @foreach($standard as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="col-md-4 yearly-package">
+                                @foreach($premium as $servicec)
+                                    <div class="services-wrap ftco-animate custom-card-size">
+                                        <div class="text">
+                                            @php
+                                                $total = $servicec->maintainance + $servicec->storage + $id->price;
+
+                                                $yearly = $total*12;
+
+                                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
+
+                                                $number = number_format($intotal);
+                                            @endphp
+                                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                            <p>Software Activation Price included (for one time)</p>
+                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <strong>What's included?</strong>
+                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security <strong>{{$servicec->security}}</strong></p>
+                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+
+                                            <div class="card-bottom">
+                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
@@ -420,6 +674,53 @@
 <script src="{{asset('user/js/google-map.js')}}"></script>
 
 <script src="{{asset('user/js/main.js')}}"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const switchToggle = document.getElementById('switchToggle');
+        const switchLabel = document.getElementById('switchLabel');
+        const monthlyPackages = document.querySelectorAll('.monthly-package');
+        const yearlyPackages = document.querySelectorAll('.yearly-package');
+
+        switchToggle.addEventListener('change', function () {
+            if (switchToggle.checked) {
+                switchLabel.innerText = 'Yearly';
+                showYearlyPackages();
+            } else {
+                switchLabel.innerText = 'Monthly';
+                showMonthlyPackages();
+            }
+        });
+
+        function showMonthlyPackages() {
+            monthlyPackages.forEach(package => {
+                package.style.display = 'block';
+            });
+
+            yearlyPackages.forEach(package => {
+                package.style.display = 'none';
+            });
+        }
+
+        function showYearlyPackages() {
+            monthlyPackages.forEach(package => {
+                package.style.display = 'none';
+            });
+
+            yearlyPackages.forEach(package => {
+                package.style.display = 'block';
+            });
+        }
+
+        // Initial setup based on default selection
+        if (switchToggle.checked) {
+            showYearlyPackages();
+        } else {
+            showMonthlyPackages();
+        }
+    });
+</script>
 
 </body>
 </html>

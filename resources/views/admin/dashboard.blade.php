@@ -254,6 +254,12 @@
                             <li class="sidebar-item"><a href="{{route('editblog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Pricing</span></a>
+                        <ul aria-expanded="false" class="collapse  first-level">
+                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('editprice',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Price List </span></a></li>
+                        </ul>
+                    </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientlist',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client List</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('visitor',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Visitor IPs</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('clientmsg',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Client Message</span></a></li>
@@ -350,7 +356,15 @@
                 </div>
                 <!-- Column -->
                 <!-- Column -->
-                <div class="col-md-6 col-lg-4 col-xlg-3">
+                <div class="col-md-6 col-lg-2 col-xlg-3">
+                    <a href="{{route('packages',['id'=>$id->id])}}" class="card card-hover">
+                        <div class="box bg-warning text-center">
+                            <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
+                            <h6 class="text-white">Packages</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xlg-3">
                     <a href="{{route('clientlist',['id'=>$id->id])}}" class="card card-hover">
                         <div class="box bg-danger text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-receipt"></i></h1>
@@ -359,7 +373,7 @@
                     </a>
                 </div>
                 <!-- Column -->
-                <div class="col-md-6 col-lg-2 col-xlg-3">
+                <div class="col-md-6 col-lg-4 col-xlg-3">
                     <a href="{{route('clientmsg',['id'=>$id->id])}}" class="card card-hover">
                         <div class="box bg-info text-center">
                             <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
@@ -367,6 +381,8 @@
                         </div>
                     </a>
                 </div>
+
+
 
                 <div class="col-md-6 col-lg-2 col-xlg-3">
                     <a href="{{route('visitor',['id'=>$id->id])}}" class="card card-hover">

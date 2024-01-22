@@ -88,6 +88,7 @@
                 <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item active"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{{route('price')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
 
@@ -131,7 +132,7 @@
                                     <a href="#"><span class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
                                 </p>
                             </div>
-                            <h3 class="heading"><a href="#">{{$blogs->title}}</a></h3>
+                            <h3 class="heading"><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a></h3>
                             <p><a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}" class="btn btn-secondary py-2 px-3">Read more</a></p>
                         </div>
                     </div>

@@ -10,16 +10,22 @@ class Pricing extends Model
     use HasFactory;
 
     protected $fillable = [
-        'projectid',
-        'projecttypes',
-        'packagestype',
-        'validity',
-        'monthlycharge',
-        'softwareprice',
-        'ssl',
-        'training',
-        'revision',
-        'domain',
+        'type',
+        'maintainance',
         'storage',
+        'peroff',
+        'development',
+        'UI_UX',
+        'logo',
+        'business_card',
+        'training_time',
+        'revision',
+        'project_manager',
+        'edit_request',
+        'technical',
+        'development_request',
+        'security',
+        'hosting',
+        'sqa',
     ];
 }

@@ -50,12 +50,9 @@ class UserDashbaord extends Controller
 
         $project = Project::find($projects);
 
-        $pack = Pricing::where('projectid',$project->id)
-            ->where('packagestype','Basic')->get();
-        $pack2 = Pricing::where('projectid',$project->id)
-            ->where('packagestype','Standard')->get();
-        $pack3 = Pricing::where('projectid',$project->id)
-            ->where('packagestype','Premium')->get();
+        $pack = Pricing::where('type','Basic')->get();
+        $pack2 = Pricing::where('type','Standard')->get();
+        $pack3 = Pricing::where('type','Premium')->get();
 
         $proj = Project::take(3)->get();
 
@@ -95,4 +92,15 @@ class UserDashbaord extends Controller
 
         return redirect()->back();
     }
+
+    public function pricing($id)
+    {
+        $user = User::find($id);
+        $pack = Pricing::where('type','Basic')->get();
+        $pack2 = Pricing::where('type','Standard')->get();
+        $pack3 = Pricing::where('type','Premium')->get();
+        return view('user.pricings',['id'=>$user,'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
+    }
+
+
 }

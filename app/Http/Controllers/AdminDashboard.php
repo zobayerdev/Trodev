@@ -64,7 +64,7 @@ class AdminDashboard extends Controller
                 'updated_at' => $now
             ]);
 
-            return redirect()->route('packages',['id'=>$request->input('id'),'project'=>$projectid]);
+            return redirect()->back();
         }
     }
 
@@ -348,30 +348,36 @@ class AdminDashboard extends Controller
         return redirect()->back();
     }
 
-    public function pricingpages($id,$project)
+    public function pricingpages($id)
     {
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
-            $pro = Project::find($project);
             $software = Project::get();
             $types =  Project::select('type')->distinct()->get();
-            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types,'proj' =>$pro]);
+            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
         }
     }
 
     public function priceinsert(Request $request)
     {
         Pricing::insert([
-            'projectid' => $request->input('software'),
-            'packagestype' => $request->input('details'),
-            'validity' => $request->input('duration'),
-            'monthlycharge' => $request->input('monthly'),
-            'softwareprice' => $request->input('price'),
-            'ssl' => $request->input('ssl'),
-            'training' => $request->input('training'),
-            'revision' => $request->input('revision'),
-            'domain' => $request->input('domain'),
-            'storage' => $request->input('storage'),
+            'type'=> $request->input('details'),
+            'maintainance' =>$request->input('maintenance'),
+            'storage'=>$request->input('storage'),
+            'peroff'=>$request->input('percentage'),
+            'development'=>$request->input('development'),
+            'UI_UX'=>$request->input('ui/ux'),
+            'logo'=>$request->input('logo'),
+            'business_card'=>$request->input('card'),
+            'training_time'=>$request->input('training'),
+            'revision'=>$request->input('revision'),
+            'project_manager'=>$request->input('manager'),
+            'edit_request'=>$request->input('edit'),
+            'technical'=>$request->input('planning'),
+            'development_request'=>$request->input('request'),
+            'security'=>$request->input('security'),
+            'hosting'=>$request->input('setup'),
+            'sqa'=>$request->input('sqa'),
         ]);
 
         return redirect()->back();
@@ -385,5 +391,92 @@ class AdminDashboard extends Controller
            $total = PageVisit::count();
             return view('admin.visitorlist', ['id'=>$user,'total'=>$total,'visit'=>$visitor]);
         }
+    }
+
+    public function editpricing($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            $all = Pricing::all();
+            $pack = Pricing::where('type','Basic')->first();
+            $pack2 = Pricing::where('type','Standard')->first();
+            $pack3 = Pricing::where('type','Premium')->first();
+            return view('admin.editprice', ['id'=>$user,'price'=>$all,'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
+        }
+    }
+
+    public function basicupdate(Request $request)
+    {
+        Pricing::where('id',$request->input('id'))->update([
+            'type'=>$request->input('type'),
+            'maintainance'=>$request->input('maintainance'),
+            'storage'=>$request->input('storage'),
+            'peroff'=>$request->input('peroff'),
+            'development'=>$request->input('development'),
+            'UI_UX'=>$request->input('UI_UX'),
+            'logo'=>$request->input('logo'),
+            'business_card'=>$request->input('business_card'),
+            'training_time'=>$request->input('training_time'),
+            'revision'=>$request->input('revision'),
+            'project_manager'=>$request->input('project_manager'),
+            'edit_request'=>$request->input('edit_request'),
+            'technical'=>$request->input('technical'),
+            'development_request'=>$request->input('development_request'),
+            'security'=>$request->input('security'),
+            'hosting'=>$request->input('hosting'),
+            'sqa'=>$request->input('sqa'),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function standaradsupdate(Request $request)
+    {
+        Pricing::where('id',$request->input('id'))->update([
+            'type'=>$request->input('type'),
+            'maintainance'=>$request->input('maintainance'),
+            'storage'=>$request->input('storage'),
+            'peroff'=>$request->input('peroff'),
+            'development'=>$request->input('development'),
+            'UI_UX'=>$request->input('UI_UX'),
+            'logo'=>$request->input('logo'),
+            'business_card'=>$request->input('business_card'),
+            'training_time'=>$request->input('training_time'),
+            'revision'=>$request->input('revision'),
+            'project_manager'=>$request->input('project_manager'),
+            'edit_request'=>$request->input('edit_request'),
+            'technical'=>$request->input('technical'),
+            'development_request'=>$request->input('development_request'),
+            'security'=>$request->input('security'),
+            'hosting'=>$request->input('hosting'),
+            'sqa'=>$request->input('sqa'),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function goldupdate(Request $request)
+    {
+        Pricing::where('id',$request->input('id'))->update([
+            'type'=>$request->input('type'),
+            'maintainance'=>$request->input('maintainance'),
+            'storage'=>$request->input('storage'),
+            'peroff'=>$request->input('peroff'),
+            'development'=>$request->input('development'),
+            'UI_UX'=>$request->input('UI_UX'),
+            'logo'=>$request->input('logo'),
+            'business_card'=>$request->input('business_card'),
+            'training_time'=>$request->input('training_time'),
+            'revision'=>$request->input('revision'),
+            'project_manager'=>$request->input('project_manager'),
+            'edit_request'=>$request->input('edit_request'),
+            'technical'=>$request->input('technical'),
+            'development_request'=>$request->input('development_request'),
+            'security'=>$request->input('security'),
+            'hosting'=>$request->input('hosting'),
+            'sqa'=>$request->input('sqa'),
+        ]);
+
+        return redirect()->back();
     }
 }
