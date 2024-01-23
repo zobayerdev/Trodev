@@ -276,23 +276,23 @@
                                             <h3>{{$servicec->type}}</h3>
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
                                             <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
                                             <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
                                             <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
                                             <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
                                             <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
                                             <p>Revision <strong>{{$servicec->revision}}</strong></p>
                                             <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
                                             <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
                                             <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
                                             <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -310,25 +310,25 @@
                                             <h3>{{$servicec->type}}</h3>
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                                             <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
-                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
-                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
-                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
-                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Design issue:-:- <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -346,25 +346,25 @@
                                             <h3>{{$servicec->type}}</h3>
                                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
-                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
+                                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge:- {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
-                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
-                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
-                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Design issue:-:- <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
                                             <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
-                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -391,23 +391,23 @@
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
+                                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                                             <p>Storage Charge: {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
-                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
-                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
-                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
-                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Design issue:-:- <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -431,25 +431,25 @@
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
-                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
+                                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge:- {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
-                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
-                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
-                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
-                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Design issue:-:- <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -458,7 +458,7 @@
                             <div class="col-md-4 yearly-package">
                                 @foreach($premium as $servicec)
                                     <div class="services-wrap ftco-animate custom-card-size">
-                                        <div class="text">
+                                        <div class="text" style="color: black">
                                             @php
                                                 $total = $servicec->maintainance + $servicec->storage ;
 
@@ -473,25 +473,25 @@
                                             <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
                                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                                             <p>Software Activation Price included (for one time)</p>
-                                            <p>Maintainace Charge: {{$servicec->maintainance}}Tk</p>
-                                            <p>Storage Charge: {{$servicec->storage}}Tk</p>
+                                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                                            <p>Storage Charge:- {{$servicec->storage}}Tk</p>
                                             <strong>What's included?</strong>
-                                            <p>Development (Full-Stack) <strong>{{$servicec->development}}</strong></p>
-                                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                                            <p>Business Card Design <strong>{{$servicec->business_card}}</strong></p>
-                                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
+                                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                                            <p>Design issue:-:- <strong>{{$servicec->business_card}}</strong></p>
+                                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
                                             <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                                            <p>Hosting & Domain Setup <strong>{{$servicec->hosting}}</strong></p>
-                                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom">Book a Meeting</a>
+                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -502,8 +502,7 @@
                 </section>
 
 
-
-
+                
             </div> <!-- .col-md-8 -->
             <div class="col-lg-4 sidebar ftco-animate">
                 <div class="sidebar-box ftco-animate">
