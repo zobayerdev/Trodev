@@ -292,7 +292,7 @@
                                             <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -328,7 +328,7 @@
                                             <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -364,7 +364,7 @@
                                             <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -407,7 +407,7 @@
                                             <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -449,7 +449,7 @@
                                             <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -491,7 +491,7 @@
                                             <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                                             <div class="card-bottom">
-                                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
                                             </div>
                                         </div>
                                     </div>
@@ -502,7 +502,7 @@
                 </section>
 
 
-                
+
             </div> <!-- .col-md-8 -->
             <div class="col-lg-4 sidebar ftco-animate">
                 <div class="sidebar-box ftco-animate">
