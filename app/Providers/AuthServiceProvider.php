@@ -4,6 +4,7 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Auth\Notifications\VerifyEmail;
+use App\Notifications\VerifyEmailNoti;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Notifications\Messages\MailMessage;
 
@@ -24,11 +25,6 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         VerifyEmail::toMailUsing(function ($notifiable, $url) {
-            $expirationTimeInMinutes = 15;
-            $expiration = now()->addMinutes($expirationTimeInMinutes);
-
-            // Append expiration timestamp to the URL
-            $url .= '&expires=' . $expiration->timestamp;
 
             $verificationUrl = $url;
             $appName = config('app.name');
@@ -42,5 +38,12 @@ class AuthServiceProvider extends ServiceProvider
                     'userName' => $userName,
                 ]);
         });
+
+//        VerifyEmailNoti::toMail(function ($notifiable, $url) {
+//            $appName = config('app.name');
+//            $userName = $notifiable->name;
+//
+//            return new VerifyEmailNoti($url, $appName, $userName);
+//        });
     }
 }
