@@ -170,6 +170,8 @@ Route::middleware(['admin'])->group(function (){
 
     Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
 
+    Route::get('/admin/appandsoftwarepackages/{id}',[AdminDashboard::class,'apppages'])->name('appandsoftware');
+
     Route::get('/admin/packages/editpackages/{id}',[AdminDashboard::class,'editpricing'])->name('editprice');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
