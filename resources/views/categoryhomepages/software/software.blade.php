@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('user/css/jquery.timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <style>
         /* Style for the message box */
@@ -33,6 +34,67 @@
             border-radius: 5px;
             opacity: 1;
             transition: opacity 1s ease-in-out;
+        }
+
+
+
+        /* Slideshow container */
+        /*.slideshow-container {*/
+        /*    max-width: 1000px;*/
+        /*    position: relative;*/
+        /*    margin: auto;*/
+        /*}*/
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            text-align: center;
+            height: 300px; /* Set a fixed height for all images */
+        }
+
+        .mySlides img {
+            width: 50%;
+            height: 100%; /* Adjust height to 100% to maintain aspect ratio */
+            margin: auto; /* Center the image horizontally */
+            display: block; /* Remove any default inline styling */
+        }
+        /* Caption text */
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #072A6C;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: transparent;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {font-size: 11px}
         }
 
         .typing-text {
@@ -120,12 +182,12 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('softwarehompage')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('services')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpage')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('softwaresservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('softwareproject')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('price')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="{{route('softwarepricing')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -149,90 +211,7 @@
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2">
-    <div class="container">
-        <div class="row no-gutters d-flex">
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('apps')}}">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-mobile"></span></div>
-                    <div  class="media-body pl-4">
-                        <h3 class="heading mb-3">App Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('websitehomepage')}}">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-globe"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Web Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('softwarehompage')}}">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-computer"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Software Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('uiuxhomepage')}}">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-uikit"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">UI/UX</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('graphicdesignhomepage')}}">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-pencil-alt"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Graphics Design</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-server"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Server Administration</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <section class="ftco-section" id="about-section">
     <div class="container">
@@ -274,9 +253,14 @@
             <div class="col-md-12 text-center">
                 <div class="img" style="background-image: url({{asset('user/images/bg_2.png')}});">
                     <div class="overlay"></div>
-                    <h2>Providing Personalized and High Quality Services</h2>
-                    <p>We can manage your dream projects to make with responsive design.</p>
-                    <p class="mb-0"><a href="{{route('register')}}" class="btn btn-primary">Touch Us</a></p>
+                    <h1 style="color: white; font-weight: bolder;">Types Of Mobile Apps Development We Offer</h1>
+                    <p>We also offer specific task based digital marketing service as listed below</p>
+                    <p class="mb-0">
+                    <p class="btn btn-primary" style="font-size: 20px;">Android App <br>Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">iOS App<br> Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">Hybrid App <br>Development</p>
+                    </p>
+
                 </div>
             </div>
         </div>
@@ -288,40 +272,40 @@
         <div class="row justify-content-center mb-5 pb-2">
             <div class="col-md-8 text-center heading-section ftco-animate">
                 <span class="subheading">Our Services</span>
-                <h2 class="mb-4">We Offer Services</h2>
+                <h2 class="mb-4">Industries We Serve</h2>
             </div>
         </div>
         <div class="row">
-            @foreach($service as $servicec)
-            <div class="col-md-4">
+            {{--            @foreach($service as $servicec)--}}
+            {{--                <div class="col-md-4">--}}
 
-                    <div class="services-wrap ftco-animate">
-                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
-                        <div class="text">
-                            @if($servicec->tools === 'App')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-mobile"></span></div>
-                            @elseif($servicec->tools === 'Software')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-computer"></span></div>
-                            @elseif($servicec->tools === 'Website')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-globe"></span></div>
-                            @elseif($servicec->tools === 'Graphic-Design')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-pencil-alt"></span></div>
-                            @elseif($servicec->tools === 'UI/UX')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-uikit"></span></div>
-                            @endif
-                            <h2>{{$servicec->tools}} Development</h2>
-                            <p align="justify">{{$servicec->description}}</p>
-                            <a href="#" class="btn-custom">Thank You</a>
-                        </div>
-                    </div>
+            {{--                    <div class="services-wrap ftco-animate">--}}
+            {{--                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>--}}
+            {{--                        <div class="text">--}}
+            {{--                            @if($servicec->tools === 'App')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-mobile"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Software')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-computer"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Website')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-globe"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Graphic-Design')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-pencil-alt"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'UI/UX')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-uikit"></span></div>--}}
+            {{--                            @endif--}}
+            {{--                            <h2>{{$servicec->tools}} Development</h2>--}}
+            {{--                            <p align="justify">{{$servicec->description}}</p>--}}
+            {{--                            <a href="#" class="btn-custom">Thank You</a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
 
-            </div>
-            @endforeach
+            {{--                </div>--}}
+            {{--            @endforeach--}}
         </div>
     </div>
 </section>
@@ -348,7 +332,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-                                <strong class="number" data-number="{{$complete}}">0</strong>
+                                {{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -378,27 +362,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach($result as $projects)
-                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">
-                <div class="col-md-4">
+            {{--            @foreach($result as $projects)--}}
+            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
+            {{--                    <div class="col-md-4">--}}
 
-                    <div class="project">
-                        <a href="{{asset('storage/'.$projects->image)}}"
-                           class="img image-popup d-flex align-items-center"
-                           style="background-image: url('{{asset('storage/'.$projects->image)}}');">
-                            <div class="icon d-flex align-items-center justify-content-center mb-5"><span
-                                    class="fa fa-plus"></span></div>
-                        </a>
-                        <div class="text">
-                            <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>
-                            <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>
-                            <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>
-                        </div>
-                    </div>
+            {{--                        <div class="project">--}}
+            {{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
+            {{--                               class="img image-popup d-flex align-items-center"--}}
+            {{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
+            {{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
+            {{--                                        class="fa fa-plus"></span></div>--}}
+            {{--                            </a>--}}
+            {{--                            <div class="text">--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
+            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
 
-                </div>
-                </a>
-            @endforeach
+            {{--                    </div>--}}
+            {{--                </a>--}}
+            {{--            @endforeach--}}
         </div>
     </div>
 </section>
@@ -508,47 +492,41 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-10 heading-section text-center ftco-animate">
-                <span class="subheading">Our Projects Blog</span>
-                <h2 class="mb-4">Latest Blog Updates</h2>
+                <span class="subheading">Technologies</span>
+                <h2 class="mb-4">Technologies We Used</h2>
             </div>
         </div>
-        <div class="row d-flex">
-            @foreach($blog as $blogs)
-                <div class="col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
-                           class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta">
-                                <p>
-                                    @php
-                                        $date = date("M d, Y", strtotime($blogs->created_at));
+        <div class="slideshow-container">
 
-                                        $write = $blogs->write;
-                                        $words = explode(' ', $write);
-                                        $first_two_words = implode(' ', array_slice($words, 2, 3));
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/download.png')}}">
+            </div>
 
-                                    @endphp
-                                    <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span
-                                            class="fa fa-calendar mr-2"></span>{{$date}}</a>
-                                    <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"><span
-                                            class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
-                                </p>
-                            </div>
-                            <h3 class="heading"><a
-                                    href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a>
-                            </h3>
-                            <p>
-                                <a href="{{route('single.blogpage',['title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
-                                   class="btn btn-secondary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/Flutter.png')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/java.jpg')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/React.png')}}">
+            </div>
+
         </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
     </div>
 </section>
+
 
 {{--<div>--}}
 {{--    <p id="timeSpent">Time Spent: Loading...</p>--}}
@@ -770,9 +748,31 @@
 </script>
 
 <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+
+<script>
     // JavaScript for typing effect
     const targetElement = document.getElementById('typing');
-    const words = ['Software', 'Android','Website','Graphic Design','UI/UX']; // Add more words as needed
+    const words = ['Software','Desktop']; // Add more words as needed
     let wordIndex = 0;
     let charIndex = 0;
     let isTyping = true;
@@ -807,5 +807,6 @@
     // Start the typing effect
     type();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>

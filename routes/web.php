@@ -13,6 +13,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Http\Controllers\UserDashbaord;
+use App\Http\Controllers\CategoryController;
 
 
 Route::get('/',[HomepageController::class,'complete'])->name('home');
@@ -169,6 +170,8 @@ Route::middleware(['admin'])->group(function (){
 
     Route::get('/admin/packages/{id}',[AdminDashboard::class,'pricingpages'])->name('packages');
 
+    Route::get('/admin/appandsoftwarepackages/{id}',[AdminDashboard::class,'apppages'])->name('appandsoftware');
+
     Route::get('/admin/packages/editpackages/{id}',[AdminDashboard::class,'editpricing'])->name('editprice');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
@@ -206,4 +209,52 @@ Route::middleware(['auth','verified'])->group(function (){
     Route::post('/sendmsgs',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
 });
 
+/*Apps Start*/
+Route::get('/apps',[CategoryController::class,'appshomepage'])->name('apps');
 
+Route::get('/apps/service',[CategoryController::class,'appsservice'])->name('appsservice');
+
+Route::get('/apps/project',[CategoryController::class,'appproject'])->name('appproject');
+
+Route::get('/apps/price',[CategoryController::class,'apppricing'])->name('apppricing');
+/*Apps End*/
+
+/*Software Start*/
+Route::get('/software',[CategoryController::class,'softwarehompage'])->name('softwarehompage');
+
+Route::get('/software/service',[CategoryController::class,'softwaresservice'])->name('softwaresservice');
+
+Route::get('/software/project',[CategoryController::class,'softwareproject'])->name('softwareproject');
+
+Route::get('/software/price',[CategoryController::class,'softwarepricing'])->name('softwarepricing');
+/*Software End*/
+
+/*Website Start*/
+Route::get('/website',[CategoryController::class,'websitehomepage'])->name('websitehomepage');
+
+Route::get('/website/service',[CategoryController::class,'websiteservice'])->name('websiteservice');
+
+Route::get('/website/project',[CategoryController::class,'websiteproject'])->name('websiteproject');
+
+Route::get('/website/price',[CategoryController::class,'websitepricing'])->name('websitepricing');
+/*Website End*/
+
+/*UI-UX Start*/
+Route::get('/ui-ux',[CategoryController::class,'uiuxhomepage'])->name('uiuxhomepage');
+
+Route::get('/ui-ux/project',[CategoryController::class,'uiuxproject'])->name('uiuxproject');
+
+Route::get('/ui-ux/service',[CategoryController::class,'uiuxservice'])->name('uiuxservice');
+
+Route::get('/ui-ux/price',[CategoryController::class,'uiuxpricing'])->name('uiuxpricing');
+/*UI-UX End*/
+
+/*Graphic-Design Start*/
+Route::get('/graphic-design',[CategoryController::class,'graphicdesignhomepage'])->name('graphicdesignhomepage');
+
+Route::get('/graphic-design/service',[CategoryController::class,'graphicdesignservice'])->name('graphicdesignservice');
+
+Route::get('/graphic-design/project',[CategoryController::class,'graphicdesignproject'])->name('graphicdesignproject');
+
+Route::get('/graphic-design/price',[CategoryController::class,'graphicdesignpricing'])->name('graphicdesignpricing');
+/*Graphic-Design End*/

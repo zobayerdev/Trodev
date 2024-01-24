@@ -352,9 +352,15 @@ class AdminDashboard extends Controller
     {
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
-            $software = Project::get();
-            $types =  Project::select('type')->distinct()->get();
-            return view('admin.pricing', ['id' => $user,'project'=>$software,'types' =>$types]);
+            return view('admin.pricing', ['id' => $user]);
+        }
+    }
+
+    public function apppages($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            return view('admin.appsoftpricing', ['id' => $user]);
         }
     }
 

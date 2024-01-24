@@ -342,7 +342,7 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Add Packages</li>
+                                <li class="breadcrumb-item active" aria-current="page">Website Packages</li>
                             </ol>
                         </nav>
                     </div>
@@ -573,27 +573,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#softwareSelect').change(function () {
-            var selectedId = $(this).val();
-            $('#lname').prop('readonly', selectedId === '');
-            if (selectedId !== '') {
-                var employeeData = <?php echo json_encode($project); ?>;
-                var selectedEmployee = employeeData.find(function (emp) {
-                    return emp.id == selectedId;
-                });
-                if (selectedEmployee) {
-                    $('#lname').val(selectedEmployee.price).prop('readonly', true);
-                }
-            } else {
-                $('#lname').val('').prop('readonly', false);
-            }
-        });
-    });
 
-
-</script>
 
 
 </body>
