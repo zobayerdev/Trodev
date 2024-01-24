@@ -182,12 +182,12 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('uiuxhomepage')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('uiuxservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('uiuxproject')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="{{route('uiuxpricing')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -202,7 +202,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-lg-6 ftco-animate">
                 <div class="mt-5">
-                    <h1 class="mb-4">We Build Great <br> <span id="typing" class="typing-text"></span> <br> Projects</h1>
+                    <h1 class="mb-4">We Build Great <br> <span id="typing" class="typing-text"></span>Projects</h1>
                     <p class="mb-4">We're in this business since 2021 and We provide the best software services</p>
                     <p><a href="{{route('services')}}" class="btn btn-primary">Our Services</a> <a href="{{route('register')}}" class="btn btn-white">Touch Us</a></p>
                 </div>
@@ -256,9 +256,9 @@
                     <h1 style="color: white; font-weight: bolder;">Types Of Mobile Apps Development We Offer</h1>
                     <p>We also offer specific task based digital marketing service as listed below</p>
                     <p class="mb-0">
-                        <p class="btn btn-primary" style="font-size: 20px;">Android App <br>Development</p>
-                        <p class="btn btn-primary" style="font-size: 20px;">iOS App<br> Development</p>
-                        <p class="btn btn-primary" style="font-size: 20px;">Hybrid App <br>Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">Android App <br>Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">iOS App<br> Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">Hybrid App <br>Development</p>
                     </p>
 
                 </div>
@@ -276,36 +276,36 @@
             </div>
         </div>
         <div class="row">
-{{--            @foreach($service as $servicec)--}}
-{{--                <div class="col-md-4">--}}
+            {{--            @foreach($service as $servicec)--}}
+            {{--                <div class="col-md-4">--}}
 
-{{--                    <div class="services-wrap ftco-animate">--}}
-{{--                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>--}}
-{{--                        <div class="text">--}}
-{{--                            @if($servicec->tools === 'App')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-mobile"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Software')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-computer"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Website')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-globe"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Graphic-Design')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-pencil-alt"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'UI/UX')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-uikit"></span></div>--}}
-{{--                            @endif--}}
-{{--                            <h2>{{$servicec->tools}} Development</h2>--}}
-{{--                            <p align="justify">{{$servicec->description}}</p>--}}
-{{--                            <a href="#" class="btn-custom">Thank You</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+            {{--                    <div class="services-wrap ftco-animate">--}}
+            {{--                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>--}}
+            {{--                        <div class="text">--}}
+            {{--                            @if($servicec->tools === 'App')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-mobile"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Software')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-computer"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Website')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-globe"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'Graphic-Design')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-pencil-alt"></span></div>--}}
+            {{--                            @elseif($servicec->tools === 'UI/UX')--}}
+            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
+            {{--                                        class="fa-solid fa-uikit"></span></div>--}}
+            {{--                            @endif--}}
+            {{--                            <h2>{{$servicec->tools}} Development</h2>--}}
+            {{--                            <p align="justify">{{$servicec->description}}</p>--}}
+            {{--                            <a href="#" class="btn-custom">Thank You</a>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
 
-{{--                </div>--}}
-{{--            @endforeach--}}
+            {{--                </div>--}}
+            {{--            @endforeach--}}
         </div>
     </div>
 </section>
@@ -332,7 +332,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-{{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
+                                {{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -362,27 +362,27 @@
             </div>
         </div>
         <div class="row">
-{{--            @foreach($result as $projects)--}}
-{{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
-{{--                    <div class="col-md-4">--}}
+            {{--            @foreach($result as $projects)--}}
+            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
+            {{--                    <div class="col-md-4">--}}
 
-{{--                        <div class="project">--}}
-{{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
-{{--                               class="img image-popup d-flex align-items-center"--}}
-{{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
-{{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
-{{--                                        class="fa fa-plus"></span></div>--}}
-{{--                            </a>--}}
-{{--                            <div class="text">--}}
-{{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
-{{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
-{{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+            {{--                        <div class="project">--}}
+            {{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
+            {{--                               class="img image-popup d-flex align-items-center"--}}
+            {{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
+            {{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
+            {{--                                        class="fa fa-plus"></span></div>--}}
+            {{--                            </a>--}}
+            {{--                            <div class="text">--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
+            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
 
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            @endforeach--}}
+            {{--                    </div>--}}
+            {{--                </a>--}}
+            {{--            @endforeach--}}
         </div>
     </div>
 </section>
@@ -772,7 +772,7 @@
 <script>
     // JavaScript for typing effect
     const targetElement = document.getElementById('typing');
-    const words = ['Android', 'iOS', 'Hybrid']; // Add more words as needed
+    const words = ['UI', 'UX']; // Add more words as needed
     let wordIndex = 0;
     let charIndex = 0;
     let isTyping = true;

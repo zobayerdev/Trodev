@@ -34,6 +34,13 @@
             opacity: 1;
             transition: opacity 1s ease-in-out;
         }
+
+        .typing-text {
+            color: #072A6C;
+            overflow: hidden;
+            border-right: 2px solid #000; /* Adjust the cursor style */
+            margin-right: 5px;
+        }
     </style>
 </head>
 
@@ -133,7 +140,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-lg-6 ftco-animate">
                 <div class="mt-5">
-                    <h1 class="mb-4">We Build <br>Great Projects</h1>
+                    <h1 class="mb-4">We Build Great <br> <span id="typing" class="typing-text"></span> <br> Projects</h1>
                     <p class="mb-4">We're in this business since 2021 and We provide the best software services</p>
                     <p><a href="{{route('services')}}" class="btn btn-primary">Our Services</a> <a href="{{route('register')}}" class="btn btn-white">Touch Us</a></p>
                 </div>
@@ -159,6 +166,7 @@
                 </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <a href="{{route('websitehomepage')}}">
                 <div class="media block-6 services services-2 d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span
                             class="fa-solid fa-globe"></span></div>
@@ -168,8 +176,10 @@
                             regelialia.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <a href="{{route('softwarehompage')}}">
                 <div class="media block-6 services d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span
                             class="fa-solid fa-computer"></span></div>
@@ -179,8 +189,10 @@
                             regelialia.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <a href="{{route('uiuxhomepage')}}">
                 <div class="media block-6 services services-2 d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span
                             class="fa-solid fa-uikit"></span></div>
@@ -190,8 +202,10 @@
                             regelialia.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <a href="{{route('graphicdesignhomepage')}}">
                 <div class="media block-6 services d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span
                             class="fa-solid fa-pencil-alt"></span></div>
@@ -201,8 +215,10 @@
                             regelialia.</p>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
+                <a href="">
                 <div class="media block-6 services services-2 d-flex">
                     <div class="icon justify-content-center align-items-center d-flex"><span
                             class="fa-solid fa-server"></span></div>
@@ -212,6 +228,7 @@
                             regelialia.</p>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
@@ -750,6 +767,45 @@
 
         return minutes + 'm ' + seconds + 's';
     }
+</script>
+
+<script>
+    // JavaScript for typing effect
+    const targetElement = document.getElementById('typing');
+    const words = ['Software', 'Android','Website','Graphic Design','UI/UX']; // Add more words as needed
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+
+    function type() {
+        if (charIndex < words[wordIndex].length) {
+            targetElement.innerHTML += words[wordIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 150); // Adjust typing speed here
+        } else {
+            isTyping = false;
+            setTimeout(erase, 1000); // Wait for a second before erasing
+        }
+    }
+
+    function erase() {
+        if (!isTyping) {
+            targetElement.innerHTML = words[wordIndex].substring(0, charIndex);
+            isTyping = true;
+        }
+
+        if (charIndex > 0) {
+            targetElement.innerHTML = words[wordIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50); // Adjust erasing speed here
+        } else {
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 500); // Wait for half a second before typing the next word
+        }
+    }
+
+    // Start the typing effect
+    type();
 </script>
 </body>
 </html>

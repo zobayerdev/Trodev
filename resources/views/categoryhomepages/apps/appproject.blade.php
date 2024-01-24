@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Trodev- Services</title>
+    <title>Trodev- Projects</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a87236255f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('user/css/animate.css')}}">
 
     <link rel="stylesheet" href="{{asset('user/css/owl.carousel.min.css')}}">
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3" style="color: white;"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
@@ -85,8 +85,8 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="{{route('apps')}}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>
-                <li class="nav-item active"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item active"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
                 <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>
@@ -101,34 +101,46 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Services</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Projects <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">Projects</h1>
             </div>
         </div>
     </div>
 </section>
 
-<section class="ftco-section bg-half-light">
+<section class="ftco-section">
     <div class="container">
-        <div class="row justify-content-center mb-5 pb-2">
-            <div class="col-md-8 text-center heading-section ftco-animate">
-                <span class="subheading">Our Services</span>
-                <h2 class="mb-4">Industries We Serve</h2>
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+                <span class="subheading">Our Global Work Industries</span>
+                <h2 class="mb-4">Latest Projects</h2>
             </div>
         </div>
         <div class="row">
-            @foreach($service as $services)
+            @foreach($service as $projects)
+
                 <div class="col-md-4">
-                    <div class="services-wrap ftco-animate">
-                        <div class="img" style="background-image: url({{asset('storage/'.$services->image)}});"></div>
-                        <div class="text">
-                            <h2>{{$services->title}}</h2>
-                            <p align="justify">{{$services->description}}</p>
+                    <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">
+                        <div class="project">
+                            <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
+                            </a>
+                            <div class="text">
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>
+                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singleprojectpages',['id'=>$projects->id])}}" style="color: white">Click here</a> </p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+
             @endforeach
         </div>
+
+        <div class="row mt-5 justify-content-center">
+            {{$service->links()}}
+        </div>
+
     </div>
 </section>
 
@@ -168,7 +180,7 @@
                     <ul class="list-unstyled">
                         <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
                         <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('projectpage')}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
                         <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
                         <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
@@ -257,7 +269,6 @@
         </div>
     </div>
 </div>
-
 
 
 <!-- loader -->
