@@ -13,6 +13,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Http\Controllers\UserDashbaord;
+use App\Http\Controllers\CategoryController;
 
 
 Route::get('/',[HomepageController::class,'complete'])->name('home');
@@ -207,3 +208,6 @@ Route::middleware(['auth','verified'])->group(function (){
 });
 
 
+Route::get('/apps',[CategoryController::class,'appshomepage'])->name('apps');
+
+Route::get('/apps/service',[CategoryController::class,'appsservice'])->name('appsservice');
