@@ -301,14 +301,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <form class="form-horizontal" action="{{route('packageinsert')}}" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="{{route('appsoftwareprice')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <h4 class="card-title">Packages Info</h4>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Type</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="details" id="typeSelect" style="width: 100%; height:36px;" required>
+                                        <select class="select2 form-control custom-select" name="type" id="typeSelect" style="width: 100%; height:36px;" required>
                                             <option value="-">Select</option>
                                             <option value="App">App</option>
                                             <option value="Software">Software</option>
@@ -318,7 +318,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Service</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" name="details" id="typeSelect" style="width: 100%; height:36px;" required>
+                                        <select class="select2 form-control custom-select" name="service" id="typeSelect" style="width: 100%; height:36px;" required>
                                             <option value="-">Select</option>
                                             <option value="Pre_Build">Pre Build</option>
                                             <option value="Customize">Customize</option>
@@ -330,43 +330,43 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Validity</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="maintenance" placeholder="number only" id="durationSelect" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="validity" placeholder="number only" id="durationSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email1" class="col-sm-3 text-right control-label col-form-label">Updateable</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="storage" id="monthlycharge" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="updateable" id="monthlycharge" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Protection</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="percentage" id="sslcertificate" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="protection" id="sslcertificate" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 text-right control-label col-form-label">Revision</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="development" id="training" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="revision" id="training" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Administration Setup</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="ui/ux" id="revision" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="administration" id="revision" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Responsive UI/UX</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="logo" id="domains" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="responsive" id="domains" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">A/B Testing</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="card" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="ab_testing" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -378,43 +378,43 @@
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Project Manager</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="revision" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="project" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Website Integration</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="manager" id="storageSelect" placeholder="Dynamic Web View App" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="website" id="storageSelect" placeholder="Dynamic Web View App" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Platform Support</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="edit" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="text" class="form-control" name="platform" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Maintenance Charge</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="planning" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="maintenance" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Monthly Packages</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="request" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="monthly" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Storage Charge (GB)</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="security" id="storageSelect" placeholder="optional" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="storage" id="storageSelect" placeholder="optional" style="width: 100%; height:36px;">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Offer Percentage</label>
                                     <div class="col-md-9">
-                                        <input type="number" class="form-control" name="setup" id="storageSelect" style="width: 100%; height:36px;" required>
+                                        <input type="number" class="form-control" name="offer" id="storageSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
 

@@ -172,6 +172,8 @@ Route::middleware(['admin'])->group(function (){
 
     Route::get('/admin/appandsoftwarepackages/{id}',[AdminDashboard::class,'apppages'])->name('appandsoftware');
 
+    Route::post('/appsoftwareprices',[AdminDashboard::class,'appsoftwareprice'])->name('appsoftwareprice');
+
     Route::get('/admin/packages/editpackages/{id}',[AdminDashboard::class,'editpricing'])->name('editprice');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');

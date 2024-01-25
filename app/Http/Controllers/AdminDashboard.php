@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\AppSoftwarePricing;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
@@ -384,6 +385,31 @@ class AdminDashboard extends Controller
             'security'=>$request->input('security'),
             'hosting'=>$request->input('setup'),
             'sqa'=>$request->input('sqa'),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function appsoftwareprice(Request $request)
+    {
+        AppSoftwarePricing::insert([
+            'type'=>$request->input('type'),
+            'Service'=>$request->input('service'),
+            'Validity'=>$request->input('validity'),
+            'Updateable'=>$request->input('updateable'),
+            'Protection'=>$request->input('protection'),
+            'Revision'=>$request->input('revision'),
+            'Administration_Setup'=>$request->input('administration'),
+            'Responsive_UI_UX'=>$request->input('responsive'),
+            'A_B_Testing'=>$request->input('ab_testing'),
+            'Training_Test'=>$request->input('training'),
+            'Project_Manager'=>$request->input('project'),
+            'Website_Integration'=>$request->input('website'),
+            'Platform_Support'=>$request->input('platform'),
+            'Maintenance_Charge'=>$request->input('maintenance'),
+            'Monthly_Packages'=>$request->input('monthly'),
+            'Storage_Charge'=>$request->input('storage'),
+            'Offer_Percentage'=>$request->input('offer'),
         ]);
 
         return redirect()->back();

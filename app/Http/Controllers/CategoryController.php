@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppSoftwarePricing;
 use App\Models\Offer;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -28,7 +29,9 @@ class CategoryController extends Controller
 
     public function apppricing()
     {
-        return view('categoryhomepages.apps.apppricing');
+        $app = AppSoftwarePricing::where('type','App')
+            ->where('Service','Pre Build')->get();
+        return view('categoryhomepages.apps.apppricing',['prebuild'=>$app]);
     }
     /*App Controller End*/
 
