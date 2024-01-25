@@ -31,7 +31,15 @@ class CategoryController extends Controller
     {
         $app = AppSoftwarePricing::where('type','App')
             ->where('Service','Pre Build')->get();
-        return view('categoryhomepages.apps.apppricing',['prebuild'=>$app]);
+        $app2 = AppSoftwarePricing::where('type','App')
+            ->where('Service','Customize')->get();
+        $app3 = AppSoftwarePricing::where('type','App')
+            ->where('Service','Dynamic')->get();
+        return view('categoryhomepages.apps.apppricing',[
+            'prebuild'=>$app,
+            'customize'=>$app2,
+            'dynamic'=>$app3
+        ]);
     }
     /*App Controller End*/
 

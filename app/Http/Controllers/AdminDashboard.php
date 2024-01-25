@@ -430,10 +430,8 @@ class AdminDashboard extends Controller
         $user = Auth::guard('admin')->user();
         if ($user->id == $id) {
             $all = Pricing::all();
-            $pack = Pricing::where('type','Basic')->first();
-            $pack2 = Pricing::where('type','Standard')->first();
-            $pack3 = Pricing::where('type','Premium')->first();
-            return view('admin.editprice', ['id'=>$user,'price'=>$all,'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
+            $app = AppSoftwarePricing::all();
+            return view('admin.editprice', ['id'=>$user,'price'=>$all, 'app'=>$app]);
         }
     }
 

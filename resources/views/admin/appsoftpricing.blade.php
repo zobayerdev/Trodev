@@ -320,7 +320,7 @@
                                     <div class="col-md-9">
                                         <select class="select2 form-control custom-select" name="service" id="typeSelect" style="width: 100%; height:36px;" required>
                                             <option value="-">Select</option>
-                                            <option value="Pre_Build">Pre Build</option>
+                                            <option value="Pre Build">Pre Build</option>
                                             <option value="Customize">Customize</option>
                                             <option value="Dynamic">Dynamic</option>
                                         </select>

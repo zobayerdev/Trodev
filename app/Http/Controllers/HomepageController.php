@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppSoftwarePricing;
 use App\Models\Blog;
 use App\Models\Employee;
 use App\Models\Offer;
@@ -125,10 +126,24 @@ class HomepageController extends Controller
         $pack = Pricing::where('type','Basic')->get();
         $pack2 = Pricing::where('type','Standard')->get();
         $pack3 = Pricing::where('type','Premium')->get();
-
+        $app = AppSoftwarePricing::where('type','App')
+            ->where('Service','Pre Build')->get();
+        $app2 = AppSoftwarePricing::where('type','App')
+            ->where('Service','Customize')->get();
+        $app3 = AppSoftwarePricing::where('type','App')
+            ->where('Service','Dynamic')->get();
         $proj = Project::take(3)->get();
 
-        return view('projectpage',['id'=>$project, 'proj' =>$proj, 'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
+        return view('projectpage',[
+            'id'=>$project,
+            'proj' =>$proj,
+            'basic' =>$pack,
+            'premium'=>$pack3,
+            'standard'=> $pack2,
+            'prebuild' => $app,
+            'customize'=>$app2,
+            'dynamic'=>$app3
+        ]);
     }
 
     public function pricingpages()
