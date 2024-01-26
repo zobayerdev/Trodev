@@ -744,6 +744,250 @@
                                     @endforeach
                                 </div>
                             </div>
+
+                        @elseif($id->type === 'Software')
+                            <div class="row">
+                                <div class="col-md-4 monthly-package">
+                                    @foreach($software as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge + $id->price;
+
+                                                    $format = number_format($total);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <p>Maintenance Charge:- {{$servicec->Maintenance_Charge}}Tk</p>
+                                                <p>Monthly Packages:- {{$servicec->Monthly_Packages}}Tk</p>
+                                                @if($servicec->Storage_Charge !== 0)
+                                                    <p>Storage Charges:- {{$servicec->Storage_Charge}}Tk</p>
+                                                @endif
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                                <div class="col-md-4 monthly-package">
+                                    @foreach($software2 as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge + $id->price;
+
+                                                    $format = number_format($total);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <p>Maintenance Charge:- {{$servicec->Maintenance_Charge}}Tk</p>
+                                                <p>Monthly Packages:- {{$servicec->Monthly_Packages}}Tk</p>
+                                                @if($servicec->Storage_Charge !== 0)
+                                                    <p>Storage Charges:- {{$servicec->Storage_Charge}}Tk</p>
+                                                @endif
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                                <div class="col-md-4 monthly-package">
+                                    @foreach($software3 as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge + $id->price;
+
+                                                    $format = number_format($total);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <p>Maintenance Charge:- {{$servicec->Maintenance_Charge}}Tk</p>
+                                                <p>Monthly Packages:- {{$servicec->Monthly_Packages}}Tk</p>
+                                                @if($servicec->Storage_Charge !== 0)
+                                                    <p>Storage Charges:- {{$servicec->Storage_Charge}}Tk</p>
+                                                @endif
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 yearly-package">
+                                    @foreach($software as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge;
+
+                                                    $yearly = $total*12;
+
+                                                    $off = $yearly*($servicec->Offer_Percentage/100)+$yearly;
+
+                                                    $totals = $id->price + $off;
+
+                                                    $format = number_format($totals);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                                <div class="col-md-4 yearly-package">
+                                    @foreach($software2 as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge;
+
+                                                    $yearly = $total*12;
+
+                                                    $off = $yearly*($servicec->Offer_Percentage/100)+$yearly;
+
+                                                    $totals = $id->price + $off;
+
+                                                    $format = number_format($totals);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                                <div class="col-md-4 yearly-package">
+                                    @foreach($software3 as $servicec)
+                                        <div class="services-wrap ftco-animate custom-card-size">
+                                            <div class="text" style="color: black; text-align: left">
+                                                @php
+                                                    $total = $servicec->Maintenance_Charge + $servicec->Monthly_Packages + $servicec->Storage_Charge;
+
+                                                    $yearly = $total*12;
+
+                                                    $off = $yearly*($servicec->Offer_Percentage/100)+$yearly;
+
+                                                    $totals = $id->price + $off;
+
+                                                    $format = number_format($totals);
+                                                @endphp
+
+                                                <h3 style="text-align: center">{{$servicec->Service}}</h3>
+                                                <h1>{{$format}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                                                <h3>{{$servicec->Validity}} Years</h3>
+                                                <p>App Activation Price included</p>
+                                                <strong>What's included?</strong>
+                                                <p>Updateable:- <strong>{{$servicec->Updateable}}</strong></p>
+                                                <p>Protection:- <strong>{{$servicec->Protection}}</strong></p>
+                                                <p>Revision:- <strong>{{$servicec->Revision}}</strong></p>
+                                                <p>Administration Setup:- <strong>{{$servicec->Administration_Setup}}</strong></p>
+                                                <p>Responsive UI/UX:- <strong>{{$servicec->Responsive_UI_UX}}</strong></p>
+                                                <p>A/B Testing:- <strong>{{$servicec->A_B_Testing}}</strong></p>
+                                                <p>Training Test:- <strong>{{$servicec->Training_Test}}</strong></p>
+                                                <p>Project Manager:- <strong>{{$servicec->Project_Manager}}</strong></p>
+                                                <p>Website Integration:- <strong>{{$servicec->Website_Integration}}</strong></p>
+                                                <p>Platform Support:- <strong>{{$servicec->Platform_Support}}</strong></p>
+
+                                                <div class="card-bottom">
+                                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                </div>
+                            </div>
                         @endif
                     </div>
                 </section>

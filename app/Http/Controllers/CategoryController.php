@@ -12,7 +12,8 @@ class CategoryController extends Controller
     /*App Controller Start*/
     public function appshomepage()
     {
-        return view('categoryhomepages.apps.apps');
+        $service = Offer::where('tools','App')->take(3)->get();
+        return view('categoryhomepages.apps.apps',['service'=>$service]);
     }
 
     public function appsservice()
@@ -46,7 +47,8 @@ class CategoryController extends Controller
     /*Software Controller Start*/
     public function softwarehompage()
     {
-        return view('categoryhomepages.software.software');
+        $service = Offer::where('tools','Software')->take(3)->get();
+        return view('categoryhomepages.software.software',['service'=>$service]);
     }
 
     public function softwaresservice()
@@ -63,14 +65,25 @@ class CategoryController extends Controller
 
     public function softwarepricing()
     {
-        return view('categoryhomepages.software.softwarepricing');
+        $software = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Pre Build')->get();
+        $software2 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Customize')->get();
+        $software3 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Dynamic')->get();
+        return view('categoryhomepages.software.softwarepricing',[
+            'software'=>$software,
+            'software2'=>$software2,
+            'software3'=>$software3,
+        ]);
     }
     /*Software Controller End*/
 
     /*Website Controller Start*/
     public function websitehomepage()
     {
-        return view('categoryhomepages.website.website');
+        $service = Offer::where('tools','Website')->take(3)->get();
+        return view('categoryhomepages.website.website',['service'=>$service]);
     }
 
     public function websiteproject()

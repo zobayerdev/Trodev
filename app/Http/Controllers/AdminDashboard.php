@@ -438,7 +438,6 @@ class AdminDashboard extends Controller
     public function basicupdate(Request $request)
     {
         Pricing::where('id',$request->input('id'))->update([
-            'type'=>$request->input('type'),
             'maintainance'=>$request->input('maintainance'),
             'storage'=>$request->input('storage'),
             'peroff'=>$request->input('peroff'),
@@ -462,24 +461,23 @@ class AdminDashboard extends Controller
 
     public function standaradsupdate(Request $request)
     {
-        Pricing::where('id',$request->input('id'))->update([
-            'type'=>$request->input('type'),
-            'maintainance'=>$request->input('maintainance'),
-            'storage'=>$request->input('storage'),
-            'peroff'=>$request->input('peroff'),
-            'development'=>$request->input('development'),
-            'UI_UX'=>$request->input('UI_UX'),
-            'logo'=>$request->input('logo'),
-            'business_card'=>$request->input('business_card'),
-            'training_time'=>$request->input('training_time'),
-            'revision'=>$request->input('revision'),
-            'project_manager'=>$request->input('project_manager'),
-            'edit_request'=>$request->input('edit_request'),
-            'technical'=>$request->input('technical'),
-            'development_request'=>$request->input('development_request'),
-            'security'=>$request->input('security'),
-            'hosting'=>$request->input('hosting'),
-            'sqa'=>$request->input('sqa'),
+        AppSoftwarePricing::where('id',$request->input('id'))->update([
+            'Maintenance_Charge'=>$request->input('Maintenance_Charge'),
+            'Storage_Charge'=>$request->input('Storage_Charge'),
+            'Monthly_Packages'=>$request->input('Monthly_Packages'),
+            'Offer_Percentage'=>$request->input('Offer_Percentage'),
+            'Service'=>$request->input('Service'),
+            'Validity'=>$request->input('Validity'),
+            'Updateable'=>$request->input('Updateable'),
+            'Protection'=>$request->input('Protection'),
+            'Revision'=>$request->input('Revision'),
+            'Administration_Setup'=>$request->input('Administration_Setup'),
+            'Responsive_UI_UX'=>$request->input('Responsive_UI_UX'),
+            'A_B_Testing'=>$request->input('A_B_Testing'),
+            'Training_Test'=>$request->input('Training_Test'),
+            'Project_Manager'=>$request->input('Project_Manager'),
+            'Website_Integration'=>$request->input('Website_Integration'),
+            'Platform_Support'=>$request->input('Platform_Support'),
         ]);
 
         return redirect()->back();
@@ -487,24 +485,23 @@ class AdminDashboard extends Controller
 
     public function goldupdate(Request $request)
     {
-        Pricing::where('id',$request->input('id'))->update([
-            'type'=>$request->input('type'),
-            'maintainance'=>$request->input('maintainance'),
-            'storage'=>$request->input('storage'),
-            'peroff'=>$request->input('peroff'),
-            'development'=>$request->input('development'),
-            'UI_UX'=>$request->input('UI_UX'),
-            'logo'=>$request->input('logo'),
-            'business_card'=>$request->input('business_card'),
-            'training_time'=>$request->input('training_time'),
-            'revision'=>$request->input('revision'),
-            'project_manager'=>$request->input('project_manager'),
-            'edit_request'=>$request->input('edit_request'),
-            'technical'=>$request->input('technical'),
-            'development_request'=>$request->input('development_request'),
-            'security'=>$request->input('security'),
-            'hosting'=>$request->input('hosting'),
-            'sqa'=>$request->input('sqa'),
+        AppSoftwarePricing::where('id',$request->input('id'))->update([
+            'Maintenance_Charge'=>$request->input('Maintenance_Charge'),
+            'Storage_Charge'=>$request->input('Storage_Charge'),
+            'Monthly_Packages'=>$request->input('Monthly_Packages'),
+            'Offer_Percentage'=>$request->input('Offer_Percentage'),
+            'Service'=>$request->input('Service'),
+            'Validity'=>$request->input('Validity'),
+            'Updateable'=>$request->input('Updateable'),
+            'Protection'=>$request->input('Protection'),
+            'Revision'=>$request->input('Revision'),
+            'Administration_Setup'=>$request->input('Administration_Setup'),
+            'Responsive_UI_UX'=>$request->input('Responsive_UI_UX'),
+            'A_B_Testing'=>$request->input('A_B_Testing'),
+            'Training_Test'=>$request->input('Training_Test'),
+            'Project_Manager'=>$request->input('Project_Manager'),
+            'Website_Integration'=>$request->input('Website_Integration'),
+            'Platform_Support'=>$request->input('Platform_Support'),
         ]);
 
         return redirect()->back();

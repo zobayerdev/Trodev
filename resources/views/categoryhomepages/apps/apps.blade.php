@@ -276,36 +276,19 @@
             </div>
         </div>
         <div class="row">
-{{--            @foreach($service as $servicec)--}}
-{{--                <div class="col-md-4">--}}
+            @foreach($service as $servicec)
+                <div class="col-md-4">
 
-{{--                    <div class="services-wrap ftco-animate">--}}
-{{--                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>--}}
-{{--                        <div class="text">--}}
-{{--                            @if($servicec->tools === 'App')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-mobile"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Software')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-computer"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Website')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-globe"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'Graphic-Design')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-pencil-alt"></span></div>--}}
-{{--                            @elseif($servicec->tools === 'UI/UX')--}}
-{{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-{{--                                        class="fa-solid fa-uikit"></span></div>--}}
-{{--                            @endif--}}
-{{--                            <h2>{{$servicec->tools}} Development</h2>--}}
-{{--                            <p align="justify">{{$servicec->description}}</p>--}}
-{{--                            <a href="#" class="btn-custom">Thank You</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
+                        <div class="text">
+                            <h2>{{$servicec->title}}</h2>
+                            <p align="justify">{{$servicec->description}}</p>
+                        </div>
+                    </div>
 
-{{--                </div>--}}
-{{--            @endforeach--}}
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

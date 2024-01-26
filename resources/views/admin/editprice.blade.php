@@ -314,30 +314,35 @@
                                 <th>Security</th>
                                 <th>Hosting & Domain Setup</th>
                                 <th>Quality Assurance</th>
+                                <th>Update</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($price as $clients)
-
-                                <tr>
-                                    <td>{{$clients->type}}</td>
-                                    <td><input type="number" name="maintainance" value="{{$clients->maintainance}}"></td>
-                                    <td><input type="number" name="storage" value="{{$clients->storage}}"></td>
-                                    <td><input type="number" name="peroff" value="{{$clients->peroff}}"></td>
-                                    <td><input type="text" name="development" value="{{$clients->development}}"></td>
-                                    <td><input type="text" name="UI_UX" value="{{$clients->UI_UX}}"></td>
-                                    <td><input type="text" name="logo" value="{{$clients->logo}}"></td>
-                                    <td><input type="text" name="business_card" value="{{$clients->business_card}}"></td>
-                                    <td><input type="text" name="training_time" value="{{$clients->training_time}}"></td>
-                                    <td><input type="text" name="revision" value="{{$clients->revision}}"></td>
-                                    <td><input type="text" name="project_manager" value="{{$clients->project_manager}}"></td>
-                                    <td><input type="text" name="edit_request" value="{{$clients->edit_request}}"></td>
-                                    <td><input type="text" name="technical" value="{{$clients->technical}}"></td>
-                                    <td><input type="text" name="development_request" value="{{$clients->development_request}}"></td>
-                                    <td><input type="text" name="security" value="{{$clients->security}}"></td>
-                                    <td><input type="text" name="hosting" value="{{$clients->hosting}}"></td>
-                                    <td><input type="text" name="sqa" value="{{$clients->sqa}}"></td>
-                                </tr>
+                                <form action="{{route('basicupdate')}}" method="post">
+                                    @csrf
+                                        <tr>
+                                            <input type="hidden" name="id" value="{{$clients->id}}">
+                                            <td style="color: red; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                            <td><input type="number" name="maintainance" value="{{$clients->maintainance}}"></td>
+                                            <td><input type="number" name="storage" value="{{$clients->storage}}"></td>
+                                            <td><input type="number" name="peroff" value="{{$clients->peroff}}"></td>
+                                            <td><input type="text" name="development" value="{{$clients->development}}"></td>
+                                            <td><input type="text" name="UI_UX" value="{{$clients->UI_UX}}"></td>
+                                            <td><input type="text" name="logo" value="{{$clients->logo}}"></td>
+                                            <td><input type="text" name="business_card" value="{{$clients->business_card}}"></td>
+                                            <td><input type="text" name="training_time" value="{{$clients->training_time}}"></td>
+                                            <td><input type="text" name="revision" value="{{$clients->revision}}"></td>
+                                            <td><input type="text" name="project_manager" value="{{$clients->project_manager}}"></td>
+                                            <td><input type="text" name="edit_request" value="{{$clients->edit_request}}"></td>
+                                            <td><input type="text" name="technical" value="{{$clients->technical}}"></td>
+                                            <td><input type="text" name="development_request" value="{{$clients->development_request}}"></td>
+                                            <td><input type="text" name="security" value="{{$clients->security}}"></td>
+                                            <td><input type="text" name="hosting" value="{{$clients->hosting}}"></td>
+                                            <td><input type="text" name="sqa" value="{{$clients->sqa}}"></td>
+                                            <td><button type="submit" class="btn btn-default">Update</button></td>
+                                        </tr>
+                                </form>
                             @endforeach
                             </tbody>
                         </table>
@@ -370,30 +375,64 @@
                                 <th>Project Manager</th>
                                 <th>Website Integration</th>
                                 <th>Platform_Support</th>
+                                <th>Update</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($app as $clients)
-
+                                @if($clients->type === 'App')
+                                    <form action="{{route('standardupdate')}}" method="post">
+                                        @csrf
                                 <tr>
-                                    <td>{{$clients->type}}</td>
-                                    <td>{{$clients->Maintenance_Charge}}</td>
-                                    <td>{{$clients->Storage_Charge}}</td>
-                                    <td>{{$clients->Monthly_Packages}}</td>
-                                    <td>{{$clients->Offer_Percentage}}</td>
-                                    <td>{{$clients->Service}}</td>
-                                    <td>{{$clients->Validity}}</td>
-                                    <td>{{$clients->Updateable}}</td>
-                                    <td>{{$clients->Protection}}</td>
-                                    <td>{{$clients->Revision}}</td>
-                                    <td>{{$clients->Administration_Setup}}</td>
-                                    <td>{{$clients->Responsive_UI_UX}}</td>
-                                    <td>{{$clients->A_B_Testing}}</td>
-                                    <td>{{$clients->Training_Test}}</td>
-                                    <td>{{$clients->Project_Manager}}</td>
-                                    <td>{{$clients->Website_Integration}}</td>
-                                    <td>{{$clients->Platform_Support}}</td>
+                                    <input type="hidden" name="id" value="{{$clients->id}}">
+                                    <td style="color: blue; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                    <td><input type="text" name="Maintenance_Charge" value="{{$clients->Maintenance_Charge}}"></td>
+                                    <td><input type="text" name="Storage_Charge" value="{{$clients->Storage_Charge}}"></td>
+                                    <td><input type="text" name="Monthly_Packages" value="{{$clients->Monthly_Packages}}"></td>
+                                    <td><input type="text" name="Offer_Percentage" value="{{$clients->Offer_Percentage}}"></td>
+                                    <td><input type="text" name="Service" value="{{$clients->Service}}"></td>
+                                    <td><input type="text" name="Validity" value="{{$clients->Validity}}"></td>
+                                    <td><input type="text" name="Updateable" value="{{$clients->Updateable}}"></td>
+                                    <td><input type="text" name="Protection" value="{{$clients->Protection}}"></td>
+                                    <td><input type="text" name="Revision" value="{{$clients->Revision}}"></td>
+                                    <td><input type="text" name="Administration_Setup" value="{{$clients->Administration_Setup}}"></td>
+                                    <td><input type="text" name="Responsive_UI_UX" value="{{$clients->Responsive_UI_UX}}"></td>
+                                    <td><input type="text" name="A_B_Testing" value="{{$clients->A_B_Testing}}"></td>
+                                    <td><input type="text" name="Training_Test" value="{{$clients->Training_Test}}"></td>
+                                    <td><input type="text" name="Project_Manager" value="{{$clients->Project_Manager}}"></td>
+                                    <td><input type="text" name="Website_Integration" value="{{$clients->Website_Integration}}"></td>
+                                    <td><input type="text" name="Platform_Support" value="{{$clients->Platform_Support}}"></td>
+                                    <td><button type="submit" class="btn btn-default">Update</button></td>
                                 </tr>
+                                    </form>
+                                @endif
+
+                                @if($clients->type === 'Software')
+                                    <form action="{{route('premiumupdate')}}" method="post">
+                                        @csrf
+                                    <tr>
+                                        <input type="hidden" name="id" value="{{$clients->id}}">
+                                        <td style="color: #6f42c1; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                        <td><input type="text" name="Maintenance_Charge" value="{{$clients->Maintenance_Charge}}"></td>
+                                        <td><input type="text" name="Storage_Charge" value="{{$clients->Storage_Charge}}"></td>
+                                        <td><input type="text" name="Monthly_Packages" value="{{$clients->Monthly_Packages}}"></td>
+                                        <td><input type="text" name="Offer_Percentage" value="{{$clients->Offer_Percentage}}"></td>
+                                        <td><input type="text" name="Service" value="{{$clients->Service}}"></td>
+                                        <td><input type="text" name="Validity" value="{{$clients->Validity}}"></td>
+                                        <td><input type="text" name="Updateable" value="{{$clients->Updateable}}"></td>
+                                        <td><input type="text" name="Protection" value="{{$clients->Protection}}"></td>
+                                        <td><input type="text" name="Revision" value="{{$clients->Revision}}"></td>
+                                        <td><input type="text" name="Administration_Setup" value="{{$clients->Administration_Setup}}"></td>
+                                        <td><input type="text" name="Responsive_UI_UX" value="{{$clients->Responsive_UI_UX}}"></td>
+                                        <td><input type="text" name="A_B_Testing" value="{{$clients->A_B_Testing}}"></td>
+                                        <td><input type="text" name="Training_Test" value="{{$clients->Training_Test}}"></td>
+                                        <td><input type="text" name="Project_Manager" value="{{$clients->Project_Manager}}"></td>
+                                        <td><input type="text" name="Website_Integration" value="{{$clients->Website_Integration}}"></td>
+                                        <td><input type="text" name="Platform_Support" value="{{$clients->Platform_Support}}"></td>
+                                        <td><button type="submit" class="btn btn-default">Update</button></td>
+                                    </tr>
+                                    </form>
+                                @endif
                             @endforeach
                             </tbody>
                         </table>

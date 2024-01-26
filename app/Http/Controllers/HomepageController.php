@@ -132,6 +132,13 @@ class HomepageController extends Controller
             ->where('Service','Customize')->get();
         $app3 = AppSoftwarePricing::where('type','App')
             ->where('Service','Dynamic')->get();
+
+        $software = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Pre Build')->get();
+        $software2 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Customize')->get();
+        $software3 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Dynamic')->get();
         $proj = Project::take(3)->get();
 
         return view('projectpage',[
@@ -142,7 +149,10 @@ class HomepageController extends Controller
             'standard'=> $pack2,
             'prebuild' => $app,
             'customize'=>$app2,
-            'dynamic'=>$app3
+            'dynamic'=>$app3,
+            'software'=>$software,
+            'software2'=>$software2,
+            'software3'=>$software3,
         ]);
     }
 
