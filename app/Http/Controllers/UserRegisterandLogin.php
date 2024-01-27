@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
+use App\Events\UserRegistered;
 
 class UserRegisterandLogin extends Controller
 {
@@ -32,11 +33,14 @@ class UserRegisterandLogin extends Controller
             }
             else{
                 $hash = Hash::make($password);
-                User::insert([
+                $user = User::insert([
                     'name' => $request->input('name'),
                     'email' => $request->input('email'),
                     'password' => $hash
                 ]);
+
+
+
 
                 return redirect()->back();
             }
@@ -58,7 +62,12 @@ class UserRegisterandLogin extends Controller
     public function dashboard($id,Request $request)
     {
         $user = User::find($id);
-
+        $users = User::where('id',$user->id)->
+            where('welcome_message_sent','false')->first();
+        if($users){
+            $users->update(['welcome_message_sent'=>'true']);
+            event(new UserRegistered($user->id));
+        }
         $ipaddress = $request->ip();
 
         $check = User::where('id',$user->id)
