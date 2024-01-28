@@ -101,7 +101,7 @@
                 <li class="nav-item"><a href="{{route('servicepages',['id'=>$id->id])}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('projectpages',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{route('blogspages',['id'=>$id->id])}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('pricing',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>
+{{--                <li class="nav-item"><a href="{{route('pricing',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>--}}
                 <li class="nav-item"><a href="{{route('conatactpage',['id'=>$id->id])}}" class="nav-link">Contact</a></li>
             </ul>
             <a href="{{route('logout')}}" class="btn-custom">Logout</a>
@@ -130,70 +130,82 @@
     <div class="container">
         <div class="row no-gutters d-flex">
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-mobile"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">App Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="{{route('app',['id'=>$id->id])}}">
+                    <div class="media block-6 services d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-mobile"></span></div>
+                        <div  class="media-body pl-4">
+                            <h3 class="heading mb-3">App Development</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-globe"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Web Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="{{route('websitehomepage')}}">
+                    <div class="media block-6 services services-2 d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-globe"></span></div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading mb-3">Web Development</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-computer"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Software Development</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="{{route('softwarehompage')}}">
+                    <div class="media block-6 services d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-computer"></span></div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading mb-3">Software Development</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-uikit"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">UI/UX</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="{{route('uiuxhomepage')}}">
+                    <div class="media block-6 services services-2 d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-uikit"></span></div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading mb-3">UI/UX</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-pencil-alt"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Graphics Design</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="{{route('graphicdesignhomepages',['id'=>$id->id])}}">
+                    <div class="media block-6 services d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-pencil-alt"></span></div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading mb-3">Graphics Design</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <div class="media block-6 services services-2 d-flex">
-                    <div class="icon justify-content-center align-items-center d-flex"><span
-                            class="fa-solid fa-server"></span></div>
-                    <div class="media-body pl-4">
-                        <h3 class="heading mb-3">Server Administration</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                <a href="">
+                    <div class="media block-6 services services-2 d-flex">
+                        <div class="icon justify-content-center align-items-center d-flex"><span
+                                class="fa-solid fa-server"></span></div>
+                        <div class="media-body pl-4">
+                            <h3 class="heading mb-3">Server Administration</h3>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia.</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

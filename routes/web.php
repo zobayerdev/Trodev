@@ -172,6 +172,8 @@ Route::middleware(['admin'])->group(function (){
 
     Route::get('/admin/appandsoftwarepackages/{id}',[AdminDashboard::class,'apppages'])->name('appandsoftware');
 
+    Route::post('/appsoftwareprices',[AdminDashboard::class,'appsoftwareprice'])->name('appsoftwareprice');
+
     Route::get('/admin/packages/editpackages/{id}',[AdminDashboard::class,'editpricing'])->name('editprice');
 
     Route::post('/packageinsert',[AdminDashboard::class,'priceinsert'])->name('packageinsert');
@@ -207,6 +209,22 @@ Route::middleware(['auth','verified'])->group(function (){
     Route::get('/pricing/{id}',[UserDashbaord::class,'pricing'])->name('pricing');
 
     Route::post('/sendmsgs',[UserDashbaord::class,'send_msgs'])->name('sendmsgs');
+
+    Route::get('/apps/{id}',[CategoryController::class,'appshome'])->name('app');
+
+    Route::get('/apps/service/{id}',[CategoryController::class,'appsservices'])->name('appsservices');
+
+    Route::get('/apps/project/{id}',[CategoryController::class,'appprojects'])->name('appprojects');
+
+    Route::get('/apps/price/{id}',[CategoryController::class,'apppricings'])->name('apppricings');
+
+    Route::get('/graphic-design/{id}',[CategoryController::class,'graphicdesignhomepages'])->name('graphicdesignhomepages');
+
+    Route::get('/graphic-design/service/{id}',[CategoryController::class,'graphicdesignservices'])->name('graphicdesignservices');
+
+    Route::get('/graphic-design/project/{id}',[CategoryController::class,'graphicdesignprojects'])->name('graphicdesignprojects');
+
+    Route::get('/graphic-design/price/{id}',[CategoryController::class,'graphicdesignpricings'])->name('graphicdesignpricings');
 });
 
 /*Apps Start*/

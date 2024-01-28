@@ -246,7 +246,9 @@
                     </li>
                     <li class="sidebar-item"><a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Pricing</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Website Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('appandsoftware',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> App & Software Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
                             <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Price List </span></a></li>
                         </ul>
                     </li>
@@ -288,425 +290,156 @@
         </div>
 
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                <div class="card">
-                <form class="form-horizontal" action="{{route('basicupdate')}}" method="post">
-                    @csrf
-                    <div class="card-body">
-                        <h4 class="card-title">Basic Packages</h4>
-
-                        <input type="text" name="id" value="{{$basic->id}}">
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Type</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="type" id="fname" value="{{$basic->type}}" readonly>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Maintence Charge</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="maintainance" id="fname" value="{{$basic->maintainance}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Storage Charge</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="storage" id="fname" value="{{$basic->storage}}">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Total</label>
-                            <div class="col-sm-9">
-                                @php
-
-                                $total = $basic->maintainance+$basic->storage;
-
-                                $format = number_format($total);
-
-                                $year = $total*12;
-
-                                $now = $year*($basic->peroff/100)+$year;
-
-                                $formats = number_format($now);
-                                    @endphp
-                                <input type="text" class="form-control" id="fname" value="{{$format}}/month" readonly>
-                                <input type="text" class="form-control" id="fname" value="{{$formats}}/year" readonly>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Percentage</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="peroff" id="fname" value="{{$basic->peroff}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development (Full-Stack)</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="development" id="fname" value="{{$basic->development}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">UI/UX Design</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="UI_UX" id="fname" value="{{$basic->UI_UX}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Logo Design</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="logo" id="fname" value="{{$basic->logo}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Business Card Design</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="business_card" id="fname" value="{{$basic->business_card}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Training Time</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="training_time" id="fname" value="{{$basic->training_time}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Revision</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="revision" id="fname" value="{{$basic->revision}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Project Manager</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="project_manager" id="fname" value="{{$basic->project_manager}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Edit Request</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="edit_request" id="fname" value="{{$basic->edit_request}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Technical Planning</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="technical" id="fname" value="{{$basic->technical}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development Request</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="development_request" id="fname" value="{{$basic->development_request}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Security</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="security" id="fname" value="{{$basic->security}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Hosting & Domain Setup</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="hosting" id="fname" value="{{$basic->hosting}}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="fname" class="col-sm-3 text-right control-label col-form-label">Quality Assurance</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="sqa" id="fname" value="{{$basic->sqa}}">
-                            </div>
-                        </div>
-
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Website Pricing</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Maintence Charge</th>
+                                <th>Storage Charge</th>
+                                <th>Percentage</th>
+                                <th>Development (Full-Stack)</th>
+                                <th>UI/UX Design</th>
+                                <th>Logo Design</th>
+                                <th>Business Card Design</th>
+                                <th>Training Time</th>
+                                <th>Revision</th>
+                                <th>Project Manager</th>
+                                <th>Edit Request</th>
+                                <th>Technical Planning</th>
+                                <th>Development Request</th>
+                                <th>Security</th>
+                                <th>Hosting & Domain Setup</th>
+                                <th>Quality Assurance</th>
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($price as $clients)
+                                <form action="{{route('basicupdate')}}" method="post">
+                                    @csrf
+                                        <tr>
+                                            <input type="hidden" name="id" value="{{$clients->id}}">
+                                            <td style="color: red; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                            <td><input type="number" name="maintainance" value="{{$clients->maintainance}}"></td>
+                                            <td><input type="number" name="storage" value="{{$clients->storage}}"></td>
+                                            <td><input type="number" name="peroff" value="{{$clients->peroff}}"></td>
+                                            <td><input type="text" name="development" value="{{$clients->development}}"></td>
+                                            <td><input type="text" name="UI_UX" value="{{$clients->UI_UX}}"></td>
+                                            <td><input type="text" name="logo" value="{{$clients->logo}}"></td>
+                                            <td><input type="text" name="business_card" value="{{$clients->business_card}}"></td>
+                                            <td><input type="text" name="training_time" value="{{$clients->training_time}}"></td>
+                                            <td><input type="text" name="revision" value="{{$clients->revision}}"></td>
+                                            <td><input type="text" name="project_manager" value="{{$clients->project_manager}}"></td>
+                                            <td><input type="text" name="edit_request" value="{{$clients->edit_request}}"></td>
+                                            <td><input type="text" name="technical" value="{{$clients->technical}}"></td>
+                                            <td><input type="text" name="development_request" value="{{$clients->development_request}}"></td>
+                                            <td><input type="text" name="security" value="{{$clients->security}}"></td>
+                                            <td><input type="text" name="hosting" value="{{$clients->hosting}}"></td>
+                                            <td><input type="text" name="sqa" value="{{$clients->sqa}}"></td>
+                                            <td><button type="submit" class="btn btn-default">Update</button></td>
+                                        </tr>
+                                </form>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="border-top">
-                        <div class="card-body">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <form class="form-horizontal" action="{{route('standardupdate')}}" method="post">
-                            @csrf
-                            <div class="card-body">
-                                <h4 class="card-title">Standard Packages</h4>
-                                <input type="text" name="id" value="{{$standard->id}}">
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Type</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="type" id="fname" value="{{$standard->type}}" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Maintence Charge</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="maintainance" id="fname" value="{{$standard->maintainance}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Storage Charge</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="storage" id="fname" value="{{$standard->storage}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Total</label>
-                                    <div class="col-sm-9">
-                                        @php
-
-                                            $total = $standard->maintainance+$standard->storage;
-
-                                            $format = number_format($total);
-
-                                            $year = $total*12;
-
-                                            $now = $year*($standard->peroff/100)+$year;
-
-                                            $formats = number_format($now);
-                                        @endphp
-                                        <input type="text" class="form-control" id="fname" value="{{$format}}/month" readonly>
-                                        <input type="text" class="form-control" id="fname" value="{{$formats}}/year" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Percentage</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="peroff" id="fname" value="{{$standard->peroff}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development (Full-Stack)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="development" id="fname" value="{{$standard->development}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">UI/UX Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="UI_UX" id="fname" value="{{$standard->UI_UX}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Logo Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="logo" id="fname" value="{{$standard->logo}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Business Card Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="business_card" id="fname" value="{{$standard->business_card}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Training Time</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="training_time" id="fname" value="{{$standard->training_time}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Revision</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="revision" id="fname" value="{{$standard->revision}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Project Manager</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="project_manager" id="fname" value="{{$standard->project_manager}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Edit Request</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="edit_request" id="fname" value="{{$standard->edit_request}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Technical Planning</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="technical" id="fname" value="{{$standard->technical}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development Request</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="development_request" id="fname" value="{{$standard->development_request}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Security</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="security" id="fname" value="{{$standard->security}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Hosting & Domain Setup</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="hosting" id="fname" value="{{$standard->hosting}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Quality Assurance</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="sqa" id="fname" value="{{$standard->sqa}}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <form class="form-horizontal" action="{{route('premiumupdate')}}" method="post">
-                            @csrf
-                            <div class="card-body">
-                                <h4 class="card-title">Premium Packages</h4>
-                                <input type="text" name="id" value="{{$premium->id}}">
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Type</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="type" id="fname" value="{{$premium->type}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Maintence Charge</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="maintainance" id="fname" value="{{$premium->maintainance}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Storage Charge</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="storage" id="fname" value="{{$premium->storage}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Total</label>
-                                    <div class="col-sm-9">
-                                        @php
-
-                                            $total = $premium->maintainance+$premium->storage;
-
-                                            $format = number_format($total);
-
-                                            $year = $total*12;
-
-                                            $now = $year*($premium->peroff/100)+$year;
-
-                                            $formats = number_format($now);
-                                        @endphp
-                                        <input type="text" class="form-control" id="fname" value="{{$format}}/month" readonly>
-                                        <input type="text" class="form-control" id="fname" value="{{$formats}}/year" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Percentage</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="peroff" id="fname" value="{{$premium->peroff}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development (Full-Stack)</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="development" id="fname" value="{{$premium->development}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">UI/UX Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="UI_UX" id="fname" value="{{$premium->UI_UX}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Logo Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="logo" id="fname" value="{{$premium->logo}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Business Card Design</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="business_card" id="fname" value="{{$premium->business_card}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Training Time</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="training_time" id="fname" value="{{$premium->training_time}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Revision</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="revision" id="fname" value="{{$premium->revision}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Project Manager</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="project_manager" id="fname" value="{{$premium->project_manager}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Edit Request</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="edit_request" id="fname" value="{{$premium->edit_request}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Technical Planning</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="technical" id="fname" value="{{$premium->technical}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Development Request</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="development_request" id="fname" value="{{$premium->development_request}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Security</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="security" id="fname" value="{{$premium->security}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Hosting & Domain Setup</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="hosting" id="fname" value="{{$premium->hosting}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Quality Assurance</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="sqa" id="fname" value="{{$premium->sqa}}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="border-top">
-                                <div class="card-body">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-
             </div>
 
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">App and Software Pricing</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Maintence Charge</th>
+                                <th>Storage Charge</th>
+                                <th>Monthly Charge</th>
+                                <th>Percentage</th>
+                                <th>Service</th>
+                                <th>Validity</th>
+                                <th>Updateable</th>
+                                <th>Protection</th>
+                                <th>Revision</th>
+                                <th>Administration Setup</th>
+                                <th>Responsive UI/UX</th>
+                                <th>A/B Testing</th>
+                                <th>Training Test</th>
+                                <th>Project Manager</th>
+                                <th>Website Integration</th>
+                                <th>Platform_Support</th>
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($app as $clients)
+                                @if($clients->type === 'App')
+                                    <form action="{{route('standardupdate')}}" method="post">
+                                        @csrf
+                                <tr>
+                                    <input type="hidden" name="id" value="{{$clients->id}}">
+                                    <td style="color: blue; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                    <td><input type="text" name="Maintenance_Charge" value="{{$clients->Maintenance_Charge}}"></td>
+                                    <td><input type="text" name="Storage_Charge" value="{{$clients->Storage_Charge}}"></td>
+                                    <td><input type="text" name="Monthly_Packages" value="{{$clients->Monthly_Packages}}"></td>
+                                    <td><input type="text" name="Offer_Percentage" value="{{$clients->Offer_Percentage}}"></td>
+                                    <td><input type="text" name="Service" value="{{$clients->Service}}"></td>
+                                    <td><input type="text" name="Validity" value="{{$clients->Validity}}"></td>
+                                    <td><input type="text" name="Updateable" value="{{$clients->Updateable}}"></td>
+                                    <td><input type="text" name="Protection" value="{{$clients->Protection}}"></td>
+                                    <td><input type="text" name="Revision" value="{{$clients->Revision}}"></td>
+                                    <td><input type="text" name="Administration_Setup" value="{{$clients->Administration_Setup}}"></td>
+                                    <td><input type="text" name="Responsive_UI_UX" value="{{$clients->Responsive_UI_UX}}"></td>
+                                    <td><input type="text" name="A_B_Testing" value="{{$clients->A_B_Testing}}"></td>
+                                    <td><input type="text" name="Training_Test" value="{{$clients->Training_Test}}"></td>
+                                    <td><input type="text" name="Project_Manager" value="{{$clients->Project_Manager}}"></td>
+                                    <td><input type="text" name="Website_Integration" value="{{$clients->Website_Integration}}"></td>
+                                    <td><input type="text" name="Platform_Support" value="{{$clients->Platform_Support}}"></td>
+                                    <td><button type="submit" class="btn btn-default">Update</button></td>
+                                </tr>
+                                    </form>
+                                @endif
+
+                                @if($clients->type === 'Software')
+                                    <form action="{{route('premiumupdate')}}" method="post">
+                                        @csrf
+                                    <tr>
+                                        <input type="hidden" name="id" value="{{$clients->id}}">
+                                        <td style="color: #6f42c1; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                        <td><input type="text" name="Maintenance_Charge" value="{{$clients->Maintenance_Charge}}"></td>
+                                        <td><input type="text" name="Storage_Charge" value="{{$clients->Storage_Charge}}"></td>
+                                        <td><input type="text" name="Monthly_Packages" value="{{$clients->Monthly_Packages}}"></td>
+                                        <td><input type="text" name="Offer_Percentage" value="{{$clients->Offer_Percentage}}"></td>
+                                        <td><input type="text" name="Service" value="{{$clients->Service}}"></td>
+                                        <td><input type="text" name="Validity" value="{{$clients->Validity}}"></td>
+                                        <td><input type="text" name="Updateable" value="{{$clients->Updateable}}"></td>
+                                        <td><input type="text" name="Protection" value="{{$clients->Protection}}"></td>
+                                        <td><input type="text" name="Revision" value="{{$clients->Revision}}"></td>
+                                        <td><input type="text" name="Administration_Setup" value="{{$clients->Administration_Setup}}"></td>
+                                        <td><input type="text" name="Responsive_UI_UX" value="{{$clients->Responsive_UI_UX}}"></td>
+                                        <td><input type="text" name="A_B_Testing" value="{{$clients->A_B_Testing}}"></td>
+                                        <td><input type="text" name="Training_Test" value="{{$clients->Training_Test}}"></td>
+                                        <td><input type="text" name="Project_Manager" value="{{$clients->Project_Manager}}"></td>
+                                        <td><input type="text" name="Website_Integration" value="{{$clients->Website_Integration}}"></td>
+                                        <td><input type="text" name="Platform_Support" value="{{$clients->Platform_Support}}"></td>
+                                        <td><button type="submit" class="btn btn-default">Update</button></td>
+                                    </tr>
+                                    </form>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
         </div>
         <footer class="footer text-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
