@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Trodev- Contact</title>
+    <title>Trodev- Services</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/a87236255f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{asset('user/css/animate.css')}}">
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3" style="color: white;"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$id->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
             </div>
         </div>
     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
                 <div class="icon d-flex justify-content-center align-items-center">
-                    <span class="fa fa-map"></span>
+                    <span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
                     <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span></p>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
-                <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
+                <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-map"></span>
                 </div>
                 <div class="text pl-3 pl-md-3">
                     <p class="hr"><span>Our Office Location</span></p>
@@ -83,121 +83,51 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('homepage',['id'=>$id->id])}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{{route('aboutus',['id'=>$id->id])}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('servicepages',['id'=>$id->id])}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpages',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="{{route('blogspages',['id'=>$id->id])}}" class="nav-link">Blog</a></li>
-{{--                <li class="nav-item"><a href="{{route('pricing',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>--}}
-                <li class="nav-item active"><a href="{{route('conatactpage',['id'=>$id->id])}}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('softwarehompage')}}" class="nav-link">Home</a></li>
+{{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
+                <li class="nav-item active"><a href="{{route('softwaresservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('softwareproject')}}" class="nav-link">Projects</a></li>
+{{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
+                <li class="nav-item"><a href="{{route('softwarepricing')}}" class="nav-link">Pricing</a></li>
+{{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
-            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');"
-         data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Contact us <i
-                            class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-3 bread">Contact us</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-3 bread">Services</h1>
             </div>
         </div>
     </div>
 </section>
 
-<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+<section class="ftco-section bg-half-light">
     <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <span class="subheading">Contact us</span>
-                <h2 class="mb-4">Message us for more details</h2>
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-8 text-center heading-section ftco-animate">
+                <span class="subheading">Our Services</span>
+                <h2 class="mb-4">Industries We Serve</h2>
             </div>
         </div>
-
-        <div class="row block-9">
-            <div class="col-md-8">
-                <form action="{{route('sendmsgs')}}" class="p-4 p-md-5 contact-form" method="post">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="name" class="form-control" value="{{$id->name}}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="email" class="form-control" value="{{$id->email}}">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="text" name="subject" class="form-control" placeholder="Subject">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <textarea name="msg" id="" cols="30" rows="7" class="form-control"
-                                          placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-
-            <div class="col-md-4 d-flex pl-md-5">
-                <div class="row">
-                    <div class="dbox w-100 d-flex ftco-animate">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="fa fa-map-marker"></span>
-                        </div>
+        <div class="row">
+            @foreach($service as $services)
+                <div class="col-md-4">
+                    <div class="services-wrap ftco-animate">
+                        <div class="img" style="background-image: url({{asset('storage/'.$services->image)}});"></div>
                         <div class="text">
-                            <p><span>Address:</span> H#34/4, Primary School Road, Islampur, Dattapara, House-Building,
-                                Tongi, Gazipur, Bangladesh</p>
-                        </div>
-                    </div>
-                    <div class="dbox w-100 d-flex ftco-animate">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="fa fa-phone"></span>
-                        </div>
-                        <div class="text">
-                            <p class="con"><span>Phone Call</span> <span><a
-                                        href="tel:+8801615257555">+880 1615257555</a></span></p>
-                        </div>
-                    </div>
-                    <div class="dbox w-100 d-flex ftco-animate">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="fa fa-paper-plane"></span>
-                        </div>
-                        <div class="text">
-                            <p><span>Email:</span> <a href="mailto:info@trodev.com">info@trodev.com</a></p>
-                        </div>
-                    </div>
-                    <div class="dbox w-100 d-flex ftco-animate">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="fa fa-globe"></span>
-                        </div>
-                        <div class="text">
-                            <p><span>Website</span> <a href="https://www.trodev.com">www.trodev.com</a></p>
+                            <h2>{{$services->title}}</h2>
+                            <p align="justify">{{$services->description}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div id="map" class="map"></div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -208,9 +138,7 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Today's world is moving with the touch of modernity, different technologies have touched that
-                        touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your
-                        business.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -238,11 +166,11 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('projectpage')}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -252,28 +180,22 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span>
-                            </li>
-                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a>
-                            </li>
-                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span
-                                        class="text">info@trodev.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span></li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a></li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
+
     <div class="container-fluid bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-                    <p class="mb-0">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                        All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
-                            href="https://www.trodev.com" target="_blank">Trodev</a>
+                    <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
@@ -281,13 +203,11 @@
     </div>
 </footer>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close d-flex align-items-center justify-content-center"
-                        data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="fa fa-close"></span>
                 </button>
             </div>
@@ -326,8 +246,7 @@
                     </div>
                     <div class="">
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="4" class="form-control"
-                                      placeholder="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
@@ -339,14 +258,10 @@
     </div>
 </div>
 
+
+
 <!-- loader -->
-<div id="ftco-loader" class="show fullscreen">
-    <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00"/>
-    </svg>
-</div>
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <script src="{{asset('user/js/jquery.min.js')}}"></script>
 <script src="{{asset('user/js/jquery-migrate-3.0.1.min.js')}}"></script>
@@ -361,7 +276,7 @@
 <script src="{{asset('user/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('user/js/jquery.timepicker.min.js')}}"></script>
 <script src="{{asset('user/js/scrollax.min.js')}}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42KP5WIzu51sfgzCzOlYmn3UBCRTRpYo"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="{{asset('user/js/google-map.js')}}"></script>
 
 <script src="{{asset('user/js/main.js')}}"></script>

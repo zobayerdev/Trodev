@@ -18,6 +18,92 @@
     <link rel="stylesheet" href="{{asset('user/css/jquery.timepicker.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        /* Style for the message box */
+        #message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+
+
+        /* Slideshow container */
+        /*.slideshow-container {*/
+        /*    max-width: 1000px;*/
+        /*    position: relative;*/
+        /*    margin: auto;*/
+        /*}*/
+
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+            text-align: center;
+            height: 300px; /* Set a fixed height for all images */
+        }
+
+        .mySlides img {
+            width: 50%;
+            height: 100%; /* Adjust height to 100% to maintain aspect ratio */
+            margin: auto; /* Center the image horizontally */
+            display: block; /* Remove any default inline styling */
+        }
+        /* Caption text */
+
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #072A6C;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: transparent;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {font-size: 11px}
+        }
+
+        .typing-text {
+            color: #072A6C;
+            overflow: hidden;
+            border-right: 2px solid #000; /* Adjust the cursor style */
+            margin-right: 5px;
+        }
+    </style>
 </head>
 
 
@@ -53,7 +139,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$id->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
             </div>
         </div>
     </div>
@@ -62,7 +148,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -96,15 +182,14 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('homepage',['id'=>$id->id])}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{{route('aboutus',['id'=>$id->id])}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('servicepages',['id'=>$id->id])}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpages',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="{{route('blogspages',['id'=>$id->id])}}" class="nav-link">Blog</a></li>
-{{--                <li class="nav-item"><a href="{{route('pricing',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>--}}
-                <li class="nav-item"><a href="{{route('conatactpage',['id'=>$id->id])}}" class="nav-link">Contact</a></li>
+                <li class="nav-item active"><a href="{{route('websitehomepage')}}" class="nav-link">Home</a></li>
+{{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
+                <li class="nav-item"><a href="{{route('websiteservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('websiteproject')}}" class="nav-link">Projects</a></li>
+{{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
+                <li class="nav-item"><a href="{{route('websitepricing')}}" class="nav-link">Pricing</a></li>
+{{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
-            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -117,99 +202,16 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
             <div class="col-lg-6 ftco-animate">
                 <div class="mt-5">
-                    <h1 class="mb-4">We Build <br>Great Projects</h1>
+                    <h1 class="mb-4">We Build Great <br> <span id="typing" class="typing-text"></span> <br> Projects</h1>
                     <p class="mb-4">We're in this business since 2021 and We provide the best software services</p>
-                    <p><a href="{{route('servicepages',['id'=>$id->id])}}" class="btn btn-primary">Our Services</a> </p>
+                    <p><a href="{{route('services')}}" class="btn btn-primary">Our Services</a> <a href="{{route('register')}}" class="btn btn-white">Touch Us</a></p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2">
-    <div class="container">
-        <div class="row no-gutters d-flex">
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('app',['id'=>$id->id])}}">
-                    <div class="media block-6 services d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-mobile"></span></div>
-                        <div  class="media-body pl-4">
-                            <h3 class="heading mb-3">App Development</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('websitehomepage')}}">
-                    <div class="media block-6 services services-2 d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-globe"></span></div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading mb-3">Web Development</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('softwarehompage')}}">
-                    <div class="media block-6 services d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-computer"></span></div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading mb-3">Software Development</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('uiuxhomepage')}}">
-                    <div class="media block-6 services services-2 d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-uikit"></span></div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading mb-3">UI/UX</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('graphicdesignhomepages',['id'=>$id->id])}}">
-                    <div class="media block-6 services d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-pencil-alt"></span></div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading mb-3">Graphics Design</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="">
-                    <div class="media block-6 services services-2 d-flex">
-                        <div class="icon justify-content-center align-items-center d-flex"><span
-                                class="fa-solid fa-server"></span></div>
-                        <div class="media-body pl-4">
-                            <h3 class="heading mb-3">Server Administration</h3>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 <section class="ftco-section" id="about-section">
     <div class="container">
@@ -251,9 +253,14 @@
             <div class="col-md-12 text-center">
                 <div class="img" style="background-image: url({{asset('user/images/bg_2.png')}});">
                     <div class="overlay"></div>
-                    <h2>Providing Personalized and High Quality Services</h2>
-                    <p>We can manage your dream projects to make with responsive design.</p>
-{{--                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>--}}
+                    <h1 style="color: white; font-weight: bolder;">Types Of Mobile Apps Development We Offer</h1>
+                    <p>We also offer specific task based digital marketing service as listed below</p>
+                    <p class="mb-0">
+                    <p class="btn btn-primary" style="font-size: 20px;">Android App <br>Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">iOS App<br> Development</p>
+                    <p class="btn btn-primary" style="font-size: 20px;">Hybrid App <br>Development</p>
+                    </p>
+
                 </div>
             </div>
         </div>
@@ -265,39 +272,22 @@
         <div class="row justify-content-center mb-5 pb-2">
             <div class="col-md-8 text-center heading-section ftco-animate">
                 <span class="subheading">Our Services</span>
-                <h2 class="mb-4">We Offer Services</h2>
+                <h2 class="mb-4">Industries We Serve</h2>
             </div>
         </div>
         <div class="row">
             @foreach($service as $servicec)
-            <div class="col-md-4">
+                <div class="col-md-4">
 
                     <div class="services-wrap ftco-animate">
                         <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>
                         <div class="text">
-                            @if($servicec->tools === 'App')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-mobile"></span></div>
-                            @elseif($servicec->tools === 'Software')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-computer"></span></div>
-                            @elseif($servicec->tools === 'Website')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-globe"></span></div>
-                            @elseif($servicec->tools === 'Graphic-Design')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-pencil-alt"></span></div>
-                            @elseif($servicec->tools === 'UI/UX')
-                                <div class="icon justify-content-center align-items-center d-flex"><span
-                                        class="fa-solid fa-uikit"></span></div>
-                            @endif
-                            <h2>{{$servicec->tools}} Development</h2>
+                            <h2>{{$servicec->title}}</h2>
                             <p align="justify">{{$servicec->description}}</p>
-                            <a href="#" class="btn-custom">Thank You</a>
                         </div>
                     </div>
 
-            </div>
+                </div>
             @endforeach
         </div>
     </div>
@@ -325,7 +315,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-                                <strong class="number" data-number="{{$complete}}">0</strong>
+                                {{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -355,22 +345,27 @@
             </div>
         </div>
         <div class="row">
-            @foreach($result as $projects)
-                <div class="col-md-4">
-                    <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}">
-                        <div class="project">
-                            <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
-                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
-                            </a>
-                            <div class="text">
-                                <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}" class="subheading">{{$projects->type}}</a>
-                                <h3>{{$projects->name}}</h3>
-                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['id'=>$projects->id,'user'=>$id->id])}}" style="color: white">Click here</a></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
+            {{--            @foreach($result as $projects)--}}
+            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
+            {{--                    <div class="col-md-4">--}}
+
+            {{--                        <div class="project">--}}
+            {{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
+            {{--                               class="img image-popup d-flex align-items-center"--}}
+            {{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
+            {{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
+            {{--                                        class="fa fa-plus"></span></div>--}}
+            {{--                            </a>--}}
+            {{--                            <div class="text">--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
+            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
+            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+
+            {{--                    </div>--}}
+            {{--                </a>--}}
+            {{--            @endforeach--}}
         </div>
     </div>
 </section>
@@ -480,48 +475,47 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-10 heading-section text-center ftco-animate">
-                <span class="subheading">Our Projects Blog</span>
-                <h2 class="mb-4">Latest Blog Updates</h2>
+                <span class="subheading">Technologies</span>
+                <h2 class="mb-4">Technologies We Used</h2>
             </div>
         </div>
-        <div class="row d-flex">
-            @foreach($blog as $blogs)
-                <div class="col-lg-4 ftco-animate">
-                    <div class="blog-entry">
-                        <a href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
-                           class="block-20" style="background-image: url('{{asset('storage/'.$blogs->image)}}');">
-                        </a>
-                        <div class="text d-block">
-                            <div class="meta">
-                                <p>
-                                    @php
-                                        $date = date("M d, Y", strtotime($blogs->created_at));
+        <div class="slideshow-container">
 
-                                        $write = $blogs->write;
-                                        $words = explode(' ', $write);
-                                        $first_two_words = implode(' ', array_slice($words, 2, 3));
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/download.png')}}">
+            </div>
 
-                                    @endphp
-                                    <a href="{{route('singlepage',['title' => Str::slug($blogs->title), 'id' => $blogs->id, 'users'=>$id->id])}}"><span
-                                            class="fa fa-calendar mr-2"></span>{{$date}}</a>
-                                    <a href="{{route('singlepage',['title' => Str::slug($blogs->title), 'id' => $blogs->id,'users'=>$id->id])}}"><span
-                                            class="fa fa-user mr-2"></span>{{ $first_two_words }}</a>
-                                </p>
-                            </div>
-                            <h3 class="heading"><a
-                                    href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}">{{$blogs->title}}</a>
-                            </h3>
-                            <p>
-                                <a href="{{route('singlepage',['users'=>$id->id,'title' => Str::slug($blogs->title), 'id' => $blogs->id])}}"
-                                   class="btn btn-secondary py-2 px-3">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/Flutter.png')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/java.jpg')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/React.png')}}">
+            </div>
+
         </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
     </div>
 </section>
 
+
+{{--<div>--}}
+{{--    <p id="timeSpent">Time Spent: Loading...</p>--}}
+{{--</div>--}}
+
+<div id="message-box">This is your message!</div>
 {{--#########################--}}
 {{--Footersection is starting--}}
 <footer class="ftco-footer">
@@ -560,11 +554,13 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('aboutus',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Service</a></li>
-                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                        <li><a href="{{route('conatactpage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Service</a>
+                        </li>
+                        <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
+                        <li><a href="{{route('projectpage')}}"><span
+                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -691,5 +687,109 @@
 
 <script src="{{asset('user/js/main.js')}}"></script>
 
+<script>
+    var startTime = new Date();
+    var totalTimeSpent = 0;
+
+
+    var intervalId = setInterval(function () {
+        var currentTime = new Date();
+        var timeSpent = currentTime - startTime;
+        totalTimeSpent += timeSpent;
+
+
+        document.getElementById('timeSpent').innerText = 'Time Spent: ' + formatTime(totalTimeSpent / 1000); // Convert milliseconds to seconds
+
+
+        startTime = currentTime;
+    }, 100);
+
+
+    window.addEventListener('unload', function () {
+        var endTime = new Date();
+        var timeSpent = endTime - startTime;
+
+
+        totalTimeSpent += timeSpent;
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/page-visit', true);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify({ time_spent: totalTimeSpent / 1000 }));
+
+
+        clearInterval(intervalId);
+    });
+
+    function formatTime(seconds) {
+        var minutes = Math.floor(seconds / 60);
+        seconds = Math.floor(seconds % 60);
+
+        return minutes + 'm ' + seconds + 's';
+    }
+</script>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+</script>
+
+<script>
+    // JavaScript for typing effect
+    const targetElement = document.getElementById('typing');
+    const words = ['Website']; // Add more words as needed
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+
+    function type() {
+        if (charIndex < words[wordIndex].length) {
+            targetElement.innerHTML += words[wordIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 150); // Adjust typing speed here
+        } else {
+            isTyping = false;
+            setTimeout(erase, 1000); // Wait for a second before erasing
+        }
+    }
+
+    function erase() {
+        if (!isTyping) {
+            targetElement.innerHTML = words[wordIndex].substring(0, charIndex);
+            isTyping = true;
+        }
+
+        if (charIndex > 0) {
+            targetElement.innerHTML = words[wordIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(erase, 50); // Adjust erasing speed here
+        } else {
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 500); // Wait for half a second before typing the next word
+        }
+    }
+
+    // Start the typing effect
+    type();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 </html>

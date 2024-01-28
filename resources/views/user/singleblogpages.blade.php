@@ -88,7 +88,7 @@
                 <li class="nav-item"><a href="{{route('servicepages',['id'=>$users->id])}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('projectpages',['id'=>$users->id])}}" class="nav-link">Projects</a></li>
                 <li class="nav-item active"><a href="{{route('blogspages',['id'=>$users->id])}}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{{route('pricing',['id'=>$users->id])}}" class="nav-link">Pricing</a></li>
+{{--                <li class="nav-item"><a href="{{route('pricing',['id'=>$users->id])}}" class="nav-link">Pricing</a></li>--}}
                 <li class="nav-item"><a href="{{route('conatactpage',['id'=>$users->id])}}" class="nav-link">Contact</a></li>
             </ul>
             <a href="{{route('logout')}}" class="btn-custom">Logout</a>

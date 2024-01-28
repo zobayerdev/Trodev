@@ -113,21 +113,33 @@
         <div class="row">
             <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
                 <p class="mb-0 w-100">
-                    <span class="text"><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
+                    <span class="text"><a href="mailto: info@trodev.com"><span
+                                class="fa fa-paper-plane mr-3"></span><span class="text" style="color: white;">info@trodev.com</span></a></span>
                 </p>
             </div>
             <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                 <div class="social-media">
                     <p class="mb-0 d-flex">
-                        <a href="https://www.facebook.com/trodevit" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook" style="color: white;"><i class="sr-only">Facebook</i></span></a>
-                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter" style="color: white;"><i class="sr-only">Twitter</i></span></a>
-                        <a href="https://www.instagram.com/trodevit/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram" style="color: white;"><i class="sr-only">Instagram</i></span></a>
-                        <a href="https://www.linkedin.com/company/84349418/" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin" style="color: white;"><i class="sr-only">LinkedIn</i></span></a>
+                        <a href="https://www.facebook.com/trodevit"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Facebook</i></span></a>
+                        <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"
+                                                                                                   style="color: white;"><i
+                                    class="sr-only">Twitter</i></span></a>
+                        <a href="https://www.instagram.com/trodevit/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">Instagram</i></span></a>
+                        <a href="https://www.linkedin.com/company/84349418/"
+                           class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"
+                                                                                          style="color: white;"><i
+                                    class="sr-only">LinkedIn</i></span></a>
                     </p>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$id->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
             </div>
         </div>
     </div>
@@ -146,7 +158,8 @@
                     <span class="fa fa-paper-plane"></span>
                 </div>
                 <div class="pr-md-4 pl-md-3 pl-3 text">
-                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span></p>
+                    <p class="con"><span>Phone Call</span> <span><a href="tel:+8801615257555">+880 1615257555</a></span>
+                    </p>
                     <p class="con">Call Us Now 24/7 Customer Support</p>
                 </div>
             </div>
@@ -163,31 +176,34 @@
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container d-flex align-items-center">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="fa fa-bars"></span> Menu
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('homepage',['id'=>$id->id])}}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{{route('aboutus',['id'=>$id->id])}}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{{route('servicepages',['id'=>$id->id])}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('projectpages',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="{{route('blogspages',['id'=>$id->id])}}" class="nav-link">Blog</a></li>
-{{--                <li class="nav-item active"><a href="{{route('pricing',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>--}}
-                <li class="nav-item"><a href="{{route('conatactpage',['id'=>$id->id])}}" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="{{route('apps')}}" class="nav-link">Home</a></li>
+{{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
+                <li class="nav-item"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
+{{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
+                <li class="nav-item  active"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
+{{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
-            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
 <!-- END nav -->
 
-<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('user/images/bg_1.png') }}');"
+         data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('homepage',['id'=>$id->id])}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Pricing <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('apps')}}">Home <i
+                                class="fa fa-chevron-right"></i></a></span> <span>Pricing <i
+                            class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Pricing</h1>
             </div>
         </div>
@@ -199,7 +215,8 @@
         <div class="row">
             <div class="col-md-6 d-flex align-items-stretch">
                 <div class="about-wrap img w-100" style="background-image: url('{{ asset('user/images/bg_2.png') }}');">
-                    <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-crane"></span></div>
+                    <div class="icon d-flex align-items-center justify-content-center"><span
+                            class="flaticon-crane"></span></div>
                 </div>
             </div>
             <div class="col-md-6 py-5 pl-md-5">
@@ -209,9 +226,10 @@
                         <h2 class="mb-4">Trodev is an IT Company</h2>
                         <div class="d-flex about">
                             <div class="icon"><span class="flaticon-hammer"></span></div>
-                            <h3>We're in this business since 2021 and We provide the best software services</h3>
+                            <h3>We're in this business since 2021, and We provide the best software services</h3>
                         </div>
-                        <p>Today's world is moving with the touch of modernity, different technologies have touched that touch. With this technology, the whole world seems to be in the palm of your hand.</p>
+                        <p>Today's world is moving with the touch of modernity, different technologies have touched that
+                            touch. With this technology, the whole world seems to be in the palm of your hand.</p>
                     </div>
                 </div>
             </div>
@@ -236,37 +254,38 @@
                 </label>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-4 monthly-package">
-                @foreach($basic as $servicec)
+                @foreach($software as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage;
 
                                 $format = number_format($total);
                             @endphp
 
-                            <h3>{{$servicec->type}}</h3>
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
 
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
                             <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
@@ -274,70 +293,70 @@
                 @endforeach
             </div>
             <div class="col-md-4 monthly-package">
-                @foreach($standard as $servicec)
+                @foreach($software2 as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage;
 
                                 $format = number_format($total);
                             @endphp
-                            <h3>{{$servicec->type}}</h3>
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
-                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
             <div class="col-md-4 monthly-package">
-                @foreach($premium as $servicec)
+                @foreach($software3 as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage;
 
                                 $format = number_format($total);
                             @endphp
-                            <h3>{{$servicec->type}}</h3>
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
                             <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
-                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
@@ -347,9 +366,9 @@
 
         <div class="row">
             <div class="col-md-4 yearly-package">
-                @foreach($basic as $servicec)
+                @foreach($software as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage ;
 
@@ -359,34 +378,35 @@
 
                                 $number = number_format($intotal);
                             @endphp
-                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
-                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
             <div class="col-md-4 yearly-package">
-                @foreach($standard as $servicec)
+                @foreach($software2 as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage;
 
@@ -396,36 +416,37 @@
 
                                 $number = number_format($intotal);
                             @endphp
-                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
-                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
             <div class="col-md-4 yearly-package">
-                @foreach($premium as $servicec)
+                @foreach($software3 as $servicec)
                     <div class="services-wrap ftco-animate custom-card-size">
-                        <div class="text">
+                        <div class="text" style="color: black; text-align: left">
                             @php
                                 $total = $servicec->maintainance + $servicec->storage;
 
@@ -435,27 +456,28 @@
 
                                 $number = number_format($intotal);
                             @endphp
-                            <h3>{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span></h3>
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
                             <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
                             <p>Software Activation Price excluded</p>
-                            <p>Maintenance Charge: {{$servicec->maintainance}}Tk</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
                             <strong>What's included?</strong>
-                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
-                            <p>UI/UX Design <strong>{{$servicec->UI_UX}}</strong></p>
-                            <p>Logo Design <strong>{{$servicec->logo}}</strong></p>
-                            <p>Design issue:- <strong>{{$servicec->business_card}}</strong></p>
-                            <p>Training Time <strong>{{$servicec->training_time}}</strong></p>
-                            <p>Revision <strong>{{$servicec->revision}}</strong></p>
-                            <p>Project Manager <strong>{{$servicec->project_manager}}</strong></p>
-                            <p>Edit Request <strong>{{$servicec->edit_request}}</strong></p>
-                            <p>Technical Planning <strong>{{$servicec->technical}}</strong></p>
-                            <p>Development Request <strong>{{$servicec->development_request}}</strong></p>
-                            <p>Security <strong>{{$servicec->security}}</strong></p>
-                            <p>Administration Setup <strong>{{$servicec->hosting}}</strong></p>
-                            <p>Quality Assurance <strong>{{$servicec->sqa}}</strong></p>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
                             <div class="card-bottom">
-                                <a href="https://cal.com/trodev/meeting" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
                             </div>
                         </div>
                     </div>
@@ -471,7 +493,9 @@
             <div class="col-lg col-md-6">
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2 d-flex align-items-center">About</h2>
-                    <p>Today's world is moving with the touch of modernity, different technologies have touched that touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your business.</p>
+                    <p>Today's world is moving with the touch of modernity, different technologies have touched that
+                        touch.Our company gives you apps, software, websites, graphics design and ui/ux design for your
+                        business.</p>
                     <ul class="ftco-footer-social list-unstyled mt-4">
                         <li><a href="#"><span class="fa fa-twitter"></span></a></li>
                         <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -499,11 +523,14 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
-                        <li><a href="{{route('servicepages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Services</a></li>
-                        <li><a href="{{route('projectpages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
-                        <li><a href="{{route('blogspages',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                        <li><a href="{{route('conatactpage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a></li>
+                        <li><a href="{{route('apps')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('services')}}"><span class="fa fa-chevron-right mr-2"></span>Services</a>
+                        </li>
+                        <li><a href="{{route('projectpage')}}"><span
+                                    class="fa fa-chevron-right mr-2"></span>Projects</a></li>
+                        <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
+                        <li><a href="{{route('contact')}}"><span class="fa fa-chevron-right mr-2"></span>Contact Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -513,9 +540,12 @@
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span></li>
-                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a></li>
-                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span class="text">info@trodev.com</span></a></li>
+                            <li><span class="fa fa-map-marker mr-3"></span><span class="text">H#34/4, Primary School Road, Islampur, Dattapara, Tongi, Gazipur, Bangladesh</span>
+                            </li>
+                            <li><a href="tel:+8801615257555"><span class="fa fa-phone mr-3"></span><span class="text">+88 01615257555</span></a>
+                            </li>
+                            <li><a href="mailto: info@trodev.com"><span class="fa fa-paper-plane mr-3"></span><span
+                                        class="text">info@trodev.com</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -527,8 +557,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 aside-stretch py-3">
-                    <p class="mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.trodev.com" target="_blank">Trodev</a>
+                    <p class="mb-0">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                            href="https://www.trodev.com" target="_blank">Trodev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>
@@ -536,11 +569,13 @@
     </div>
 </footer>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close d-flex align-items-center justify-content-center" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close d-flex align-items-center justify-content-center"
+                        data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="fa fa-close"></span>
                 </button>
             </div>
@@ -579,7 +614,8 @@
                     </div>
                     <div class="">
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="4" class="form-control"
+                                      placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
@@ -592,9 +628,14 @@
 </div>
 
 
-
 <!-- loader -->
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<div id="ftco-loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00"/>
+    </svg>
+</div>
 
 <script src="{{asset('user/js/jquery.min.js')}}"></script>
 <script src="{{asset('user/js/jquery-migrate-3.0.1.min.js')}}"></script>
