@@ -125,40 +125,14 @@
                 <p>Publish Date: {{$date}}</p>
 
                 <p>
-                    <?php
-                        $lines = explode(".", $id->description); // Split description into lines by full stops
-                        $firstTwoLines = array_slice($lines, 0, 2); // Get the first two lines
-                        echo implode(".", $firstTwoLines); // Display the first two lines joined by full stops
-                    ?>
+                    {!! $id->description !!}
                 </p>
 
-                <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
-                </p>
-                <?php
-                    $lines = explode(".", $id->description); // Split description into lines by full stops
-                    $firstTwoLines = array_slice($lines, 2, 4); // Get the first two lines
-                    echo implode(".", $firstTwoLines);
-                ?>
-                <p>
-                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">
-                </p>
-                <?php
-                $nextFourLines = array_slice($lines, 4, 39);
-
-                $linesToShow = array_slice($lines, 4, 4);
 
 
-                $remainingLines = array_slice($lines, 6);
-
-                $chunks = array_chunk($remainingLines, 5);
-
-                echo '<p>' . implode(".", $linesToShow) . '.' . '</p>';
-
-                foreach ($chunks as $chunk) {
-                    echo '<p>' . implode(".", $chunk) . ".</p>";
-                }
-                ?>
+{{--                <p>--}}
+{{--                    <img src="{{ asset('storage/'.$id->image) }}" alt="" class="img-fluid">--}}
+{{--                </p>--}}
 
 
 

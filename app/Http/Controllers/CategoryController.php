@@ -90,16 +90,36 @@ class CategoryController extends Controller
         return view('categoryhomepages.software.software',['service'=>$service]);
     }
 
+    public function softwarehompages($id)
+    {
+        $user = User::find($id);
+        $service = Offer::where('tools','Software')->take(3)->get();
+        return view('user.category.software.software',['id'=>$user,'service'=>$service]);
+    }
     public function softwaresservice()
     {
         $appservice = Offer::where('tools','Software')->get();
         return view('categoryhomepages.software.softwareservice',['service'=>$appservice]);
     }
 
+    public function softwaresservices($id)
+    {
+        $user = User::find($id);
+        $appservice = Offer::where('tools','Software')->get();
+        return view('user.category.software.softwareservice',['id'=>$user,'service'=>$appservice]);
+    }
+
     public function softwareproject()
     {
         $appservice = Project::where('type','Software')->paginate(6);
         return view('categoryhomepages.software.softwareproject',['service'=>$appservice]);
+    }
+
+    public function softwareprojects($id)
+    {
+        $user = User::find($id);
+        $appservice = Project::where('type','Software')->paginate(6);
+        return view('user.category.software.softwareproject',['id'=>$user,'service'=>$appservice]);
     }
 
     public function softwarepricing()
@@ -116,6 +136,22 @@ class CategoryController extends Controller
             'software3'=>$software3,
         ]);
     }
+
+    public function softwarepricings($id)
+    {
+        $user = User::find($id);
+        $software = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Pre Build')->get();
+        $software2 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Customize')->get();
+        $software3 = AppSoftwarePricing::where('type','Software')
+            ->where('Service','Dynamic')->get();
+        return view('user.category.software.softwarepricing',['id'=>$user,
+            'software'=>$software,
+            'software2'=>$software2,
+            'software3'=>$software3,
+        ]);
+    }
     /*Software Controller End*/
 
     /*Website Controller Start*/
@@ -125,20 +161,47 @@ class CategoryController extends Controller
         return view('categoryhomepages.website.website',['service'=>$service]);
     }
 
+    public function websitehomepages($id)
+    {
+        $user = User::find($id);
+        $service = Offer::where('tools','Website')->take(3)->get();
+        return view('user.category.website.website',['id'=>$user,'service'=>$service]);
+    }
+
     public function websiteproject()
     {
         $appservice = Project::where('type','Website')->paginate(6);
         return view('categoryhomepages.website.websiteproject',['service'=>$appservice]);
     }
 
+    public function websiteprojects($id)
+    {
+        $user = User::find($id);
+        $appservice = Project::where('type','Website')->paginate(6);
+        return view('user.category.website.websiteproject',['id'=>$user,'service'=>$appservice]);
+    }
     public function websiteservice()
     {
         $appservice = Offer::where('tools','Website')->get();
         return view('categoryhomepages.website.websiteservice',['service'=>$appservice]);
     }
+
+    public function websiteservices($id)
+    {
+        $user = User::find($id);
+        $appservice = Offer::where('tools','Website')->get();
+        return view('user.category.website.websiteservice',['id'=>$user,'service'=>$appservice]);
+    }
+
     public function websitepricing()
     {
         return view('categoryhomepages.website.websitepricing');
+    }
+
+    public function websitepricings($id)
+    {
+        $user = User::find($id);
+        return view('user.category.website.websitepricing',['id'=>$user]);
     }
     /*Website Controller End*/
 
@@ -147,6 +210,11 @@ class CategoryController extends Controller
     {
         return view('categoryhomepages.ui-ux.ui-ux');
     }
+    public function uiuxhomepages($id)
+    {
+        $user = User::find($id);
+        return view('user.category.ui-ux.ui-ux',['id'=>$user]);
+    }
 
     public function uiuxproject()
     {
@@ -154,14 +222,34 @@ class CategoryController extends Controller
         return view('categoryhomepages.ui-ux.ui-uxproject',['service'=>$appservice]);
     }
 
+    public function uiuxprojects($id)
+    {
+        $user = User::find($id);
+        $appservice = Project::where('type','UI/UX')->paginate(6);
+        return view('user.category.ui-ux.ui-uxproject',['id'=>$user,'service'=>$appservice]);
+    }
+
     public function uiuxservice()
     {
         $appservice = Offer::where('tools','UI/UX')->get();
         return view('categoryhomepages.ui-ux.ui-uxservice',['service'=>$appservice]);
     }
+
+    public function uiuxservices($id)
+    {
+        $user = User::find($id);
+        $appservice = Offer::where('tools','UI/UX')->get();
+        return view('user.category.ui-ux.ui-uxservice',['id'=>$user,'service'=>$appservice]);
+    }
     public function uiuxpricing()
     {
         return view('categoryhomepages.ui-ux.ui-uxpricing');
+    }
+
+    public function uiuxpricings($id)
+    {
+        $user = User::find($id);
+        return view('user.category.ui-ux.ui-uxpricing',['id'=>$user]);
     }
     /*UI-UX Controller End*/
 

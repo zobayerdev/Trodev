@@ -301,6 +301,22 @@ class AdminDashboard extends Controller
         return redirect()->back();
     }
 
+    public function imageUpload(Request $request)
+    {
+        if ($request->hasFile('upload')){
+            $originalname2 = $request->file('upload')->getClientOriginalName();
+            $file = pathinfo($originalname2, PATHINFO_FILENAME);
+            $exten = $request->file('upload')->getClientOriginalExtension();
+            $name = $file . '_' . time() . '.' . $exten;
+
+            $request->file('upload')->move(public_path('public/blog'),$name);
+
+            $url = asset('public/' .$name);
+
+            return response()->json(['fileName'=>$name,'uploaded'=>1,'url'=>$url]);
+        }
+    }
+
     public function clientlist($id)
     {
         $user = Auth::guard('admin')->user();

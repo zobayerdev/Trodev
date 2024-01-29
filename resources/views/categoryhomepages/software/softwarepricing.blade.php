@@ -182,12 +182,12 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('apps')}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('softwarehompage')}}" class="nav-link">Home</a></li>
 {{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
-                <li class="nav-item"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('softwaresservice')}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('softwareproject')}}" class="nav-link">Projects</a></li>
 {{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
-                <li class="nav-item  active"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item  active"><a href="{{route('softwarepricing')}}" class="nav-link">Pricing</a></li>
 {{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
         </div>

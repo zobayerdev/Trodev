@@ -187,7 +187,7 @@
                 <li class="nav-item"><a href="{{route('websiteservice')}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('websiteproject')}}" class="nav-link">Projects</a></li>
 {{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
-                <li class="nav-item  active"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item  active"><a href="{{route('websitepricing')}}" class="nav-link">Pricing</a></li>
 {{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
         </div>

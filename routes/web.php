@@ -187,6 +187,8 @@ Route::middleware(['admin'])->group(function (){
     Route::post('/standardupdate',[AdminDashboard::class,'standaradsupdate'])->name('standardupdate');
 
     Route::post('/premiumupdate',[AdminDashboard::class,'goldupdate'])->name('premiumupdate');
+
+    Route::post('/upload',[AdminDashboard::class,'imageUpload'])->name('ckeditor.upload');
 });
 
 Route::middleware(['auth','verified'])->group(function (){
@@ -225,6 +227,34 @@ Route::middleware(['auth','verified'])->group(function (){
     Route::get('/graphic-design/project/{id}',[CategoryController::class,'graphicdesignprojects'])->name('graphicdesignprojects');
 
     Route::get('/graphic-design/price/{id}',[CategoryController::class,'graphicdesignpricings'])->name('graphicdesignpricings');
+
+    Route::get('/ui-ux/{id}',[CategoryController::class,'uiuxhomepages'])->name('uiuxhomepages');
+
+    Route::get('/ui-ux/project/{id}',[CategoryController::class,'uiuxprojects'])->name('uiuxprojects');
+
+    Route::get('/ui-ux/service/{id}',[CategoryController::class,'uiuxservices'])->name('uiuxservices');
+
+    Route::get('/ui-ux/price/{id}',[CategoryController::class,'uiuxpricings'])->name('uiuxpricings');
+
+    Route::get('/website/{id}',[CategoryController::class,'websitehomepages'])->name('websitehomepages');
+
+    Route::get('/website/service/{id}',[CategoryController::class,'websiteservices'])->name('websiteservices');
+
+    Route::get('/website/project/{id}',[CategoryController::class,'websiteprojects'])->name('websiteprojects');
+
+    Route::get('/website/price/{id}',[CategoryController::class,'websitepricings'])->name('websitepricings');
+
+    Route::get('/software/{id}',[CategoryController::class,'softwarehompages'])->name('softwarehompages');
+
+    Route::get('/software/service/{id}',[CategoryController::class,'softwaresservices'])->name('softwaresservices');
+
+    Route::get('/software/project/{id}',[CategoryController::class,'softwareprojects'])->name('softwareprojects');
+
+    Route::get('/software/price/{id}',[CategoryController::class,'softwarepricings'])->name('softwarepricings');
+
+    Route::get('/profile/{id}',[UserDashbaord::class,'profilepage'])->name('profile');
+
+    Route::post('/updateProfile',[UserDashbaord::class,'updateProfile'])->name('updateProfile');
 });
 
 /*Apps Start*/

@@ -20,8 +20,14 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+
     <![endif]-->
+    <style type="text/css">
+        .ck-editor_editable_inline{
+            height: 500px;
+        }
+   </style>
 </head>
 
 <body>
@@ -301,7 +307,9 @@
                                 <div class="form-group row">
                                     <label for="lname" class="col-sm-3 text-right control-label col-form-label">Write a Blog</label>
                                     <div class="col-sm-9">
-                                        <textarea class="form-control" id="lname" name="blog" placeholder="Write Blog" required></textarea>
+                                        <textarea class="form-control" id="editor" name="blog" style="display:none;"></textarea>
+                                        <input type="hidden" name="blog_content" id="blogContent">
+
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -393,8 +401,29 @@
 <script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+<!-- Include the image plugin -->
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'),{
+            ckfinder:{
+                uploadUrl: '{{route('ckeditor.upload').'?_token='.csrf_token()}}'
+            }
+        })
+        .then(editor => {
+            editor.model.document.on('change:data', () => {
+                document.querySelector('#blogContent').value = editor.getData();
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+
+
+</script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script>
     $(document).ready(function () {
         $('#selectName').change(function () {
