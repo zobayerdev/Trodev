@@ -318,7 +318,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-                                {{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
+                                <strong class="number" data-number="{{$total}}">0</strong>
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -328,7 +328,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-worker-1"></span></div>
                             <div class="text">
-                                <strong class="number" data-number="54900">0</strong>
+                                <strong class="number" data-number="20">0</strong>
                                 <span>Happy Clients</span>
                             </div>
                         </div>
@@ -348,27 +348,27 @@
             </div>
         </div>
         <div class="row">
-            {{--            @foreach($result as $projects)--}}
-            {{--                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">--}}
-            {{--                    <div class="col-md-4">--}}
+            @foreach($project as $projects)
+                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">
+                    <div class="col-md-4">
 
-            {{--                        <div class="project">--}}
-            {{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
-            {{--                               class="img image-popup d-flex align-items-center"--}}
-            {{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
-            {{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
-            {{--                                        class="fa fa-plus"></span></div>--}}
-            {{--                            </a>--}}
-            {{--                            <div class="text">--}}
-            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><span class="subheading">{{$projects->type}}</span></a>--}}
-            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><h3>{{$projects->name}}</h3></a>--}}
-            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" style="color: white">Click here</a></p>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
+                        <div class="project">
+                            <a href="{{asset('storage/'.$projects->image)}}"
+                               class="img image-popup d-flex align-items-center"
+                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span
+                                        class="fa fa-plus"></span></div>
+                            </a>
+                            <div class="text">
+                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><span class="subheading">{{$projects->type}}</span></a>
+                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><h3>{{$projects->name}}</h3></a>
+                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" style="color: white">Click here</a></p>
+                            </div>
+                        </div>
 
-            {{--                    </div>--}}
-            {{--                </a>--}}
-            {{--            @endforeach--}}
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
 </section>

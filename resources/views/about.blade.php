@@ -212,7 +212,7 @@
                         <div class="block-18 d-flex align-items-center justify-content-between">
                             <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-worker-1"></span></div>
                             <div class="text">
-                                <strong class="number" data-number="54900">0</strong>
+                                <strong class="number" data-number="20">0</strong>
                                 <span>Happy Customers</span>
                             </div>
                         </div>
