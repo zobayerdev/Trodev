@@ -11,6 +11,7 @@ use App\Models\PageVisit;
 use App\Models\Pricing;
 use App\Models\Project;
 use App\Models\SendMsg;
+use App\Models\uiuxgraphic;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -447,7 +448,8 @@ class AdminDashboard extends Controller
         if ($user->id == $id) {
             $all = Pricing::all();
             $app = AppSoftwarePricing::all();
-            return view('admin.editprice', ['id'=>$user,'price'=>$all, 'app'=>$app]);
+            $ui = uiuxgraphic::all();
+            return view('admin.editprice', ['id'=>$user,'price'=>$all, 'app'=>$app,'ui'=>$ui]);
         }
     }
 
@@ -518,6 +520,50 @@ class AdminDashboard extends Controller
             'Project_Manager'=>$request->input('Project_Manager'),
             'Website_Integration'=>$request->input('Website_Integration'),
             'Platform_Support'=>$request->input('Platform_Support'),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function uiux($id)
+    {
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            return view('admin.uiuxgraphic', ['id'=>$user]);
+        }
+    }
+
+    public function uiuxinsert(Request $request)
+    {
+        uiuxgraphic::insert([
+            'type'=>$request->input('type'),
+            'services'=>$request->input('service'),
+            'licence'=>$request->input('licence'),
+            'file'=>$request->input('file'),
+            'format'=>$request->input('format'),
+            'mockup'=>$request->input('mockup'),
+            'showcase'=>$request->input('showcase'),
+            'price'=>$request->input('price'),
+            'revision'=>$request->input('revision'),
+            'service'=>$request->input('servicetime'),
+            'landing'=>$request->input('landing'),
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function uiupdate(Request $request)
+    {
+        uiuxgraphic::where('id',$request->input('id'))->update([
+            'licence' =>$request->input('licence'),
+            'file' =>$request->input('file'),
+            'format' =>$request->input('format'),
+            'mockup' =>$request->input('mockup'),
+            'showcase' =>$request->input('showcase'),
+            'price' =>$request->input('price'),
+            'revision' =>$request->input('revision'),
+            'service' =>$request->input('service'),
+            'landing' =>$request->input('landing'),
         ]);
 
         return redirect()->back();

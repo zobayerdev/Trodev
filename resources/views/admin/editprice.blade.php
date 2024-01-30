@@ -248,7 +248,7 @@
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Website Pricing </span></a></li>
                             <li class="sidebar-item"><a href="{{route('appandsoftware',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> App & Software Pricing </span></a></li>
-                            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('uiuxs',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
                             <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Price List </span></a></li>
                         </ul>
                     </li>
@@ -408,7 +408,7 @@
                                 @endif
 
                                 @if($clients->type === 'Software')
-                                    <form action="{{route('premiumupdate')}}" method="post">
+                                    <form action="{{route('standardupdate')}}" method="post">
                                         @csrf
                                     <tr>
                                         <input type="hidden" name="id" value="{{$clients->id}}">
@@ -431,6 +431,108 @@
                                         <td><input type="text" name="Platform_Support" value="{{$clients->Platform_Support}}"></td>
                                         <td><button type="submit" class="btn btn-default">Update</button></td>
                                     </tr>
+                                    </form>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">UI/UX Pricing</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Service</th>
+                                <th>Licence</th>
+                                <th>File Type</th>
+                                <th>Format Type</th>
+                                <th>Mockup Design</th>
+                                <th>Showcase Banner</th>
+                                <th>Price</th>
+                                <th>Revision</th>
+                                <th>Service Time</th>
+                                <th>Landing/System Design Page</th>
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($ui as $clients)
+                                @if($clients->type === 'UI/UX')
+                                    <form action="{{route('uiupdate')}}" method="post">
+                                        @csrf
+                                        <tr>
+                                            <input type="hidden" name="id" value="{{$clients->id}}">
+                                            <td style="color: blue; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                            <td>{{$clients->services}}</td>
+                                            <td><input type="text" name="licence" value="{{$clients->licence}}"></td>
+                                            <td><input type="text" name="file" value="{{$clients->file}}"></td>
+                                            <td><input type="text" name="format" value="{{$clients->format}}"></td>
+                                            <td><input type="text" name="mockup" value="{{$clients->mockup}}"></td>
+                                            <td><input type="text" name="showcase" value="{{$clients->showcase}}"></td>
+                                            <td><input type="text" name="price" value="{{$clients->price}}"></td>
+                                            <td><input type="text" name="revision" value="{{$clients->revision}}"></td>
+                                            <td><input type="text" name="service" value="{{$clients->service}}"></td>
+                                            <td><input type="text" name="landing" value="{{$clients->landing}}"></td>
+                                            <td><button type="submit" class="btn btn-default">Update</button></td>
+                                        </tr>
+                                    </form>
+                                @endif
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Graphic Design Pricing</h5>
+                    <div class="table-responsive">
+                        <table id="zero_config" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Service</th>
+                                <th>Licence</th>
+                                <th>File Type</th>
+                                <th>Format Type</th>
+                                <th>Mockup Design</th>
+                                <th>Showcase Banner</th>
+                                <th>Price</th>
+                                <th>Revision</th>
+                                <th>Service Time</th>
+
+                                <th>Update</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($ui as $clients)
+                                @if($clients->type === 'Graphic-Design')
+                                    <form action="{{route('uiupdate')}}" method="post">
+                                        @csrf
+                                        <tr>
+                                            <input type="hidden" name="id" value="{{$clients->id}}">
+                                            <td style="color: blue; font-weight: bolder; font-size: 16px;">{{$clients->type}}</td>
+                                            <td>{{$clients->services}}</td>
+                                            <td><input type="text" name="licence" value="{{$clients->licence}}"></td>
+                                            <td><input type="text" name="file" value="{{$clients->file}}"></td>
+                                            <td><input type="text" name="format" value="{{$clients->format}}"></td>
+                                            <td><input type="text" name="mockup" value="{{$clients->mockup}}"></td>
+                                            <td><input type="text" name="showcase" value="{{$clients->showcase}}"></td>
+                                            <td><input type="text" name="price" value="{{$clients->price}}"></td>
+                                            <td><input type="text" name="revision" value="{{$clients->revision}}"></td>
+                                            <td><input type="text" name="service" value="{{$clients->service}}"></td>
+
+                                            <td><button type="submit" class="btn btn-default">Update</button></td>
+                                        </tr>
                                     </form>
                                 @endif
                             @endforeach

@@ -347,7 +347,7 @@
         </div>
         <div class="row">
             {{--            @foreach($result as $projects)--}}
-            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
+            {{--                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">--}}
             {{--                    <div class="col-md-4">--}}
 
             {{--                        <div class="project">--}}
@@ -358,9 +358,9 @@
             {{--                                        class="fa fa-plus"></span></div>--}}
             {{--                            </a>--}}
             {{--                            <div class="text">--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
-            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
+            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><span class="subheading">{{$projects->type}}</span></a>--}}
+            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><h3>{{$projects->name}}</h3></a>--}}
+            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" style="color: white">Click here</a></p>--}}
             {{--                            </div>--}}
             {{--                        </div>--}}
 

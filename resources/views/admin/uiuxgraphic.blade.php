@@ -10,28 +10,25 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('admin/assets/images/favicon.png')}}">
-    <title>Add Blogs (Trodev)</title>
+    <title>Add Pricing</title>
     <!-- Custom CSS -->
     <link href="{{asset('admin/assets/libs/flot/css/float-chart.css')}}" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/jquery-minicolors/jquery.minicolors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/libs/quill/dist/quill.snow.css')}}">
     <link href="{{asset('admin/dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
-
     <![endif]-->
-    <style type="text/css">
-        .ck-editor_editable_inline{
-            height: 500px;
-        }
-   </style>
+
 </head>
 
 <body>
-<!-- ============================================================== -->
 <!-- Preloader - style you can find in spinners.css -->
 <!-- ============================================================== -->
 <div class="preloader">
@@ -72,15 +69,26 @@
                         </span>
 
                 </a>
-
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Toggle which is visible on mobile only -->
+                <!-- ============================================================== -->
                 <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
             </div>
-
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
             <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
                 <ul class="navbar-nav float-left mr-auto">
                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
-
+                    <!-- ============================================================== -->
+                    <!-- create new -->
+                    <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
@@ -185,7 +193,7 @@
                     <!-- User profile and search -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('admin/assets/images/users/1.jpg')}}" alt="user" class="rounded-circle" width="31"></a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -218,22 +226,22 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav" class="p-t-30">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.dashboard',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Project</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-cloud"></i><span class="hide-menu">Project</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Project </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('project',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Project </span></a></li>
                             <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Project List </span></a></li>
                         </ul>
                     </li>
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Employee</span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Employee</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Employee </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('projects',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employee',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Add Employee </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('employees',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Employee List </span></a></li>
                         </ul>
                     </li>
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('service',['id'=>$id->id])}}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Offer Service</span></a></li>
                     <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-nature-people"></i><span class="hide-menu">Blog</span></a>
                         <ul aria-expanded="false" class="collapse  first-level">
-                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Write Blog </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('blog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Write Blog </span></a></li>
                             <li class="sidebar-item"><a href="{{route('editblog',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Blog List </span></a></li>
                         </ul>
                     </li>
@@ -241,7 +249,7 @@
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Website Pricing </span></a></li>
                             <li class="sidebar-item"><a href="{{route('appandsoftware',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> App & Software Pricing </span></a></li>
-                            <li class="sidebar-item"><a href="{{route('uiuxs',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
                             <li class="sidebar-item"><a href="{{route('editprice',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Price List </span></a></li>
                         </ul>
                     </li>
@@ -269,12 +277,12 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12 d-flex no-block align-items-center">
-                    <h4 class="page-title">Blog</h4>
+                    <h4 class="page-title">Add Packages</h4>
                     <div class="ml-auto text-right">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                <li class="breadcrumb-item active" aria-current="page">Website Packages</li>
                             </ol>
                         </nav>
                     </div>
@@ -294,64 +302,87 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <form class="form-horizontal" action="{{route('blog-insert')}}" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="{{route('uiuxinsert')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
-                                <h4 class="card-title">Write a Blog</h4>
+                                <h4 class="card-title">Graphic Design & UI/UX Info</h4>
                                 <div class="form-group row">
-                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">Title</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="fname" name="project" placeholder="Project Name Here" required>
+                                    <label class="col-sm-3 text-right control-label col-form-label">Type</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="type" id="typeSelect" style="width: 100%; height:36px;" required>
+                                            <option value="-">Select</option>
+                                            <option value="UI/UX">UI/UX</option>
+                                            <option value="Graphic-Design">Graphic Design</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Write a Blog</label>
-                                    <div class="col-sm-9">
-                                        <textarea class="form-control" id="editor" name="blog" style="display:none;"></textarea>
-                                        <input type="hidden" name="blog_content" id="blogContent">
+                                    <label class="col-sm-3 text-right control-label col-form-label">Service</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control custom-select" name="service" id="typeSelect" style="width: 100%; height:36px;" required>
+                                            <option value="-">Select</option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Standard">Standard</option>
+                                            <option value="Premium">Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                                    </div>
-                                </div>
                                 <div class="form-group row">
-                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Image</label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="form-control-file" name="blogpic" id="imageUpload" required>
-                                        <small class="form-text text-muted">Upload an image here</small>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-3 text-right control-label col-form-label">Writer</label>
+                                    <label class="col-sm-3 text-right control-label col-form-label">Licence</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" id="selectName" name="delopername" style="width: 100%; height:36px;" required>
-                                            <option value="">Select</option>
-                                            @foreach($employee as $emp)
-                                                <option value="{{$emp->Name}}">{{$emp->id}}. {{$emp->Name}}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" class="form-control" name="licence" id="durationSelect" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 text-right control-label col-form-label">Designation</label>
+                                    <label for="email1" class="col-sm-3 text-right control-label col-form-label">File Type</label>
                                     <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" id="selectDesignation" name="designation" style="width: 100%; height:36px;" required disabled>
-                                            <option value="">Select</option>
-                                            <!-- Options for Designation will be populated based on selection -->
-                                        </select>
+                                        <input type="text" class="form-control" name="file" id="monthlycharge" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Post</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="lname" name="description" placeholder="Write post Here" required>
+                                    <label class="col-sm-3 text-right control-label col-form-label">Format Type</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="format" id="sslcertificate" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Image</label>
-                                    <div class="col-sm-9">
-                                        <input type="file" class="form-control-file" name="pic" id="imageUpload" required>
-                                        <small class="form-text text-muted">Upload your image here</small>
+                                    <label class="col-sm-3 text-right control-label col-form-label">Mockup Design</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="mockup" id="training" style="width: 100%; height:36px;" required>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Showcase Banner</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="showcase" id="revision" style="width: 100%; height:36px;" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Price</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="price" id="domains" style="width: 100%; height:36px;" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Revision</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="revision" id="storageSelect" style="width: 100%; height:36px;" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Service Time</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="servicetime" id="storageSelect" style="width: 100%; height:36px;" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row" id="designInput">
+                                    <label for="imageUpload" class="col-sm-3 text-right control-label col-form-label">Landing/System Design Page</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="landing" placeholder="UI/UX Only" id="storageSelect" style="width: 100%; height:36px;">
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="border-top">
                                 <div class="card-body text-center">
@@ -365,19 +396,35 @@
                 </div>
             </div>
 
-        </div>
 
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
         <footer class="footer text-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;<script>document.write(new Date().getFullYear());</script>
             All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a
                 href="https://www.trodev.com" target="_blank">Trodev</a>
         </footer>
-
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
     </div>
-
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
 </div>
-
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
 <script src="{{asset('admin/assets/libs/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('admin/assets/libs/popper.js/dist/umd/popper.min.js')}}"></script>
@@ -401,55 +448,37 @@
 <script src="{{asset('admin/assets/libs/flot/jquery.flot.crosshair.js')}}"></script>
 <script src="{{asset('admin/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js')}}"></script>
 <script src="{{asset('admin/dist/js/pages/chart/chart-page-init.js')}}"></script>
-<script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
-<!-- Include the image plugin -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- Add Select2 library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'),{
-            ckfinder:{
-                uploadUrl: '{{route('ckeditor.upload').'?_token='.csrf_token()}}'
-            }
-        })
-        .then(editor => {
-            editor.model.document.on('change:data', () => {
-                document.querySelector('#blogContent').value = editor.getData();
-            });
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    $(document).ready(function(){
+        // Initialize Select2
+        $('#typeSelect').select2();
 
+        // Show/hide input based on selected option
+        $('#typeSelect').on('change', function(){
+            var selectedOption = $(this).val();
 
-
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#selectName').change(function () {
-            var selectedName = $(this).val();
-            $('#selectDesignation').prop('disabled', selectedName === ''); // Disable designation if no name is selected
-            if (selectedName !== '') {
-                // Ajax call or data lookup to retrieve corresponding designation based on the selected name
-                // For demonstration purposes, I'm using a simple array to match the name to its designation
-                var employeeData = <?php echo json_encode($employee); ?>;
-                var selectedEmployee = employeeData.find(function (emp) {
-                    return emp.Name === selectedName;
-                });
-                if (selectedEmployee) {
-                    $('#selectDesignation').empty().append($('<option>', {
-                        value: selectedEmployee.Designation,
-                        text: selectedEmployee.Designation,
-                        selected: true
-                    }));
-                }
+            if(selectedOption === 'Graphic-Design'){
+                $('#designInput').show();
             } else {
-                $('#selectDesignation').empty(); // Clear designation options if no name is selected
+                $('#designInput').hide();
             }
         });
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+
+
 
 </body>
 
 </html>
+
+
+

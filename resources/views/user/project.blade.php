@@ -21,6 +21,15 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H7Z41SH00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7H7Z41SH00');
+    </script>
 </head>
 <body>
 <div class="py-1 top">

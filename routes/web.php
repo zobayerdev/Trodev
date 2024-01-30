@@ -189,6 +189,12 @@ Route::middleware(['admin'])->group(function (){
     Route::post('/premiumupdate',[AdminDashboard::class,'goldupdate'])->name('premiumupdate');
 
     Route::post('/upload',[AdminDashboard::class,'imageUpload'])->name('ckeditor.upload');
+
+    Route::get('/admin/uiuxgraphicdesign/{id}',[AdminDashboard::class,'uiux'])->name('uiuxs');
+
+    Route::post('/uiinsert',[AdminDashboard::class,'uiuxinsert'])->name('uiuxinsert');
+
+    Route::post('/uiUpdate',[AdminDashboard::class,'uiupdate'])->name('uiupdate');
 });
 
 Route::middleware(['auth','verified'])->group(function (){
@@ -258,51 +264,51 @@ Route::middleware(['auth','verified'])->group(function (){
 });
 
 /*Apps Start*/
-Route::get('/apps',[CategoryController::class,'appshomepage'])->name('apps');
+Route::get('home/apps',[CategoryController::class,'appshomepage'])->name('apps');
 
-Route::get('/apps/service',[CategoryController::class,'appsservice'])->name('appsservice');
+Route::get('home/apps/service',[CategoryController::class,'appsservice'])->name('appsservice');
 
-Route::get('/apps/project',[CategoryController::class,'appproject'])->name('appproject');
+Route::get('home/apps/project',[CategoryController::class,'appproject'])->name('appproject');
 
-Route::get('/apps/price',[CategoryController::class,'apppricing'])->name('apppricing');
+Route::get('home/apps/price',[CategoryController::class,'apppricing'])->name('apppricing');
 /*Apps End*/
 
 /*Software Start*/
-Route::get('/software',[CategoryController::class,'softwarehompage'])->name('softwarehompage');
+Route::get('home/software',[CategoryController::class,'softwarehompage'])->name('softwarehompage');
 
-Route::get('/software/service',[CategoryController::class,'softwaresservice'])->name('softwaresservice');
+Route::get('home/software/service',[CategoryController::class,'softwaresservice'])->name('softwaresservice');
 
-Route::get('/software/project',[CategoryController::class,'softwareproject'])->name('softwareproject');
+Route::get('home/software/project',[CategoryController::class,'softwareproject'])->name('softwareproject');
 
-Route::get('/software/price',[CategoryController::class,'softwarepricing'])->name('softwarepricing');
+Route::get('home/software/price',[CategoryController::class,'softwarepricing'])->name('softwarepricing');
 /*Software End*/
 
 /*Website Start*/
-Route::get('/website',[CategoryController::class,'websitehomepage'])->name('websitehomepage');
+Route::get('home/website',[CategoryController::class,'websitehomepage'])->name('websitehomepage');
 
-Route::get('/website/service',[CategoryController::class,'websiteservice'])->name('websiteservice');
+Route::get('home/website/service',[CategoryController::class,'websiteservice'])->name('websiteservice');
 
-Route::get('/website/project',[CategoryController::class,'websiteproject'])->name('websiteproject');
+Route::get('home/website/project',[CategoryController::class,'websiteproject'])->name('websiteproject');
 
-Route::get('/website/price',[CategoryController::class,'websitepricing'])->name('websitepricing');
+Route::get('home/website/price',[CategoryController::class,'websitepricing'])->name('websitepricing');
 /*Website End*/
 
 /*UI-UX Start*/
-Route::get('/ui-ux',[CategoryController::class,'uiuxhomepage'])->name('uiuxhomepage');
+Route::get('home/ui-ux',[CategoryController::class,'uiuxhomepage'])->name('uiuxhomepage');
 
-Route::get('/ui-ux/project',[CategoryController::class,'uiuxproject'])->name('uiuxproject');
+Route::get('home/ui-ux/project',[CategoryController::class,'uiuxproject'])->name('uiuxproject');
 
-Route::get('/ui-ux/service',[CategoryController::class,'uiuxservice'])->name('uiuxservice');
+Route::get('home/ui-ux/service',[CategoryController::class,'uiuxservice'])->name('uiuxservice');
 
-Route::get('/ui-ux/price',[CategoryController::class,'uiuxpricing'])->name('uiuxpricing');
+Route::get('home/ui-ux/price',[CategoryController::class,'uiuxpricing'])->name('uiuxpricing');
 /*UI-UX End*/
 
 /*Graphic-Design Start*/
-Route::get('/graphic-design',[CategoryController::class,'graphicdesignhomepage'])->name('graphicdesignhomepage');
+Route::get('home/graphic-design',[CategoryController::class,'graphicdesignhomepage'])->name('graphicdesignhomepage');
 
-Route::get('/graphic-design/service',[CategoryController::class,'graphicdesignservice'])->name('graphicdesignservice');
+Route::get('home/graphic-design/service',[CategoryController::class,'graphicdesignservice'])->name('graphicdesignservice');
 
-Route::get('/graphic-design/project',[CategoryController::class,'graphicdesignproject'])->name('graphicdesignproject');
+Route::get('home/graphic-design/project',[CategoryController::class,'graphicdesignproject'])->name('graphicdesignproject');
 
-Route::get('/graphic-design/price',[CategoryController::class,'graphicdesignpricing'])->name('graphicdesignpricing');
+Route::get('home/graphic-design/price',[CategoryController::class,'graphicdesignpricing'])->name('graphicdesignpricing');
 /*Graphic-Design End*/

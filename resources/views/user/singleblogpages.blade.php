@@ -21,6 +21,15 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H7Z41SH00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7H7Z41SH00');
+    </script>
 </head>
 <body>
 <div class="py-1 top">
@@ -42,7 +51,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$users->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$users->id])}}" class="btn btn-primary">{{$users->name}}</a></p>
             </div>
         </div>
     </div>
@@ -126,7 +135,7 @@
                 <p>Publish Date: {{$date}}</p>
 
                 <p>
-                    {!! $id->description !!}
+                    {!! $ids->description !!}
                 </p>
 
 
