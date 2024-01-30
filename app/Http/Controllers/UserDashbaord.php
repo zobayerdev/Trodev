@@ -102,5 +102,36 @@ class UserDashbaord extends Controller
         return view('user.pricings',['id'=>$user,'basic' =>$pack, 'premium'=>$pack3, 'standard'=> $pack2]);
     }
 
+    public function profilepage($id)
+    {
+        $user = User::find($id);
+        return view('user.profile.profile',['id'=>$user]);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $pic = $request->file('propic');
+
+        if ($pic) {
+            $originalname = $pic->getClientOriginalName();
+            $path = $pic->storeAs('public/user', $originalname);
+            $path = str_replace('public/', '', $path);
+
+            User::where('id', $request->input('id'))->update([
+                'propic' => $path
+            ]);
+        }
+
+        User::where('id', $request->input('id'))->update([
+            'name' => $request->input('name'),
+            'mobile' => $request->input('phone'),
+            'address1' => $request->input('address1'),
+            'address2'=>$request->input('address2'),
+            'second_email'=>$request->input('email'),
+            'state'=>$request->input('state'),
+            'country'=>$request->input('country'),
+        ]);
+        return redirect()->back();
+    }
 
 }

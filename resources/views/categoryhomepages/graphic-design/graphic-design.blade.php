@@ -268,45 +268,89 @@
 </section>
 
 <section class="ftco-section bg-half-light">
+
     <div class="container">
         <div class="row justify-content-center mb-5 pb-2">
             <div class="col-md-8 text-center heading-section ftco-animate">
-                <span class="subheading">Our Services</span>
-                <h2 class="mb-4">Industries We Serve</h2>
+                <h2 class="mb-4">Our Packages</h2>
             </div>
         </div>
+
         <div class="row">
-            {{--            @foreach($service as $servicec)--}}
-            {{--                <div class="col-md-4">--}}
+            <div class="col-md-4 monthly-package">
+                @foreach($price as $servicec)
+                    @if($servicec->services === 'Basic')
+                        <div class="services-wrap ftco-animate custom-card-size">
+                            <div class="text" style="color: black; text-align: left">
+                                <h3 style="text-align: center">{{$servicec->services}}</h3>
+                                <h1>{{$servicec->price}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                <p>Licence:- {{$servicec->licence}}</p>
+                                <p>File Type:- <strong>{{$servicec->file}}</strong></p>
+                                <p>Format Type:- <strong>{{$servicec->format}}</strong></p>
+                                <p>Mockup Design:- <strong>{{$servicec->mockup}} files</strong></p>
+                                <p>Showcase Banner:- <strong>{{$servicec->showcase}} files</strong></p>
+                                <p>Revision:- <strong>{{$servicec->revision}} time</strong></p>
+                                <p>Service Time:- <strong>{{$servicec->service}} months</strong></p>
 
-            {{--                    <div class="services-wrap ftco-animate">--}}
-            {{--                        <div class="img" style="background-image: url({{asset('storage/'.$servicec->image)}});"></div>--}}
-            {{--                        <div class="text">--}}
-            {{--                            @if($servicec->tools === 'App')--}}
-            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-            {{--                                        class="fa-solid fa-mobile"></span></div>--}}
-            {{--                            @elseif($servicec->tools === 'Software')--}}
-            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-            {{--                                        class="fa-solid fa-computer"></span></div>--}}
-            {{--                            @elseif($servicec->tools === 'Website')--}}
-            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-            {{--                                        class="fa-solid fa-globe"></span></div>--}}
-            {{--                            @elseif($servicec->tools === 'Graphic-Design')--}}
-            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-            {{--                                        class="fa-solid fa-pencil-alt"></span></div>--}}
-            {{--                            @elseif($servicec->tools === 'UI/UX')--}}
-            {{--                                <div class="icon justify-content-center align-items-center d-flex"><span--}}
-            {{--                                        class="fa-solid fa-uikit"></span></div>--}}
-            {{--                            @endif--}}
-            {{--                            <h2>{{$servicec->tools}} Development</h2>--}}
-            {{--                            <p align="justify">{{$servicec->description}}</p>--}}
-            {{--                            <a href="#" class="btn-custom">Thank You</a>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
 
-            {{--                </div>--}}
-            {{--            @endforeach--}}
+                                <div class="card-bottom">
+                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+            <div class="col-md-4 monthly-package">
+                @foreach($price as $servicec)
+                    @if($servicec->services === 'Standard')
+                        <div class="services-wrap ftco-animate custom-card-size">
+                            <div class="text" style="color: black; text-align: left">
+                                <h3 style="text-align: center">{{$servicec->services}}</h3>
+                                <h1>{{$servicec->price}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                <p>Licence:- {{$servicec->licence}}</p>
+                                <p>File Type:- <strong>{{$servicec->file}}</strong></p>
+                                <p>Format Type:- <strong>{{$servicec->format}}</strong></p>
+                                <p>Mockup Design:- <strong>{{$servicec->mockup}} files</strong></p>
+                                <p>Showcase Banner:- <strong>{{$servicec->showcase}} files</strong></p>
+                                <p>Revision:- <strong>{{$servicec->revision}} time</strong></p>
+                                <p>Service Time:- <strong>{{$servicec->service}} months</strong></p>
+
+
+                                <div class="card-bottom">
+                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+            <div class="col-md-4 monthly-package">
+                @foreach($price as $servicec)
+                    @if($servicec->services === 'Premium')
+                        <div class="services-wrap ftco-animate custom-card-size">
+                            <div class="text" style="color: black; text-align: left">
+                                <h3 style="text-align: center">{{$servicec->services}}</h3>
+                                <h1>{{$servicec->price}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                                <p>Licence:- {{$servicec->licence}}</p>
+                                <p>File Type:- <strong>{{$servicec->file}}</strong></p>
+                                <p>Format Type:- <strong>{{$servicec->format}}</strong></p>
+                                <p>Mockup Design:- <strong>{{$servicec->mockup}} files</strong></p>
+                                <p>Showcase Banner:- <strong>{{$servicec->showcase}} files</strong></p>
+                                <p>Revision:- <strong>{{$servicec->revision}} time</strong></p>
+                                <p>Service Time:- <strong>{{$servicec->service}} months</strong></p>
+
+
+                                <div class="card-bottom">
+                                    <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -332,7 +376,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-                                {{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
+                                <strong class="number" data-number="{{$count}}">0</strong>
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -362,27 +406,27 @@
             </div>
         </div>
         <div class="row">
-            {{--            @foreach($result as $projects)--}}
-            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
-            {{--                    <div class="col-md-4">--}}
+            @foreach($service as $projects)
+                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">
+                    <div class="col-md-4">
 
-            {{--                        <div class="project">--}}
-            {{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
-            {{--                               class="img image-popup d-flex align-items-center"--}}
-            {{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
-            {{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
-            {{--                                        class="fa fa-plus"></span></div>--}}
-            {{--                            </a>--}}
-            {{--                            <div class="text">--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
-            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
+                        <div class="project">
+                            <a href="{{asset('storage/'.$projects->image)}}"
+                               class="img image-popup d-flex align-items-center"
+                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span
+                                        class="fa fa-plus"></span></div>
+                            </a>
+                            <div class="text">
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>
+                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>
+                            </div>
+                        </div>
 
-            {{--                    </div>--}}
-            {{--                </a>--}}
-            {{--            @endforeach--}}
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
 </section>

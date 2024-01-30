@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$id->id])}}" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -148,7 +148,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -182,14 +182,15 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('websitehomepage')}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('websitehomepages',['id'=>$id->id])}}" class="nav-link">Home</a></li>
 {{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
-                <li class="nav-item"><a href="{{route('websiteservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('websiteproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('websiteservices',['id'=>$id->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('websiteprojects',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
 {{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
-                <li class="nav-item  active"><a href="{{route('apppricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item  active"><a href="{{route('websitepricings',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>
 {{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -257,231 +258,231 @@
 
         <div class="row">
             <div class="col-md-4 monthly-package">
-                {{--                @foreach($basic as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage;--}}
+                @foreach($basic as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage;
 
-                {{--                                $format = number_format($total);--}}
-                {{--                            @endphp--}}
+                                $format = number_format($total);
+                            @endphp
 
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}</h3>--}}
-                {{--                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>--}}
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
+                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
 
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:- <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:- <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
 
-                {{--                @endforeach--}}
+                @endforeach
             </div>
             <div class="col-md-4 monthly-package">
-                {{--                @foreach($standard as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage;--}}
+                @foreach($standard as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage;
 
-                {{--                                $format = number_format($total);--}}
-                {{--                            @endphp--}}
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}</h3>--}}
-                {{--                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>--}}
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>--}}
-                {{--                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                                $format = number_format($total);
+                            @endphp
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
+                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endforeach--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="col-md-4 monthly-package">
-                {{--                @foreach($premium as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage;--}}
+                @foreach($premium as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage;
 
-                {{--                                $format = number_format($total);--}}
-                {{--                            @endphp--}}
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}</h3>--}}
-                {{--                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>--}}
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>--}}
-                {{--                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                                $format = number_format($total);
+                            @endphp
+                            <h3 style="text-align: center">{{$servicec->type}}</h3>
+                            <h1>{{$format}}Tk<span style="font-size: 14px;">/mo</span></h1>
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endforeach--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4 yearly-package">
-                {{--                @foreach($basic as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage ;--}}
+                @foreach($basic as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage ;
 
-                {{--                                $yearly = $total*12;--}}
+                                $yearly = $total*12;
 
-                {{--                                $intotal = $yearly*($servicec->peroff/100)+$yearly;--}}
+                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                {{--                                $number = number_format($intotal);--}}
-                {{--                            @endphp--}}
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>--}}
-                {{--                            </h3>--}}
-                {{--                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>--}}
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                                $number = number_format($intotal);
+                            @endphp
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
+                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endforeach--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="col-md-4 yearly-package">
-                {{--                @foreach($standard as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage;--}}
+                @foreach($standard as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage;
 
-                {{--                                $yearly = $total*12;--}}
+                                $yearly = $total*12;
 
-                {{--                                $intotal = $yearly*($servicec->peroff/100)+$yearly;--}}
+                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                {{--                                $number = number_format($intotal);--}}
-                {{--                            @endphp--}}
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>--}}
-                {{--                            </h3>--}}
-                {{--                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>--}}
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>--}}
-                {{--                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                                $number = number_format($intotal);
+                            @endphp
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
+                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endforeach--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
             <div class="col-md-4 yearly-package">
-                {{--                @foreach($premium as $servicec)--}}
-                {{--                    <div class="services-wrap ftco-animate custom-card-size">--}}
-                {{--                        <div class="text" style="color: black; text-align: left">--}}
-                {{--                            @php--}}
-                {{--                                $total = $servicec->maintainance + $servicec->storage;--}}
+                @foreach($premium as $servicec)
+                    <div class="services-wrap ftco-animate custom-card-size">
+                        <div class="text" style="color: black; text-align: left">
+                            @php
+                                $total = $servicec->maintainance + $servicec->storage;
 
-                {{--                                $yearly = $total*12;--}}
+                                $yearly = $total*12;
 
-                {{--                                $intotal = $yearly*($servicec->peroff/100)+$yearly;--}}
+                                $intotal = $yearly*($servicec->peroff/100)+$yearly;
 
-                {{--                                $number = number_format($intotal);--}}
-                {{--                            @endphp--}}
-                {{--                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>--}}
-                {{--                            </h3>--}}
-                {{--                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>--}}
-                {{--                            <p>Software Activation Price excluded</p>--}}
-                {{--                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>--}}
-                {{--                            <strong>What's included?</strong>--}}
-                {{--                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>--}}
-                {{--                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>--}}
-                {{--                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>--}}
-                {{--                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>--}}
-                {{--                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>--}}
-                {{--                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>--}}
-                {{--                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>--}}
-                {{--                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>--}}
-                {{--                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>--}}
-                {{--                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>--}}
-                {{--                            <p>Security:- <strong>{{$servicec->security}}</strong></p>--}}
-                {{--                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>--}}
-                {{--                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>--}}
+                                $number = number_format($intotal);
+                            @endphp
+                            <h3 style="text-align: center">{{$servicec->type}}<span style="font-size: 14px;">({{$servicec->peroff}}%off)</span>
+                            </h3>
+                            <h1>{{$number}}Tk<span style="font-size: 14px;">/yr</span></h1>
+                            <p>Software Activation Price excluded</p>
+                            <p>Maintenance Charge:- {{$servicec->maintainance}}Tk</p>
+                            <strong>What's included?</strong>
+                            <p>Development:-  <strong>{{$servicec->development}}</strong></p>
+                            <p>UI/UX Design:- <strong>{{$servicec->UI_UX}}</strong></p>
+                            <p>Logo Design:- <strong>{{$servicec->logo}}</strong></p>
+                            <p>Design Issue:- <strong>{{$servicec->business_card}}</strong></p>
+                            <p>Training Time:- <strong>{{$servicec->training_time}}</strong></p>
+                            <p>Revision:- <strong>{{$servicec->revision}}</strong></p>
+                            <p>Project Manager:- <strong>{{$servicec->project_manager}}</strong></p>
+                            <p>Edit Request:- <strong>{{$servicec->edit_request}}</strong></p>
+                            <p>Technical Planning:- <strong>{{$servicec->technical}}</strong></p>
+                            <p>Development Request:- <strong>{{$servicec->development_request}}</strong></p>
+                            <p>Security:- <strong>{{$servicec->security}}</strong></p>
+                            <p>Administration Setup:- <strong>{{$servicec->hosting}}</strong></p>
+                            <p>Quality Assurance:- <strong>{{$servicec->sqa}}</strong></p>
 
-                {{--                            <div class="card-bottom">--}}
-                {{--                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>--}}
-                {{--                            </div>--}}
-                {{--                        </div>--}}
-                {{--                    </div>--}}
-                {{--                @endforeach--}}
+                            <div class="card-bottom">
+                                <a href="{{ route('register') }}" class="btn-custom" style="text-align: center">Book a Meeting</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

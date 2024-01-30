@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$id->id])}}" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -51,7 +51,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -83,14 +83,15 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{{route('websitehomepage')}}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{route('websitehomepages',['id'=>$id->id])}}" class="nav-link">Home</a></li>
 {{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
-                <li class="nav-item active"><a href="{{route('websiteservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('websiteproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item active"><a href="{{route('websiteservices',['id'=>$id->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('websiteprojects',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
 {{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
-                <li class="nav-item"><a href="{{route('websitepricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="{{route('websitepricings',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>
 {{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -101,7 +102,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-start">
             <div class="col-md-9 ftco-animate pb-5">
-                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('home')}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{{route('homepage',['id'=>$id->id])}}">Home <i class="fa fa-chevron-right"></i></a></span> <span>Services <i class="fa fa-chevron-right"></i></span></p>
                 <h1 class="mb-3 bread">Services</h1>
             </div>
         </div>
@@ -166,7 +167,7 @@
                 <div class="ftco-footer-widget">
                     <h2 class="ftco-heading-2">See More</h2>
                     <ul class="list-unstyled">
-                        <li><a href="{{route('home')}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
+                        <li><a href="{{route('homepage',['id'=>$id->id])}}"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
                         <li><a href="{{route('about')}}"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
                         <li><a href="{{route('projectpage')}}"><span class="fa fa-chevron-right mr-2"></span>Projects</a></li>
                         <li><a href="{{route('blogs')}}"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>

@@ -21,6 +21,15 @@
 
     <link rel="stylesheet" href="{{asset('user/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/style.css')}}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H7Z41SH00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7H7Z41SH00');
+    </script>
 
     <style>
         /* Apply the flip effect for screens smaller than 768 pixels (adjust as needed) */
@@ -70,7 +79,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="#" class="btn btn-primary">{{$id->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$id->id])}}" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -170,7 +179,7 @@
                     <div class="overlay"></div>
                     <h2>Providing Personalized and High Quality Services</h2>
                     <p>We can manage your dream projects to make with responsive design.</p>
-                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>
+{{--                    <p class="mb-0"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Touch Us</a></p>--}}
                 </div>
             </div>
         </div>

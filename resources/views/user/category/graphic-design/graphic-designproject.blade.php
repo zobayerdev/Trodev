@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">{{$id->name}}</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$id->id])}}" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -121,14 +121,14 @@
             @foreach($service as $projects)
 
                 <div class="col-md-4">
-                    <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">
+                    <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">
                         <div class="project">
                             <a href="{{asset('storage/'.$projects->image)}}" class="img image-popup d-flex align-items-center" style="background-image: url('{{asset('storage/'.$projects->image)}}');">
                                 <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span></div>
                             </a>
                             <div class="text">
-                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>
-                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>
+                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><span class="subheading">{{$projects->type}}</span></a>
+                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><h3>{{$projects->name}}</h3></a>
                                 <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singleprojectpages',['id'=>$projects->id])}}" style="color: white">Click here</a> </p>
                             </div>
                         </div>

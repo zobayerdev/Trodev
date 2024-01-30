@@ -234,7 +234,7 @@
                         <ul aria-expanded="false" class="collapse  first-level">
                             <li class="sidebar-item"><a href="{{route('packages',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> Website Pricing </span></a></li>
                             <li class="sidebar-item"><a href="{{route('appandsoftware',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> App & Software Pricing </span></a></li>
-                            <li class="sidebar-item"><a href="#" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
+                            <li class="sidebar-item"><a href="{{route('uiuxs',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-plus"></i><span class="hide-menu"> UI/UX & Graphic Design Pricing </span></a></li>
                             <li class="sidebar-item"><a href="{{route('editprice',['id'=>$id->id])}}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Price List </span></a></li>
                         </ul>
                     </li>
@@ -288,10 +288,17 @@
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                             <tr>
+                                <th>Pictuer</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Member From</th>
                                 <th>Verified</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+
+                                <th>State, Country</th>
+
+                                <th>Member From</th>
+                                <th>Second Email</th>
                                 <th>IP Address</th>
                                 <th>Visit Count</th>
                             </tr>
@@ -302,18 +309,30 @@
                                     $date = date("M d, Y", strtotime($clients->created_at));
                                 @endphp
                                 <tr>
+                                    <td>
+                                        <a href="{{asset('storage/'.$clients->propic)}}" target="_blank">
+                                            <img src="{{asset('storage/'.$clients->propic)}}" width="100%" height="100%">
+                                        </a>
+                                    </td>
                                     <td>{{$clients->name}}</td>
                                     <td>{{$clients->email}}</td>
-                                    <td>{{$date}}</td>
                                     @if($clients->email_verified_at)
-                                    <td class="text-success" style="font-weight: bolder; font-size: 16px;">
+                                        <td class="text-success" style="font-weight: bolder; font-size: 16px;">
                                             Verified
-                                    </td>
+                                        </td>
                                     @else
                                         <td class="text-warning" style="font-weight: bolder; font-size: 16px;">
                                             Not Verified
                                         </td>
                                     @endif
+                                    <td>{{$clients->mobile}}</td>
+                                    <td>{{$clients->address1}}
+                                        {{$clients->address2}}</td>
+
+                                    <td>{{$clients->state}}, {{$clients->country}}</td>
+
+                                    <td>{{$date}}</td>
+                                    <td>{{$clients->second_email}}</td>
 
                                     <td>{{$clients->ip_address}}</td>
                                     <td>{{$clients->visit_count}}</td>
@@ -322,10 +341,17 @@
                             </tbody>
                             <tfoot>
                             <tr>
+                                <th>Pictuer</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Member From</th>
                                 <th>Verified</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+
+                                <th>State, Country</th>
+
+                                <th>Member From</th>
+                                <th>Second Email</th>
                                 <th>IP Address</th>
                                 <th>Visit Count</th>
                             </tr>
