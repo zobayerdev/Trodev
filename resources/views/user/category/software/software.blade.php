@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                <p class="mb-0 register-link"><a href="{{route('register')}}" class="btn btn-primary">Sign up</a></p>
+                <p class="mb-0 register-link"><a href="{{route('profile',['id'=>$id->id])}}" class="btn btn-primary">{{$id->name}}</a></p>
             </div>
         </div>
     </div>
@@ -148,7 +148,7 @@
     <div class="container">
         <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-md-4 d-flex mb-2 mb-md-0">
-                <a class="navbar-brand d-flex align-items-center" href="{{route('home')}}">
+                <a class="navbar-brand d-flex align-items-center" href="{{route('homepage',['id'=>$id->id])}}">
                     <span class="flaticon flaticon-crane"></span>
                     <span class="ml-2">Trodev <small>IT & Software Company</small></span>
                 </a>
@@ -182,14 +182,15 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('softwarehompage')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('softwarehompages',['id'=>$id->id])}}" class="nav-link">Home</a></li>
 {{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
-                <li class="nav-item"><a href="{{route('softwaresservice')}}" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="{{route('softwareproject')}}" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{route('softwaresservices',['id'=>$id->id])}}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{route('softwareprojects',['id'=>$id->id])}}" class="nav-link">Projects</a></li>
 {{--                <li class="nav-item"><a href="{{route('blogs')}}" class="nav-link">Blog</a></li>--}}
-                <li class="nav-item"><a href="{{route('softwarepricing')}}" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="{{route('softwarepricings',['id'=>$id->id])}}" class="nav-link">Pricing</a></li>
 {{--                <li class="nav-item"><a href="{{route('contact')}}" class="nav-link">Contact</a></li>--}}
             </ul>
+            <a href="{{route('logout')}}" class="btn-custom">Logout</a>
         </div>
     </div>
 </nav>
@@ -346,7 +347,7 @@
         </div>
         <div class="row">
             {{--            @foreach($result as $projects)--}}
-            {{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
+            {{--                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}">--}}
             {{--                    <div class="col-md-4">--}}
 
             {{--                        <div class="project">--}}
@@ -357,9 +358,9 @@
             {{--                                        class="fa fa-plus"></span></div>--}}
             {{--                            </a>--}}
             {{--                            <div class="text">--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
-            {{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
-            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
+            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><span class="subheading">{{$projects->type}}</span></a>--}}
+            {{--                                <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}"><h3>{{$projects->name}}</h3></a>--}}
+            {{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{route('singlepages',['user'=>$id->id,'id'=>$projects->id])}}" style="color: white">Click here</a></p>--}}
             {{--                            </div>--}}
             {{--                        </div>--}}
 

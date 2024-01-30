@@ -182,7 +182,7 @@
         </button>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
+                <li class="nav-item active"><a href="{{route('apps')}}" class="nav-link">Home</a></li>
 {{--                <li class="nav-item"><a href="{{route('about')}}" class="nav-link">About</a></li>--}}
                 <li class="nav-item"><a href="{{route('appsservice')}}" class="nav-link">Services</a></li>
                 <li class="nav-item"><a href="{{route('appproject')}}" class="nav-link">Projects</a></li>
@@ -315,7 +315,7 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="flaticon-engineer"></span></div>
                             <div class="text">
-{{--                                <strong class="number" data-number="{{$complete}}">0</strong>--}}
+                                <strong class="number" data-number="{{$total}}">0</strong>
                                 <span>Project Completed</span>
                             </div>
                         </div>
@@ -345,27 +345,27 @@
             </div>
         </div>
         <div class="row">
-{{--            @foreach($result as $projects)--}}
-{{--                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">--}}
-{{--                    <div class="col-md-4">--}}
+            @foreach($project as $projects)
+                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}">
+                    <div class="col-md-4">
 
-{{--                        <div class="project">--}}
-{{--                            <a href="{{asset('storage/'.$projects->image)}}"--}}
-{{--                               class="img image-popup d-flex align-items-center"--}}
-{{--                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">--}}
-{{--                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span--}}
-{{--                                        class="fa fa-plus"></span></div>--}}
-{{--                            </a>--}}
-{{--                            <div class="text">--}}
-{{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>--}}
-{{--                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>--}}
-{{--                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <div class="project">
+                            <a href="{{asset('storage/'.$projects->image)}}"
+                               class="img image-popup d-flex align-items-center"
+                               style="background-image: url('{{asset('storage/'.$projects->image)}}');">
+                                <div class="icon d-flex align-items-center justify-content-center mb-5"><span
+                                        class="fa fa-plus"></span></div>
+                            </a>
+                            <div class="text">
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><span class="subheading">{{$projects->type}}</span></a>
+                                <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}"><h3>{{$projects->name}}</h3></a>
+                                <p><span class="fa-solid fa-link mr-1"></span> <a href="{{ route('singleprojectpages', ['id' => $projects->id]) }}" style="color: white">Click here</a></p>
+                            </div>
+                        </div>
 
-{{--                    </div>--}}
-{{--                </a>--}}
-{{--            @endforeach--}}
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
 </section>
