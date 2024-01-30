@@ -371,6 +371,8 @@
     </div>
 </section>
 
+
+
 <section class="ftco-section ftco-no-pt ftco-no-pb testimony-section img">
     <div class="overlay"></div>
     <div class="container">
@@ -386,84 +388,76 @@
                 <div class="carousel-testimony owl-carousel ftco-owl">
                     <div class="item">
                         <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({{asset('user/images/person_1.jpg')}})">
+                            <div class="user-img" style="background-image: url({{asset('user/images/dstqm.png')}})">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="fa fa-quote-left"></i>
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                    right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                                <p class="mb-4">আলহমদুলিল্লাহ, আমাদের অ্যাপ খুব কম সময়ে তৈরি করে দেওয়ার জন্য। এই ডেভেলপারের কাজ খুব সুন্দর এবং অ্যাপস এর ডিজাইন টা খুব সুন্দর। আমি আমার মাদ্রাসার সকল কাজ এই অ্যাপস এর মাধ্যমে পরিচালনা করতে পারতেছি।</p>
+                                <p class="name">Abdullah</p>
+                                <span class="name">পরিচালক (দারুস সুন্নাহ তাহফিযুল কুরআন মাদ্রাসা)</span>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({{asset('user/images/person_2.jpg')}})">
+                            <div class="user-img" style="background-image: url({{asset('user/images/at_taqwa.png')}})">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="fa fa-quote-left"></i>
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                    right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                                <p class="mb-4">Dedicated Company. These company develop my Madrasha At-Taqwa apps. These company developer fully complete my apps very quickly.</p>
+                                <p class="name">Robiul Islam</p>
+                                <span class="name">Founder of Madrasha At-Taqwa</span>
                             </div>
                         </div>
                     </div>
                     <div class="item">
                         <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({{asset('user/images/person_3.jpg')}})">
+                            <div class="user-img" style="background-image: url({{asset('user/images/tuna_scanner.png')}})">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="fa fa-quote-left"></i>
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                    right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                                <p class="mb-4">They make my scanner apps. It's a nice UI design and service are all goods. Thank you, Trodev Team.</p>
+                                <p class="name">Tuna Scanner</p>
+                                <span class="name">Founder</span>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
+{{--                    <div class="item">
                         <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({{asset('user/images/person_1.jpg')}})">
+                            <div class="user-img" style="background-image: url({{asset('user/images/abbu_image.jpg')}})">
 									<span class="quote d-flex align-items-center justify-content-center">
 										<i class="fa fa-quote-left"></i>
 									</span>
                             </div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                    right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
+                                <p class="mb-4">They make my e-commerce website agroduyar. It's a nice UI design and service are all goods. Thank you Trodev Team.</p>
+                                <p class="name">M. A Hasan</p>
+                                <span class="name">Founder of Agroduyar</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">
-                            <div class="user-img" style="background-image: url({{asset('user/images/person_3.jpg')}})">
-									<span class="quote d-flex align-items-center justify-content-center">
-										<i class="fa fa-quote-left"></i>
-									</span>
-                            </div>
-                            <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-                                    right at the coast of the Semantics, a large language ocean</p>
-                                <p class="name">Jeff Freshman</p>
-                                <span class="position">Guests</span>
-                            </div>
-                        </div>
-                    </div>
+                    </div>--}}
+                    {{--                    <div class="item">--}}
+                    {{--                        <div class="testimony-wrap py-4 pb-5 d-flex justify-content-between align-items-end">--}}
+                    {{--                            <div class="user-img" style="background-image: url({{asset('user/images/person_3.jpg')}})">--}}
+                    {{--									<span class="quote d-flex align-items-center justify-content-center">--}}
+                    {{--										<i class="fa fa-quote-left"></i>--}}
+                    {{--									</span>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="text">--}}
+                    {{--                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia--}}
+                    {{--                                    and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove--}}
+                    {{--                                    right at the coast of the Semantics, a large language ocean</p>--}}
+                    {{--                                <p class="name">Jeff Freshman</p>--}}
+                    {{--                                <span class="position">Guests</span>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -483,7 +477,15 @@
         <div class="slideshow-container">
 
             <div class="mySlides fade">
-                <img src="{{asset('category/apps/download.png')}}">
+                <img src="{{asset('category/apps/android.png')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/android_studio.png')}}">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{asset('category/apps/dart.jpg')}}">
             </div>
 
             <div class="mySlides fade">
@@ -495,7 +497,7 @@
             </div>
 
             <div class="mySlides fade">
-                <img src="{{asset('category/apps/React.png')}}">
+                <img src="{{asset('category/apps/firebase.png')}}">
             </div>
 
         </div>
