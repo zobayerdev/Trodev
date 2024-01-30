@@ -162,7 +162,7 @@
     <div class="container">
         <div class="row no-gutters d-flex">
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('app',['id'=>$id->id])}}">
+                <a href="{{route('apps')}}">
                     <div class="media block-6 services d-flex">
                         <div class="icon justify-content-center align-items-center d-flex"><span
                                 class="fa-solid fa-mobile"></span></div>
@@ -174,7 +174,7 @@
                 </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('websitehomepages',['id'=>$id->id])}}">
+                <a href="{{route('websitehomepage')}}">
                     <div class="media block-6 services services-2 d-flex">
                         <div class="icon justify-content-center align-items-center d-flex"><span
                                 class="fa-solid fa-globe"></span></div>
@@ -186,7 +186,7 @@
                 </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('softwarehompages',['id'=>$id->id])}}">
+                <a href="{{route('softwarehompage')}}">
                     <div class="media block-6 services d-flex">
                         <div class="icon justify-content-center align-items-center d-flex"><span
                                 class="fa-solid fa-computer"></span></div>
@@ -198,7 +198,7 @@
                 </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('uiuxhomepages',['id'=>$id->id])}}">
+                <a href="{{route('uiuxhomepage')}}">
                     <div class="media block-6 services services-2 d-flex">
                         <div class="icon justify-content-center align-items-center d-flex"><span
                                 class="fa-solid fa-uikit"></span></div>
@@ -210,7 +210,7 @@
                 </a>
             </div>
             <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
-                <a href="{{route('graphicdesignhomepages',['id'=>$id->id])}}">
+                <a href="{{route('graphicdesignhomepage')}}">
                     <div class="media block-6 services d-flex">
                         <div class="icon justify-content-center align-items-center d-flex"><span
                                 class="fa-solid fa-pencil-alt"></span></div>
