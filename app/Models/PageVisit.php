@@ -13,7 +13,7 @@ class PageVisit extends Model
         [
             'ip_address',
             'visit_count',
-            'time_spent',
+            'city',
             'created_at',
             'updated_at'
         ];

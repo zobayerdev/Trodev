@@ -36,7 +36,8 @@ class UserRegisterandLogin extends Controller
                 $user = User::insert([
                     'name' => $request->input('name'),
                     'email' => $request->input('email'),
-                    'password' => $hash
+                    'password' => $hash,
+                    'created_at' => Carbon::now('Asia/Dhaka')
                 ]);
 
 

@@ -12,6 +12,7 @@ use App\Models\Project;
 use App\Models\SendMsg;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 
 class HomepageController extends Controller
 {
@@ -33,6 +34,9 @@ class HomepageController extends Controller
 
         $check = PageVisit::where('ip_address',$ipaddress)->first();
 
+        $location = Location::get($ipaddress);
+        $city = isset($location->city) ? $location->city : 'Unknown';
+
         if($check)
         {
             $check->increment('visit_count');
@@ -44,6 +48,7 @@ class HomepageController extends Controller
             PageVisit::insert([
                 'ip_address' => $ipaddress,
                 'visit_count' => 1,
+                'city'=> $city,
                 'created_at' => Carbon::now('Asia/Dhaka'),
                 'updated_at' => Carbon::now('Asia/Dhaka')
             ]);

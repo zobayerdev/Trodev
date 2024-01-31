@@ -15,11 +15,6 @@ class AdminLoginandRegistration extends Controller
     {
         $password = $request->input('password');
         $makehash = Hash::make($password);
-        $request->validate([
-            'name'=>'required|string|max:50',
-            'email'=>'required|email|max:70',
-            'password'=>'required|string|max:8'
-        ]);
 
         if($request->input('password')!==$request->input('confirm-password'))
         {
